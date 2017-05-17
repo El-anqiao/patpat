@@ -26,7 +26,7 @@ return new \Phalcon\Config([
         "host" => "smtp.qq.com",
         "port" => 25,
         "username" => "565720073@qq.com",
-        "password" => "faraonexx",
+        "password" => "**",
         //"sendmail" => "/usr/sbin/sendmail -bs",
         'encryption' => 'tls',
         'from' => [
