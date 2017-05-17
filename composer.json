@@ -1,0 +1,29 @@
+{
+  "name": "phasty",
+  "description": "Shopping cart on phalcon php framework.",
+  "keywords": [
+    "shopping cart",
+    "phalcon"
+  ],
+  "require": {
+    "brandonwamboldt/utilphp": "~1.0",
+
+    "imagecow/imagecow": "1.*",
+    "philipbrown/basket": "dev-master",
+    "firebase/php-jwt": "^2.1",
+    "phalcon-ext/mailer": "^2.0"
+  },
+  "require-dev": {
+    "fzaninotto/faker": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Phasty\\": "app",
+      "Phalcon\\": "Phalcon"
+    }
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "minimum-stability": "stable"
+}

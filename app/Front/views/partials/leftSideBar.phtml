@@ -1,0 +1,35 @@
+<div class="left-sidebar">
+    <h2>Category</h2>
+    <div id="categories-container"></div>
+    <!--/category-products-->
+    <?php if($category): ?>
+    <!-- block for filtering products -->
+    <?php if(isset($brands) && is_array($brands)): ?>
+    <div class="brands_products">
+        <!--brands_products-->
+        <h2>Brands</h2>
+        <div class="brands-name searchProductsBlock">
+            <ul class="list-group nav nav-pills nav-stacked">
+                <li class="list-group-item">
+                    <?php echo $this->tag->selectStatic(["brands", 'name' => "brands[]", "class" => "select2", "multiple" => "multiple", $brands, 'useEmpty' => true, 'emptyText' => '&nbsp;', 'emptyValue' => '0']); ?>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <?php endif; ?>
+    <!--/brands_products-->
+    <br />
+    <div class="price-range searchProductsBlock">
+        <!--price-range-->
+        <h2>Price Range</h2>
+        <div id="priceRangeSlider" data-slider-min="0" data-slider-max="<?php echo $maxPrice ?>" data-slider-step="5" data-slider-value="[0, <?php echo $maxPrice ?>]"></div>
+        <br />
+        <span class="pull-left"><?php echo $this->config->app->currency;?>&nbsp;</span><span class="pull-left"><input style="max-width: 70px" type="text" name="price['min']" id="priceRangeLeftValue" /></span><span class="pull-right"><input style="max-width: 70px" type="text" name="price['max']" id="priceRangeRightValue" /></span><span class="pull-right"><?php echo $this->config->app->currency;?>&nbsp;</span>
+    </div>
+    <hr />
+    <!--/price-range-->
+    <?php $this->widgets->searchByAttributes(['category' => $category]); ?>
+    <button id="searchProductsButton" class="btn btn-info pull-right">Make Search</button>
+    <?php endif; ?>
+    <!-- /block for filtering products -->
+</div>
