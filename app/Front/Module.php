@@ -9,6 +9,8 @@ use Phalcon\Loader;
 use Phalcon\Mvc\ModuleDefinitionInterface;
 use Phalcon\Mvc\View;
 use Phalcon\Widgets\WidgetFactory;
+use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
+use Phalcon\Mvc\View\Engine\Php as PhpEngine;
 
 class Module implements ModuleDefinitionInterface {
 
@@ -25,13 +27,39 @@ class Module implements ModuleDefinitionInterface {
 		 * Setting up the view component
 		 */
 
-		$di->set('view', function () {
+		/*$di->set('view', function () {
 			$view = new View();
 			$view->setViewsDir(__DIR__ . '/views/');
 			$view->setTemplateAfter('main');
 			return $view;
 		}
 		);
+        */
+        $di->setShared('view', function () {
+
+            $view = new View();
+            $view->setDI($this);
+            $view->setViewsDir(__DIR__ . '/views/');
+
+            $view->registerEngines([
+                '.volt' => function ($view) {
+                    $config = $this->getConfig();
+
+                    $volt = new VoltEngine($view, $this);
+
+                    $volt->setOptions([
+                        'compiledPath' => $config->application->cacheDir,
+                        'compiledSeparator' => '_'
+                    ]);
+
+                    return $volt;
+                },
+                '.phtml' => PhpEngine::class
+
+            ]);
+            $view->setTemplateAfter('main');
+            return $view;
+        });
 
 		/**
 		 * Images resize and cache

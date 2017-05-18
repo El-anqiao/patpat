@@ -1,97 +1,1553 @@
-<?php $this->view->partial('index/_slider'); ?>
-<div class="row">
-    <div class="col-sm-12 padding-right">
-        <div class="features_items">
-            <!--features_items-->
-            <h2 class="title text-center">Features Items</h2>
-            <?php foreach ($products as $key=> $product): ?>
-            <div class="col-sm-4">
-                <div class="product-image-wrapper">
-                    <div class="single-products">
-                        <div class="productinfo text-center">
-                            <img src="<?php echo $this->iwi->load($product->getImages())->showAs(268, 249); ?>" alt="" />
-                            <h2><?php $this->widgets->price([
-                                    'value'=>$product->price,
-                                    'defaultCurrency' => $this->config->app->currency,
-                                    'currentCurrency' => $this->session->get('currency')
-                                    ]) ?></h2>
-                            <p>
-                                <?php echo $product->name ?>
-                            </p>
-                            <a class="btn btn-default add-to-cart" data-product-id="<?php echo $product->id ?>"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                        </div>
-                        <div class="product-overlay">
-                            <div class="overlay-content">
-                                <div class="attributes-overlay">
-                                    <?php echo $product->shortDescription ?></div>
-                                <h2><?php $this->widgets->price([
-                                    'value'=>$product->price,
-                                    'defaultCurrency' => $this->config->app->currency,
-                                    'currentCurrency' => $this->session->get('currency')
-                                    ]) ?></h2>
-                                <p>
-                                    <?php echo $this->tag->linkTo(["products/show/$product->slug", $product->name]); ?>
-                                </p>
-                                <a class="btn btn-default add-to-cart" data-product-id="<?php echo $product->id ?>"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="choose">
-                        <ul class="nav nav-pills nav-justified">
-                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a>
+<!-- site main -->
+<div id="site-main" class="padded index_test">
+<!-- banner activity -->
+<div class="container banner_test">
+<!-- banner -->
+<div id="test-index-banner">
+    <div class="carousel-inner slick-con" role="listbox">
+        <?php if(is_mobile){ ?>
+            <a href="https://www.patpat.com/bundle_event_products-44.html?flag=slide_0" class="home-track">
+                <img src="https://img.patpat.com/web_index_diy/5913c74a95eed/1494468426.jpg" alt="Patpat Image">
+                <div class="banner-info">
+                    <strong>Buy 2, Get Free </strong>
+                    <P>Headband Set</P>
+                </div>
+            </a>
+            <a href="https://www.patpat.com/Flash-Sale/event/Here-Comes-Little-Fox-21236.html?flag=slide_2" class="home-track">
+                <img src="https://img.patpat.com/web_index_diy/591a73632c71f/1494905699.jpg" alt="Patpat Image">
+                <div class="banner-info">
+                    <strong>It&#039;s All About</strong>
+                    <P>Crazy lil&#039; Fox</P>
+                </div>
+            </a>
+            <a href="https://www.patpat.com/Flash-Sale/event/Baby-Toddler-Girls-Dress-and-Set-21267.html?flag=slide_3" class="home-track">
+                <img src="https://img.patpat.com/web_index_diy/5909d9faa02a2/1493817850.jpg" alt="Patpat Image">
+                <div class="banner-info">
+                    <strong>Cute As Always</strong>
+                    <P>Dresses &amp; Sets</P>
+                </div>
+            </a>
+        <?php }else{ ?>
+            <a href="bundle_event_products-44-flag=slide_0.html" class="home-track">
+                <img src="https://img.patpat.com/web_index_diy/5913c6f318876/1494468339.jpg" alt="Patpat Image">
+
+                <div class="banner-info">
+                    <strong>Buy 2, Get Free </strong>
+
+                    <P>Headband Set</P>
+                </div>
+            </a>
+            <a href="flashsale/event/Baby-Boys-Cool-Summer-Time-21223-flag=flash_sale_1-flag=slide_2.html"
+               class="home-track">
+                <img src="https://img.patpat.com/web_index_diy/59104e07d6e75/1494240775.jpg" alt="Patpat Image">
+
+                <div class="banner-info">
+                    <strong>Smart Summer Styles</strong>
+
+                    <P>Over 40 Styles</P>
+                </div>
+            </a>
+            <a href="flashsale/event.html" class="home-track">
+                <img src="https://img.patpat.com/web_index_diy/5909d96cebaa3/1493817708.jpg" alt="Patpat Image">
+
+                <div class="banner-info">
+                    <strong>Cute As Always</strong>
+
+                    <P>Dresses &amp; Sets</P>
+                </div>
+            </a>
+
+
+        <?php } ?>
+
+
+
+
+    </div>
+</div>
+<?php if(is_mobile){ ?>
+    <!-- sign -->
+    <div class="sign-entrance clearfix">
+        <a href="javascript:;" id="wap-sign-btn">Check In</a>                      <a href="https://www.patpat.com/patpoints">Redeem Points</a>
+    </div>
+    <!-- activity -->
+    <div class="activity">
+        <div class="countdown clearfix">
+            <div class="col-sm-12 col-md-8 carousel-inner">
+                <div class="swipe">
+                    <div class="swiper-container banners-container border-gradient" id="slider-daily">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <div class="banner-pro product-off"  data-end_time="1495285200">
+                                    <div class="index-test-time end-time-bigbox">
+                                        <p>DAILY STYLE</p>
+                                        <span class="end-time-hours time"></span>:<span class="end-time-minutes time"></span>:<span class="end-time-seconds time"></span>
+                                        <span class="price font-regular">$20.99<s>$49.99</s></span>
+                                    </div>
+                                    <a href="https://www.patpat.com/product/Precious-Denim-Shirt-and-Tutu-Set-Mom-and-Me-Look.html?flag=daily_deal_0" class="home-track">
+                                        <img class="img-lazyload img-responsive" src="https://img.patpat.com/assets/img/product_placeholder.png" alt="Precious Denim Shirt and Tutu Set Mom and Me Look" data-original="https://img.patpat.com/Product/41029/T-MS-002-00051-001.jpg/1493033966.jpg/350x350">
+                                    </a>
+                                </div>
                             </li>
-                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a>
+                            <li class="swiper-slide">
+                                <div class="banner-pro product-off"  data-end_time="1495285200">
+                                    <div class="index-test-time end-time-bigbox">
+                                        <p>DAILY STYLE</p>
+                                        <span class="end-time-hours time"></span>:<span class="end-time-minutes time"></span>:<span class="end-time-seconds time"></span>
+                                        <span class="price font-regular">$13.99<s>$27.63</s></span>
+                                    </div>
+                                    <a href="https://www.patpat.com/product/Bold-Striped-Sleeveless-Mom-Me-DressPrice-Varied-by-Size.html?flag=daily_deal_1" class="home-track">
+                                        <img class="img-lazyload img-responsive" src="https://img.patpat.com/assets/img/product_placeholder.png" alt="Bold Striped Sleeveless Mom &amp; Me Dress(Price Varied by Size)" data-original="https://img.patpat.com/Product/40771/1688I-WYT-001-00005-001-7.jpg/1494417143.jpg/350x350">
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="banner-pro product-off"  data-end_time="1495717200">
+                                    <div class="index-test-time end-time-bigbox">
+                                        <p>DAILY STYLE</p>
+                                        <span class="end-time-hours time"></span>:<span class="end-time-minutes time"></span>:<span class="end-time-seconds time"></span>
+                                        <span class="price font-regular">$8.99<s>$16.99</s></span>
+                                    </div>
+                                    <a href="https://www.patpat.com/product/Babies-White-One-Piece-with-Funny-Slogan-Cute-Like-Mommy-and-Smelly-Like-Daddy-%C2%A0.html?flag=daily_deal_2" class="home-track">
+                                        <img class="img-lazyload img-responsive" src="https://img.patpat.com/assets/img/product_placeholder.png" alt="Babies&#039; White One Piece with Funny Slogan Cute Like Mommy and Smelly Like Daddy &nbsp;" data-original="https://img.patpat.com/Product/41814/TAOBAO-YC-014-00005-001-1.jpg/1494231485.jpg/350x350">
+                                    </a>
+                                </div>
                             </li>
                         </ul>
                     </div>
+
                 </div>
             </div>
-            <?php endforeach; ?>
         </div>
-        <!--features_items-->
-        <div class="recommended_items">
-            <!--recommended_items-->
-            <h2 class="title text-center">recommended items</h2>
-            <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <?php foreach($products as $key=> $product): ?>
-                    <?php if($key==0 ): ?>
-                    <div class="item active">
-                        <?php endif; ?>
-                        <div class="col-sm-4">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <img src="<?php echo $this->iwi->load($product->getImages())->showAs(268, 134, true); ?>" alt="" />
-                                        <h2><?php $this->widgets->price([
-                                    'value'=>$product->price,
-                                    'defaultCurrency' => $this->config->app->currency,
-                                    'currentCurrency' => $this->session->get('currency')
-                                    ]) ?></h2>
-                                        <p>
-                                            <?php echo $product->name; ?></p>
-                                        <a class="btn btn-default add-to-cart" data-product-id="<?php echo $product->id ?>"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <?php if($key==2 ): ?>
-                    </div>
-                    <div class="item">
-                        <?php endif; ?>
-                        <?php if($key==5 ): ?>
-                    </div>
-                    <?php endif; ?>
-                    <?php endforeach; ?>
-                </div>
-                <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </div>
+        <div class="discount clearfix">
+            <a href="https://www.patpat.com/flashsale/event/Being-Kids,-Being-Gorgeous-20669-New.html?flag=featured_0?flag=featured_0" class="home-track">
+                <img src="https://img.patpat.com/web_index_diy/591568046d7de/1494575108.png" alt="Patpat Image" data-original="">
+            </a>
+            <a href="https://www.patpat.com/Flash-Sale/event/Baby-Toddler-Girls-Dress-and-Set-21267.html?flag=featured_1" class="home-track">
+                <img src="https://img.patpat.com/web_index_diy/59198daf0cc1b/1494846895.png" alt="Patpat Image" data-original="">
+            </a>
+            <a href="https://www.patpat.com/Flash-Sale/event/Essential-to-Fathers-Day-21228.html?flag=featured_2" class="home-track">
+                <img src="https://img.patpat.com/web_index_diy/59198dad47b81/1494846893.png" alt="Patpat Image" data-original="">
+            </a>
+            <a href="https://www.patpat.com/flashsale/event/Crazy-Clearance-Sale-21060-New-Sale.html?flag=up_to_viewmore" class="upto">
+
+                <img src="https://img.patpat.com/web_index_diy/58f5bd9244baa/1492499858.png" alt="Patpat Image">
+
+                <span>View More</span>
+            </a>
         </div>
-        <!--/recommended_items-->
     </div>
+<?php }else{ ?>
+    <!-- activity -->
+    <div class="activity">
+        <div class="countdown clearfix">
+            <div class="col-sm-12 col-md-8 carousel-inner">
+                <div class="product-img-slider">
+                    <ul class="clearfix">
+                        <li>
+                            <div class="product-img product-off clearfix" data-end_time="1495285200">
+                                <div class="index-test-time end-time-bigbox">
+                                    <p>DAILY STYLE</p>
+                                    <span class="end-time-hours time"></span> :
+                                    <span class="end-time-minutes time"></span> :
+                                    <span class="end-time-seconds time"></span>
+                                    <span class="price font-regular">$20.99<s>$49.99</s></span>
+                                </div>
+                                <a href="product/Precious-Denim-Shirt-and-Tutu-Set-Mom-and-Me-Look-in-Blue-flag=daily_deal_0.html"
+                                   class="home-track">
+                                    <img class="img-lazyload img-responsive"
+                                         src="https://img.patpat.com/assets/img/product_placeholder.png"
+                                         alt="Precious Denim Shirt and Tutu Set Mom and Me Look in Blue"
+                                         data-original="https://img.patpat.com/Product/41029/T-MS-002-00051-001.jpg/1493033966.jpg/350x350">
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="product-img product-off clearfix" data-end_time="1495285200">
+                                <div class="index-test-time end-time-bigbox">
+                                    <p>DAILY STYLE</p>
+                                    <span class="end-time-hours time"></span> :
+                                    <span class="end-time-minutes time"></span> :
+                                    <span class="end-time-seconds time"></span>
+                                    <span class="price font-regular">$13.99<s>$27.63</s></span>
+                                </div>
+                                <a href="product/Bold-Striped-Sleeveless-Mom-Me-DressPrice-Varied-by-Size-flag=daily_deal_1.html"
+                                   class="home-track">
+                                    <img class="img-lazyload img-responsive"
+                                         src="https://img.patpat.com/assets/img/product_placeholder.png"
+                                         alt="Bold Striped Sleeveless Mom &amp; Me Dress(Price Varied by Size)"
+                                         data-original="https://img.patpat.com/Product/40771/1688I-WYT-001-00005-001-7.jpg/1494417143.jpg/350x350">
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="product-img product-off clearfix" data-end_time="1494853200">
+                                <div class="index-test-time end-time-bigbox">
+                                    <p>DAILY STYLE</p>
+                                    <span class="end-time-hours time"></span> :
+                                    <span class="end-time-minutes time"></span> :
+                                    <span class="end-time-seconds time"></span>
+                                    <span class="price font-regular">$8.99<s>$16.99</s></span>
+                                </div>
+                                <a href="product/Babies-White-One-Piece-with-Funny-Slogan-Cute-Like-Mommy-and-Smelly-Like-Daddy-%C2%A0-flag=daily_deal_2.html"
+                                   class="home-track">
+                                    <img class="img-lazyload img-responsive"
+                                         src="https://img.patpat.com/assets/img/product_placeholder.png"
+                                         alt="Babies&#039; White One Piece with Funny Slogan Cute Like Mommy and Smelly Like Daddy &nbsp;"
+                                         data-original="https://img.patpat.com/Product/41814/TAOBAO-YC-014-00005-001-1.jpg/1494231485.jpg/350x350">
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="swipe">
+                    <div class="swiper-container banners-container border-gradient" id="slider-daily">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <div class="banner-pro product-off" data-end_time="1495285200">
+                                    <div class="index-test-time end-time-bigbox">
+                                        <p>DAILY STYLE</p>
+                                        <span class="end-time-hours time"></span>:<span
+                                            class="end-time-minutes time"></span>:<span
+                                            class="end-time-seconds time"></span>
+                                        <span class="price font-regular">$20.99<s>$49.99</s></span>
+                                    </div>
+                                    <a href="product/Precious-Denim-Shirt-and-Tutu-Set-Mom-and-Me-Look-in-Blue-flag=daily_deal_0.html"
+                                       class="home-track">
+                                        <img class="img-lazyload img-responsive"
+                                             src="https://img.patpat.com/assets/img/product_placeholder.png"
+                                             alt="Precious Denim Shirt and Tutu Set Mom and Me Look in Blue"
+                                             data-original="https://img.patpat.com/Product/41029/T-MS-002-00051-001.jpg/1493033966.jpg/350x350">
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="banner-pro product-off" data-end_time="1495285200">
+                                    <div class="index-test-time end-time-bigbox">
+                                        <p>DAILY STYLE</p>
+                                        <span class="end-time-hours time"></span>:<span
+                                            class="end-time-minutes time"></span>:<span
+                                            class="end-time-seconds time"></span>
+                                        <span class="price font-regular">$13.99<s>$27.63</s></span>
+                                    </div>
+                                    <a href="product/Bold-Striped-Sleeveless-Mom-Me-DressPrice-Varied-by-Size-flag=daily_deal_1.html"
+                                       class="home-track">
+                                        <img class="img-lazyload img-responsive"
+                                             src="https://img.patpat.com/assets/img/product_placeholder.png"
+                                             alt="Bold Striped Sleeveless Mom &amp; Me Dress(Price Varied by Size)"
+                                             data-original="https://img.patpat.com/Product/40771/1688I-WYT-001-00005-001-7.jpg/1494417143.jpg/350x350">
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="banner-pro product-off" data-end_time="1494853200">
+                                    <div class="index-test-time end-time-bigbox">
+                                        <p>DAILY STYLE</p>
+                                        <span class="end-time-hours time"></span>:<span
+                                            class="end-time-minutes time"></span>:<span
+                                            class="end-time-seconds time"></span>
+                                        <span class="price font-regular">$8.99<s>$16.99</s></span>
+                                    </div>
+                                    <a href="product/Babies-White-One-Piece-with-Funny-Slogan-Cute-Like-Mommy-and-Smelly-Like-Daddy-%C2%A0-flag=daily_deal_2.html"
+                                       class="home-track">
+                                        <img class="img-lazyload img-responsive"
+                                             src="https://img.patpat.com/assets/img/product_placeholder.png"
+                                             alt="Babies&#039; White One Piece with Funny Slogan Cute Like Mommy and Smelly Like Daddy &nbsp;"
+                                             data-original="https://img.patpat.com/Product/41814/TAOBAO-YC-014-00005-001-1.jpg/1494231485.jpg/350x350">
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <ul class="product-small-img product-img-slider-list">
+                    <li class="slick-track">
+                        <img class="img-lazyload img-responsive"
+                             src="https://img.patpat.com/assets/img/product_placeholder.png"
+                             alt="Precious Denim Shirt and Tutu Set Mom and Me Look in Blue"
+                             data-original="https://img.patpat.com/Product/41029/T-MS-002-00051-001.jpg/1493033966.jpg/120x120">
+                    </li>
+                    <li class="slick-track">
+                        <img class="img-lazyload img-responsive"
+                             src="https://img.patpat.com/assets/img/product_placeholder.png"
+                             alt="Bold Striped Sleeveless Mom &amp; Me Dress(Price Varied by Size)"
+                             data-original="https://img.patpat.com/Product/40771/1688I-WYT-001-00005-001-7.jpg/1494417143.jpg/120x120">
+                    </li>
+                    <li class="slick-track">
+                        <img class="img-lazyload img-responsive"
+                             src="https://img.patpat.com/assets/img/product_placeholder.png"
+                             alt="Babies&#039; White One Piece with Funny Slogan Cute Like Mommy and Smelly Like Daddy &nbsp;"
+                             data-original="https://img.patpat.com/Product/41814/TAOBAO-YC-014-00005-001-1.jpg/1494231485.jpg/120x120">
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-4 upto">
+
+                <a href="flashsale/event/Crazy-Clearance-Sale-21060-New-Sale-flag=up_to_viewmore.html"
+                   class="home-track">
+                    <img src="https://img.patpat.com/web_index_diy/58f5bd9244baa/1492499858.png" alt="Patpat Image">
+                    <span>View More</span>
+
+                </a>
+            </div>
+        </div>
+        <div class="discount clearfix">
+            <a href="flashsale/event/Being-Kids,-Being-Gorgeous-20669-New-flag=featured_0-flag=featured_0.html"
+               class="home-track">
+                <img src="https://img.patpat.com/web_index_diy/591568046d7de/1494575108.png" alt="Patpat Image"
+                     data-original="">
+            </a>
+            <a href="flashsale/event.html" class="home-track">
+                <img src="https://img.patpat.com/web_index_diy/591568066969a/1494575110.png" alt="Patpat Image"
+                     data-original="">
+            </a>
+            <a href="Flash-Sale/event/Essential-to-Fathers-Day-21228-flag=featured_2.html" class="home-track">
+                <img src="https://img.patpat.com/web_index_diy/5915680827b4f/1494575112.png" alt="Patpat Image"
+                     data-original="">
+            </a>
+        </div>
+    </div>
+<?php } ?>
+
 </div>
+
+
+<!-- FLASH SALE -->
+<section class="padded section">
+    <div class="container">
+        <div class="flash_sale_box">
+            <div class="hd-test-index">
+                <a class="font-regular" href="flashsale/event.html">Flash Sale<span><i></i></span></a>
+            </div>
+            <div class="bd-flash clearfix">
+                <div class="col-xs-12 col-sm-6 index_impression" data-id="21249">
+                    <article class="box-product alt alt2 box-flashsale">
+                        <a href="flashsale/event/Get-Ready-for-4th-Of-July-21249-flag=flash_sale_0.html"
+                           class="img home-track">
+                            <img src="https://img.patpat.com/Event/21248/5913e0d6f32d7/1494474966.jpg/750x340"
+                                 alt="Get Ready for 4th Of July" class="center-block img-responsive"/>
+                            <span class="end-time"><img src="https://img.patpat.com/assets/img/index_test/flash.png"
+                                                        alt=""><span class="hidden-xs">Ends in </span>8 days</span>
+                        </a>
+
+                        <div class="caption caption-bottom">
+                            <h2 class="heading font-regular">
+                                <a href="flashsale/event/Get-Ready-for-4th-Of-July-21249-flag=flash_sale_0.html"
+                                   class="link-black home-track" onclick="homePageClick();">Get Ready for 4th Of
+                                    July</a>
+                            </h2>
+                            <a href="flashsale/event/Get-Ready-for-4th-Of-July-21249-flag=flash_sale_0.html"
+                               class="price home-track" style="color:#444" onclick="homePageClick();">
+                                <span class="text-muted">Starting from <span class='text-primary'>$4.99</span></span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-xs-12 col-sm-6 index_impression" data-id="21233">
+                    <article class="box-product alt alt2 box-flashsale">
+                        <a href="flashsale/event/Statement-Summer-Swimsuits-for-Toddlers-and-Teens-21233-flag=flash_sale_1.html"
+                           class="img home-track">
+                            <img src="https://img.patpat.com/Event/21081/58f5dc2937151/1492507689.jpg/750x340"
+                                 alt="Statement Summer Swimsuits for Toddlers and Teens"
+                                 class="center-block img-responsive"/>
+                            <span class="end-time"><img src="https://img.patpat.com/assets/img/index_test/flash.png"
+                                                        alt=""><span class="hidden-xs">Ends in </span>3 days</span>
+                        </a>
+
+                        <div class="caption caption-bottom">
+                            <h2 class="heading font-regular">
+                                <a href="flashsale/event/Statement-Summer-Swimsuits-for-Toddlers-and-Teens-21233-flag=flash_sale_1.html"
+                                   class="link-black home-track" onclick="homePageClick();">Statement Summer Swimsuits
+                                    for Toddlers and Teens</a>
+                            </h2>
+                            <a href="flashsale/event/Statement-Summer-Swimsuits-for-Toddlers-and-Teens-21233-flag=flash_sale_1.html"
+                               class="price home-track" style="color:#444" onclick="homePageClick();">
+                                <span class="text-muted">Starting from <span class='text-primary'>$11.99</span></span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-xs-12 col-sm-6 index_impression" data-id="21228">
+                    <article class="box-product alt alt2 box-flashsale">
+                        <a href="flashsale/event/Essential-to-Fathers-Day-21228-flag=flash_sale_2.html"
+                           class="img home-track">
+                            <img src="https://img.patpat.com/Event/21227/59156d70686ec/1494576496.jpg/750x340"
+                                 alt="Essential to Father&#039;s Day " class="center-block img-responsive"/>
+                            <span class="end-time"><img src="https://img.patpat.com/assets/img/index_test/flash.png"
+                                                        alt=""><span class="hidden-xs">Ends in </span>3 days</span>
+                        </a>
+
+                        <div class="caption caption-bottom">
+                            <h2 class="heading font-regular">
+                                <a href="flashsale/event/Essential-to-Fathers-Day-21228-flag=flash_sale_2.html"
+                                   class="link-black home-track" onclick="homePageClick();">Essential to Father&#039;s
+                                    Day </a>
+                            </h2>
+                            <a href="flashsale/event/Essential-to-Fathers-Day-21228-flag=flash_sale_2.html"
+                               class="price home-track" style="color:#444" onclick="homePageClick();">
+                                <span class="text-muted">Starting from <span class='text-primary'>$6.99</span></span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-xs-12 col-sm-6 index_impression" data-id="21104">
+                    <article class="box-product alt alt2 box-flashsale">
+                        <a href="flashsale/event/Darling-Mom-and-Me-Look-21104-flag=flash_sale_3.html"
+                           class="img home-track">
+                            <img src="https://img.patpat.com/Event/21090/58fb236777c22/1492853607.jpg/750x340"
+                                 alt="Darling Mom and Me Look" class="center-block img-responsive"/>
+                            <span class="end-time"><img src="https://img.patpat.com/assets/img/index_test/flash.png"
+                                                        alt=""><span class="hidden-xs">Ends in </span>8 days</span>
+                        </a>
+
+                        <div class="caption caption-bottom">
+                            <h2 class="heading font-regular">
+                                <a href="flashsale/event/Darling-Mom-and-Me-Look-21104-flag=flash_sale_3.html"
+                                   class="link-black home-track" onclick="homePageClick();">Darling Mom and Me Look</a>
+                            </h2>
+                            <a href="flashsale/event/Darling-Mom-and-Me-Look-21104-flag=flash_sale_3.html"
+                               class="price home-track" style="color:#444" onclick="homePageClick();">
+                                <span class="text-muted">Starting from <span class='text-primary'>$6.99</span></span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <a class="more-flash" href="flashsale/event.html">View More</a>
+        </div>
+    </div>
+</section>
+<!-- TOP TRENDS -->
+<section class="padded section">
+    <div class="container">
+        <div class="trends">
+            <div class="hd-test-index">
+                <span class="font-regular">TOP TRENDS</span>
+            </div>
+            <div class="trends-pro-list clearfix">
+                <a href="Flash-Sale/event/Darling-Mom-and-Me-Look-21104-flag=top_trends_0.html"
+                   class="trends-product home-track">
+                    <span><img class="img-lazyload img-responsive"
+                               src="https://img.patpat.com/assets/img/product_placeholder.png"
+                               data-original="https://img.patpat.com/web_index_diy/591577be7e672/1494579134.png"></span>
+                    <strong class="font-regular">Darling</strong>
+
+                    <P>Mom and Me Look</P>
+                </a>
+                <a href="category/Baby-Toddlers/Baby-Toddler-Girl-flag=top_trends_1.html"
+                   class="trends-product home-track">
+                    <span><img class="img-lazyload img-responsive"
+                               src="https://img.patpat.com/assets/img/product_placeholder.png"
+                               data-original="https://img.patpat.com/web_index_diy/591577cb70a2c/1494579147.png"></span>
+                    <strong class="font-regular">Girls</strong>
+
+                    <P>Adorable Styles</P>
+                </a>
+                <a href="category/Baby-Toddlers/Baby-Toddler-Boy/Tops-flag=top_trends_2.html"
+                   class="trends-product home-track">
+                    <span><img class="img-lazyload img-responsive"
+                               src="https://img.patpat.com/assets/img/product_placeholder.png"
+                               data-original="https://img.patpat.com/web_index_diy/591577f1872ad/1494579185.png"></span>
+                    <strong class="font-regular">Boys</strong>
+
+                    <P>&#039;Top&#039; Priority</P>
+                </a>
+                <a href="category/Baby-Toddlers/Baby-Toddler-Girl/One-Pieces-category_id=27&son_category_id=%5B843,844%5D&tag_id=&last_id=0&filter=%7B-Age--%5B%5D,-+Color+--%5B%5D,-Price--%5B%5D%7D&sort=8&page=1&is_sale=0&start_price=&end_price=-flag=top_trends_3.html"
+                   class="trends-product home-track">
+                    <span><img class="img-lazyload img-responsive"
+                               src="https://img.patpat.com/assets/img/product_placeholder.png"
+                               data-original="https://img.patpat.com/web_index_diy/591578207741c/1494579232.png"></span>
+                    <strong class="font-regular">Baby</strong>
+
+                    <P>Cute One-pieces</P>
+                </a>
+                <a href="category/Baby-Toddlers/Baby-Toddler-Girl/Sets-category_id=27&son_category_id=%5B843,867%5D&tag_id=&last_id=0&filter=%7B-Age--%5B%5D,-+Color+--%5B%5D,-Price--%5B%5D%7D&sort=8&page=1&is_sale=0&start_price=&end_price=-flag=top_trends_4.html"
+                   class="trends-product home-track">
+                    <span><img class="img-lazyload img-responsive"
+                               src="https://img.patpat.com/assets/img/product_placeholder.png"
+                               data-original="https://img.patpat.com/web_index_diy/591578306409c/1494579248.png"></span>
+                    <strong class="font-regular">Sets</strong>
+
+                    <P>Selected Fashions</P>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- you like -->
+<section class="padded section">
+<div class="container">
+<div class="you-link" id="category_like">
+<div class="hd-test-index">
+    <span class="font-regular">YOU MAY LIKE</span>
+    <a id="link-pull" href="javascript:;"><i></i></a>
+</div>
+<div class="like-product">
+<div class="row">
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="40767">
+    <article class="box-product alt">
+        <a href="product/Casual-Striped-Short-Sleeve-Mom-and-Me-Dress-in-BlackPrice-Varied-by-Size-flag=recommended_0.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/40767/1688I-WYT-001-00001-001.jpg/1492682569.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Casual Striped Short- Sleeve Mom and Me Dress in Black(Price Varied by Size)"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Casual Striped Short- Sleeve Mom and Me Dress in Black(Price Varied by Size)">Casual
+                    Striped Short- Sleeve Mom and Me Dress in Black(Price Varied by Size)</a></h2>
+
+            <p class="price product-list-price">
+                <s>$27.08</s>&nbsp;&nbsp;$14.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="40767" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Casual-Striped-Short-Sleeve-Mom-and-Me-Dress-in-BlackPrice-Varied-by-Size-flag=recommended_0&size=Kids-+2+Years.html"
+           class="link-black home-track">Kids: 2 Years</a>
+        <a href="product/Casual-Striped-Short-Sleeve-Mom-and-Me-Dress-in-BlackPrice-Varied-by-Size-flag=recommended_0&size=Kids-+3-4+Years.html"
+           class="link-black home-track">Kids: 3-4 Years</a>
+        <a href="product/Casual-Striped-Short-Sleeve-Mom-and-Me-Dress-in-BlackPrice-Varied-by-Size-flag=recommended_0&size=Kids-+5-6+Years.html"
+           class="link-black home-track">Kids: 5-6 Years</a>
+        <a href="product/Casual-Striped-Short-Sleeve-Mom-and-Me-Dress-in-BlackPrice-Varied-by-Size-flag=recommended_0&size=Kids-+7-8+Years.html"
+           class="link-black home-track">Kids: 7-8 Years</a>
+        <a href="product/Casual-Striped-Short-Sleeve-Mom-and-Me-Dress-in-BlackPrice-Varied-by-Size-flag=recommended_0&size=Kids-+8-9+Years.html"
+           class="link-black home-track">Kids: 8-9 Years</a>
+        <a href="product/Casual-Striped-Short-Sleeve-Mom-and-Me-Dress-in-BlackPrice-Varied-by-Size-flag=recommended_0&size=Women-+S.html"
+           class="link-black home-track">Women: S</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41585">
+    <article class="box-product alt">
+        <a href="product/Sleeveless-Flower-Stripes-Knee-length-Dress-color=&flag=recommended_1.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41585/1688I-WYT-001-00033-001-1.jpg/1493885774.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Sleeveless Flower Stripes Knee-length Dress "/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Sleeveless Flower Stripes Knee-length Dress ">Sleeveless Flower Stripes
+                    Knee-length Dress </a></h2>
+
+            <p class="price product-list-price">
+                <s>$21.84</s>&nbsp;&nbsp;$10.99
+            </p>
+
+            <span class="acting">SALE</span> <span class="acting-color"></span>
+        </div>
+        <div class="collect" data-id="41585" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Sleeveless-Flower-Stripes-Knee-length-Dress-color=&flag=recommended_1&size=Kids-+9-12+Months.html"
+           class="link-black home-track">Kids: 9-12 Months</a>
+        <a href="product/Sleeveless-Flower-Stripes-Knee-length-Dress-color=&flag=recommended_1&size=Kids-+3+Years.html"
+           class="link-black home-track">Kids: 3 Years</a>
+        <a href="product/Sleeveless-Flower-Stripes-Knee-length-Dress-color=&flag=recommended_1&size=Kids-+4-5+Years.html"
+           class="link-black home-track">Kids: 4-5 Years</a>
+        <a href="product/Sleeveless-Flower-Stripes-Knee-length-Dress-color=&flag=recommended_1&size=Kids-+6-7+Years.html"
+           class="link-black home-track">Kids: 6-7 Years</a>
+        <a href="product/Sleeveless-Flower-Stripes-Knee-length-Dress-color=&flag=recommended_1&size=Kids-+8-9+Years.html"
+           class="link-black home-track">Kids: 8-9 Years</a>
+        <a href="product/Sleeveless-Flower-Stripes-Knee-length-Dress-color=&flag=recommended_1&size=Kids-+10-11+Years.html"
+           class="link-black home-track">Kids: 10-11 Years</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="40391">
+    <article class="box-product alt">
+        <a href="product/Lace-and-Daisy-Set-in-White-for-Toddler-Girl-flag=recommended_2.html" class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/40391/TAOBAO-YC-004-00001-001-15.jpg/1493197738.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Lace and Daisy Set in White for Toddler Girl"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Lace and Daisy Set in White for Toddler Girl">Lace and Daisy Set in White for
+                    Toddler Girl</a></h2>
+
+            <p class="price product-list-price">
+                <s>$17.99</s>&nbsp;&nbsp;$9.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="40391" data-event_id="21137" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Lace-and-Daisy-Set-in-White-for-Toddler-Girl-flag=recommended_2&size=2+Years.html"
+           class="link-black home-track">2 Years</a>
+        <a href="product/Lace-and-Daisy-Set-in-White-for-Toddler-Girl-flag=recommended_2&size=4+Years.html"
+           class="link-black home-track">4 Years</a>
+        <a href="product/Lace-and-Daisy-Set-in-White-for-Toddler-Girl-flag=recommended_2&size=3-4+Years.html"
+           class="link-black home-track">3-4 Years</a>
+        <a href="product/Lace-and-Daisy-Set-in-White-for-Toddler-Girl-flag=recommended_2&size=5-6+Years.html"
+           class="link-black home-track">5-6 Years</a>
+        <a href="product/Lace-and-Daisy-Set-in-White-for-Toddler-Girl-flag=recommended_2&size=6-7+Years.html"
+           class="link-black home-track">6-7 Years</a>
+        <a href="product/Lace-and-Daisy-Set-in-White-for-Toddler-Girl-flag=recommended_2&size=12-18+Months.html"
+           class="link-black home-track">12-18 Months</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41911">
+    <article class="box-product alt">
+        <a href="product/Fairy-Pink-Long-Sleeve-4-Piece-Tutu-Dress-Bodysuit-Set-for-Baby-Girls-color=&flag=recommended_3.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41911/TAOBAO-YC-019-00002-001-1.jpg/1494321919.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Fairy Pink Long-Sleeve 4-Piece Tutu Dress Bodysuit Set for Baby Girls"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Fairy Pink Long-Sleeve 4-Piece Tutu Dress Bodysuit Set for Baby Girls">Fairy
+                    Pink Long-Sleeve 4-Piece Tutu Dress Bodysuit Set for Baby Girls</a></h2>
+
+            <p class="price product-list-price">
+                <s>$26.99</s>&nbsp;&nbsp;$14.99
+            </p>
+
+            <span class="acting-color"></span>
+        </div>
+        <div class="collect" data-id="41911" data-event_id="0" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Fairy-Pink-Long-Sleeve-4-Piece-Tutu-Dress-Bodysuit-Set-for-Baby-Girls-color=&flag=recommended_3&size=0-3+Months.html"
+           class="link-black home-track">0-3 Months</a>
+        <a href="product/Fairy-Pink-Long-Sleeve-4-Piece-Tutu-Dress-Bodysuit-Set-for-Baby-Girls-color=&flag=recommended_3&size=3-6+Months.html"
+           class="link-black home-track">3-6 Months</a>
+        <a href="product/Fairy-Pink-Long-Sleeve-4-Piece-Tutu-Dress-Bodysuit-Set-for-Baby-Girls-color=&flag=recommended_3&size=9-12+Months.html"
+           class="link-black home-track">9-12 Months</a>
+        <a href="product/Fairy-Pink-Long-Sleeve-4-Piece-Tutu-Dress-Bodysuit-Set-for-Baby-Girls-color=&flag=recommended_3&size=12-18+Months.html"
+           class="link-black home-track">12-18 Months</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41808">
+    <article class="box-product alt">
+        <a href="product/Fathers-Day-Daddy-and-Me-Matching-T-shirt-flag=recommended_4.html" class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41808/FH-002-00005-001.jpg/1494067057.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Father&#039;s Day Daddy and Me Matching T-shirt"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Father&#039;s Day Daddy and Me Matching T-shirt">Father&#039;s Day Daddy and
+                    Me Matching T-shirt</a></h2>
+
+            <p class="price product-list-price">
+                <s>$25.99</s>&nbsp;&nbsp;$11.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="41808" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Fathers-Day-Daddy-and-Me-Matching-T-shirt-flag=recommended_4&size=Kids-+3+Years.html"
+           class="link-black home-track">Kids: 3 Years</a>
+        <a href="product/Fathers-Day-Daddy-and-Me-Matching-T-shirt-flag=recommended_4&size=Kids-+4+Years.html"
+           class="link-black home-track">Kids: 4 Years</a>
+        <a href="product/Fathers-Day-Daddy-and-Me-Matching-T-shirt-flag=recommended_4&size=Kids-+3-4+Years.html"
+           class="link-black home-track">Kids: 3-4 Years</a>
+        <a href="product/Fathers-Day-Daddy-and-Me-Matching-T-shirt-flag=recommended_4&size=Kids-+5-6+Years.html"
+           class="link-black home-track">Kids: 5-6 Years</a>
+        <a href="product/Fathers-Day-Daddy-and-Me-Matching-T-shirt-flag=recommended_4&size=Kids-+7-8+Years.html"
+           class="link-black home-track">Kids: 7-8 Years</a>
+        <a href="product/Fathers-Day-Daddy-and-Me-Matching-T-shirt-flag=recommended_4&size=Kids-+8-9+Years.html"
+           class="link-black home-track">Kids: 8-9 Years</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41777">
+    <article class="box-product alt">
+        <a href="product/Short-sleeve-Letters-Vinyl-Grey-Tee-for-Dad-and-Boy%C2%A0-flag=recommended_5.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41777/1688-JP-QZ21-00005-001-1.jpg/1494060112.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Short- sleeve Letters Vinyl Grey Tee for Dad and Boy&nbsp;"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Short- sleeve Letters Vinyl Grey Tee for Dad and Boy&nbsp;">Short- sleeve
+                    Letters Vinyl Grey Tee for Dad and Boy&nbsp;</a></h2>
+
+            <p class="price product-list-price">
+                <s>$26.49</s>&nbsp;&nbsp;$11.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="41777" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Short-sleeve-Letters-Vinyl-Grey-Tee-for-Dad-and-Boy%C2%A0-flag=recommended_5&size=Boys-+3+Years.html"
+           class="link-black home-track">Boys: 3 Years</a>
+        <a href="product/Short-sleeve-Letters-Vinyl-Grey-Tee-for-Dad-and-Boy%C2%A0-flag=recommended_5&size=Boys-+4+Years.html"
+           class="link-black home-track">Boys: 4 Years</a>
+        <a href="product/Short-sleeve-Letters-Vinyl-Grey-Tee-for-Dad-and-Boy%C2%A0-flag=recommended_5&size=Boys-+3-4+Years.html"
+           class="link-black home-track">Boys: 3-4 Years</a>
+        <a href="product/Short-sleeve-Letters-Vinyl-Grey-Tee-for-Dad-and-Boy%C2%A0-flag=recommended_5&size=Boys-+5-6+Years.html"
+           class="link-black home-track">Boys: 5-6 Years</a>
+        <a href="product/Short-sleeve-Letters-Vinyl-Grey-Tee-for-Dad-and-Boy%C2%A0-flag=recommended_5&size=Boys-+7-8+Years.html"
+           class="link-black home-track">Boys: 7-8 Years</a>
+        <a href="product/Short-sleeve-Letters-Vinyl-Grey-Tee-for-Dad-and-Boy%C2%A0-flag=recommended_5&size=Boys-+8-9+Years.html"
+           class="link-black home-track">Boys: 8-9 Years</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="38301">
+    <article class="box-product alt">
+        <a href="product/Girls-Lemon-Printed-Off-the-Shoulder-Dress-color=&flag=recommended_6.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/38301/Y-RX-001-00001-001.jpg/1487854343.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Girl&#039;s Lemon Printed Off-the-Shoulder Dress"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Girl&#039;s Lemon Printed Off-the-Shoulder Dress">Girl&#039;s Lemon Printed
+                    Off-the-Shoulder Dress</a></h2>
+
+            <p class="price product-list-price">
+                <s>$29.99</s>&nbsp;&nbsp;$14.99
+            </p>
+
+            <span class="acting">SALE</span> <span class="acting-color"></span>
+        </div>
+        <div class="collect" data-id="38301" data-event_id="20669" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Girls-Lemon-Printed-Off-the-Shoulder-Dress-color=&flag=recommended_6&size=3-4+Years.html"
+           class="link-black home-track">3-4 Years</a>
+        <a href="product/Girls-Lemon-Printed-Off-the-Shoulder-Dress-color=&flag=recommended_6&size=4-5+Years.html"
+           class="link-black home-track">4-5 Years</a>
+        <a href="product/Girls-Lemon-Printed-Off-the-Shoulder-Dress-color=&flag=recommended_6&size=5-6+Years.html"
+           class="link-black home-track">5-6 Years</a>
+        <a href="product/Girls-Lemon-Printed-Off-the-Shoulder-Dress-color=&flag=recommended_6&size=6-7+Years.html"
+           class="link-black home-track">6-7 Years</a>
+        <a href="product/Girls-Lemon-Printed-Off-the-Shoulder-Dress-color=&flag=recommended_6&size=8-9+Years.html"
+           class="link-black home-track">8-9 Years</a>
+        <a href="product/Girls-Lemon-Printed-Off-the-Shoulder-Dress-color=&flag=recommended_6&size=10-11+Years.html"
+           class="link-black home-track">10-11 Years</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41854">
+    <article class="box-product alt">
+        <a href="product/Funny-Yellow-and-Red-Cotton-Bodysuit-for-Babies-color=&flag=recommended_7.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41854/1688-EZ-001-00006-001-1.jpg/1494310592.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Funny Yellow and Red Cotton Bodysuit for Babies"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Funny Yellow and Red Cotton Bodysuit for Babies">Funny Yellow and Red Cotton
+                    Bodysuit for Babies</a></h2>
+
+            <p class="price product-list-price">
+                <s>$16.99</s>&nbsp;&nbsp;$8.99
+            </p>
+
+            <span class="acting-color"></span>
+        </div>
+        <div class="collect" data-id="41854" data-event_id="0" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Funny-Yellow-and-Red-Cotton-Bodysuit-for-Babies-color=&flag=recommended_7&size=3-6+Months.html"
+           class="link-black home-track">3-6 Months</a>
+        <a href="product/Funny-Yellow-and-Red-Cotton-Bodysuit-for-Babies-color=&flag=recommended_7&size=6-9+Months.html"
+           class="link-black home-track">6-9 Months</a>
+        <a href="product/Funny-Yellow-and-Red-Cotton-Bodysuit-for-Babies-color=&flag=recommended_7&size=9-12+Months.html"
+           class="link-black home-track">9-12 Months</a>
+        <a href="product/Funny-Yellow-and-Red-Cotton-Bodysuit-for-Babies-color=&flag=recommended_7&size=2+Years.html"
+           class="link-black home-track">2 Years</a>
+        <a href="product/Funny-Yellow-and-Red-Cotton-Bodysuit-for-Babies-color=&flag=recommended_7&size=3+Years.html"
+           class="link-black home-track">3 Years</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41816">
+    <article class="box-product alt">
+        <a href="product/Silly-Daddy-Witty-Words-Short-sleeve-White-One-Piece-for-Babies%C2%A0-flag=recommended_8.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41816/TAOBAO-YC-014-00007-001-1.jpg/1494231493.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Silly Daddy Witty Words Short-sleeve White One Piece for Babies&nbsp;"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Silly Daddy Witty Words Short-sleeve White One Piece for Babies&nbsp;">Silly
+                    Daddy Witty Words Short-sleeve White One Piece for Babies&nbsp;</a></h2>
+
+            <p class="price product-list-price">
+                <s>$14.99</s>&nbsp;&nbsp;$7.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="41816" data-event_id="21228" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Silly-Daddy-Witty-Words-Short-sleeve-White-One-Piece-for-Babies%C2%A0-flag=recommended_8&size=3-6+Months.html"
+           class="link-black home-track">3-6 Months</a>
+        <a href="product/Silly-Daddy-Witty-Words-Short-sleeve-White-One-Piece-for-Babies%C2%A0-flag=recommended_8&size=9-12+Months.html"
+           class="link-black home-track">9-12 Months</a>
+        <a href="product/Silly-Daddy-Witty-Words-Short-sleeve-White-One-Piece-for-Babies%C2%A0-flag=recommended_8&size=2+Years.html"
+           class="link-black home-track">2 Years</a>
+        <a href="product/Silly-Daddy-Witty-Words-Short-sleeve-White-One-Piece-for-Babies%C2%A0-flag=recommended_8&size=3+Years.html"
+           class="link-black home-track">3 Years</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="40512">
+    <article class="box-product alt">
+        <a href="product/Fashion-Letter-Printed-Cotton-T-Shirt-in-Black-for-Baby-Boy-flag=recommended_9.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/40512/1688C-SK-001-00245-001-1.jpg/1492172060.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Fashion Letter Printed Cotton T-Shirt in Black for Baby Boy"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Fashion Letter Printed Cotton T-Shirt in Black for Baby Boy">Fashion Letter
+                    Printed Cotton T-Shirt in Black for Baby Boy</a></h2>
+
+            <p class="price product-list-price">
+                <s>$17.99</s>&nbsp;&nbsp;$6.99
+            </p>
+
+        </div>
+        <div class="collect" data-id="40512" data-event_id="0" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Fashion-Letter-Printed-Cotton-T-Shirt-in-Black-for-Baby-Boy-flag=recommended_9&size=3-6+Months.html"
+           class="link-black home-track">3-6 Months</a>
+        <a href="product/Fashion-Letter-Printed-Cotton-T-Shirt-in-Black-for-Baby-Boy-flag=recommended_9&size=6-9+Months.html"
+           class="link-black home-track">6-9 Months</a>
+        <a href="product/Fashion-Letter-Printed-Cotton-T-Shirt-in-Black-for-Baby-Boy-flag=recommended_9&size=9-12+Months.html"
+           class="link-black home-track">9-12 Months</a>
+        <a href="product/Fashion-Letter-Printed-Cotton-T-Shirt-in-Black-for-Baby-Boy-flag=recommended_9&size=12-18+Months.html"
+           class="link-black home-track">12-18 Months</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41103">
+    <article class="box-product alt">
+        <a href="product/Toddler-Girls-Charming-Striped-and-Star-Patterned-Backless-Sun-Dress-in-Grey-flag=recommended_10.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41103/T-MS-002-00058-001.jpg/1493201588.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Toddler Girl&#039;s Charming Striped and Star Patterned Backless Sun Dress in Grey"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Toddler Girl&#039;s Charming Striped and Star Patterned Backless Sun Dress in Grey">Toddler
+                    Girl&#039;s Charming Striped and Star Patterned Backless Sun Dress in Grey</a></h2>
+
+            <p class="price product-list-price">
+                <s>$28.99</s>&nbsp;&nbsp;$13.99
+            </p>
+
+        </div>
+        <div class="collect" data-id="41103" data-event_id="0" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Toddler-Girls-Charming-Striped-and-Star-Patterned-Backless-Sun-Dress-in-Grey-flag=recommended_10&size=3+Years.html"
+           class="link-black home-track">3 Years</a>
+        <a href="product/Toddler-Girls-Charming-Striped-and-Star-Patterned-Backless-Sun-Dress-in-Grey-flag=recommended_10&size=4+Years.html"
+           class="link-black home-track">4 Years</a>
+        <a href="product/Toddler-Girls-Charming-Striped-and-Star-Patterned-Backless-Sun-Dress-in-Grey-flag=recommended_10&size=4-5+Years.html"
+           class="link-black home-track">4-5 Years</a>
+        <a href="product/Toddler-Girls-Charming-Striped-and-Star-Patterned-Backless-Sun-Dress-in-Grey-flag=recommended_10&size=5-6+Years.html"
+           class="link-black home-track">5-6 Years</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41032">
+    <article class="box-product alt">
+        <a href="product/Pink-Heart-Graphic-Short-Sleeve-Mom-and-Me-Tee-in-White-flag=recommended_11.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41032/1688C-SH-003-00087-001.jpg/1493033952.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Pink Heart Graphic Short Sleeve Mom and Me Tee in White"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Pink Heart Graphic Short Sleeve Mom and Me Tee in White">Pink Heart Graphic
+                    Short Sleeve Mom and Me Tee in White</a></h2>
+
+            <p class="price product-list-price">
+                <s>$19.99</s>&nbsp;&nbsp;$9.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="41032" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Pink-Heart-Graphic-Short-Sleeve-Mom-and-Me-Tee-in-White-flag=recommended_11&size=Kids-+9-12+Months.html"
+           class="link-black home-track">Kids: 9-12 Months</a>
+        <a href="product/Pink-Heart-Graphic-Short-Sleeve-Mom-and-Me-Tee-in-White-flag=recommended_11&size=Kids-+12-18+Months.html"
+           class="link-black home-track">Kids: 12-18 Months</a>
+        <a href="product/Pink-Heart-Graphic-Short-Sleeve-Mom-and-Me-Tee-in-White-flag=recommended_11&size=Kids-+18-24+Months.html"
+           class="link-black home-track">Kids: 18-24 Months</a>
+        <a href="product/Pink-Heart-Graphic-Short-Sleeve-Mom-and-Me-Tee-in-White-flag=recommended_11&size=Kids-+3+Years.html"
+           class="link-black home-track">Kids: 3 Years</a>
+        <a href="product/Pink-Heart-Graphic-Short-Sleeve-Mom-and-Me-Tee-in-White-flag=recommended_11&size=Kids-+3-4+Years.html"
+           class="link-black home-track">Kids: 3-4 Years</a>
+        <a href="product/Pink-Heart-Graphic-Short-Sleeve-Mom-and-Me-Tee-in-White-flag=recommended_11&size=Women-+S.html"
+           class="link-black home-track">Women: S</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41031">
+    <article class="box-product alt">
+        <a href="product/Blessed-to-Have-Each-Other-Mom-and-Me-Tee-in-White-flag=recommended_12.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41031/1688C-SH-003-00086-001.jpg/1493033950.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Blessed to Have Each Other Mom and Me Tee in White"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Blessed to Have Each Other Mom and Me Tee in White">Blessed to Have Each Other
+                    Mom and Me Tee in White</a></h2>
+
+            <p class="price product-list-price">
+                <s>$19.99</s>&nbsp;&nbsp;$9.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="41031" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Blessed-to-Have-Each-Other-Mom-and-Me-Tee-in-White-flag=recommended_12&size=Kids-+18-24+Months.html"
+           class="link-black home-track">Kids: 18-24 Months</a>
+        <a href="product/Blessed-to-Have-Each-Other-Mom-and-Me-Tee-in-White-flag=recommended_12&size=Kids-+3+Years.html"
+           class="link-black home-track">Kids: 3 Years</a>
+        <a href="product/Blessed-to-Have-Each-Other-Mom-and-Me-Tee-in-White-flag=recommended_12&size=Kids-+3-4+Years.html"
+           class="link-black home-track">Kids: 3-4 Years</a>
+        <a href="product/Blessed-to-Have-Each-Other-Mom-and-Me-Tee-in-White-flag=recommended_12&size=Kids-+4-5+Years.html"
+           class="link-black home-track">Kids: 4-5 Years</a>
+        <a href="product/Blessed-to-Have-Each-Other-Mom-and-Me-Tee-in-White-flag=recommended_12&size=Women-+S.html"
+           class="link-black home-track">Women: S</a>
+        <a href="product/Blessed-to-Have-Each-Other-Mom-and-Me-Tee-in-White-flag=recommended_12&size=Women-+M.html"
+           class="link-black home-track">Women: M</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41114">
+    <article class="box-product alt">
+        <a href="product/Anchor-Graphic-Solid-Mom-and-Me-Tank-Top-color=&flag=recommended_13.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41114/T-MS-002-00069-001-6.jpg/1493123958.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Anchor Graphic Solid Mom and Me Tank Top "/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Anchor Graphic Solid Mom and Me Tank Top ">Anchor Graphic Solid Mom and Me
+                    Tank Top </a></h2>
+
+            <p class="price product-list-price">
+                <s>$28.99</s>&nbsp;&nbsp;$9.99
+            </p>
+
+            <span class="acting">SALE</span> <span class="acting-color"></span>
+        </div>
+        <div class="collect" data-id="41114" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Anchor-Graphic-Solid-Mom-and-Me-Tank-Top-color=&flag=recommended_13&size=Kids-+12-18+Months.html"
+           class="link-black home-track">Kids: 12-18 Months</a>
+        <a href="product/Anchor-Graphic-Solid-Mom-and-Me-Tank-Top-color=&flag=recommended_13&size=Kids-+2+Years.html"
+           class="link-black home-track">Kids: 2 Years</a>
+        <a href="product/Anchor-Graphic-Solid-Mom-and-Me-Tank-Top-color=&flag=recommended_13&size=Kids-+3+Years.html"
+           class="link-black home-track">Kids: 3 Years</a>
+        <a href="product/Anchor-Graphic-Solid-Mom-and-Me-Tank-Top-color=&flag=recommended_13&size=Kids-+3-4+Years.html"
+           class="link-black home-track">Kids: 3-4 Years</a>
+        <a href="product/Anchor-Graphic-Solid-Mom-and-Me-Tank-Top-color=&flag=recommended_13&size=Kids-+5-6+Years.html"
+           class="link-black home-track">Kids: 5-6 Years</a>
+        <a href="product/Anchor-Graphic-Solid-Mom-and-Me-Tank-Top-color=&flag=recommended_13&size=Women-+S.html"
+           class="link-black home-track">Women: S</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41247">
+    <article class="box-product alt">
+        <a href="product/Mama-Bird-and-Baby-Bird-Matching-Tee-in-Grey-flag=recommended_14.html" class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41247/T-MS-002-00082-001.jpg/1493211012.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Mama Bird and Baby Bird  Matching Tee in Grey"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Mama Bird and Baby Bird  Matching Tee in Grey">Mama Bird and Baby Bird
+                    Matching Tee in Grey</a></h2>
+
+            <p class="price product-list-price">
+                <s>$23.80</s>&nbsp;&nbsp;$11.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="41247" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Mama-Bird-and-Baby-Bird-Matching-Tee-in-Grey-flag=recommended_14&size=Kids-+3+Years.html"
+           class="link-black home-track">Kids: 3 Years</a>
+        <a href="product/Mama-Bird-and-Baby-Bird-Matching-Tee-in-Grey-flag=recommended_14&size=Kids-+4+Years.html"
+           class="link-black home-track">Kids: 4 Years</a>
+        <a href="product/Mama-Bird-and-Baby-Bird-Matching-Tee-in-Grey-flag=recommended_14&size=Kids-+4-5+Years.html"
+           class="link-black home-track">Kids: 4-5 Years</a>
+        <a href="product/Mama-Bird-and-Baby-Bird-Matching-Tee-in-Grey-flag=recommended_14&size=Kids-+5-6+Years.html"
+           class="link-black home-track">Kids: 5-6 Years</a>
+        <a href="product/Mama-Bird-and-Baby-Bird-Matching-Tee-in-Grey-flag=recommended_14&size=Kids-+6-7+Years.html"
+           class="link-black home-track">Kids: 6-7 Years</a>
+        <a href="product/Mama-Bird-and-Baby-Bird-Matching-Tee-in-Grey-flag=recommended_14&size=Kids-+7-8+Years.html"
+           class="link-black home-track">Kids: 7-8 Years</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41241">
+    <article class="box-product alt">
+        <a href="product/Adorable-Heart-Printed-Short-Sleeve-Mom-Me-Dress-in-Navy-flag=recommended_15.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41241/T-MS-002-00076-001.jpg/1493211002.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Adorable Heart Printed Short Sleeve Mom &amp; Me Dress in Navy"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Adorable Heart Printed Short Sleeve Mom &amp; Me Dress in Navy">Adorable Heart
+                    Printed Short Sleeve Mom &amp; Me Dress in Navy</a></h2>
+
+            <p class="price product-list-price">
+                <s>$33.48</s>&nbsp;&nbsp;$16.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="41241" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Adorable-Heart-Printed-Short-Sleeve-Mom-Me-Dress-in-Navy-flag=recommended_15&size=Kids-+3+Years.html"
+           class="link-black home-track">Kids: 3 Years</a>
+        <a href="product/Adorable-Heart-Printed-Short-Sleeve-Mom-Me-Dress-in-Navy-flag=recommended_15&size=Kids-+4+Years.html"
+           class="link-black home-track">Kids: 4 Years</a>
+        <a href="product/Adorable-Heart-Printed-Short-Sleeve-Mom-Me-Dress-in-Navy-flag=recommended_15&size=Kids-+4-5+Years.html"
+           class="link-black home-track">Kids: 4-5 Years</a>
+        <a href="product/Adorable-Heart-Printed-Short-Sleeve-Mom-Me-Dress-in-Navy-flag=recommended_15&size=Kids-+5-6+Years.html"
+           class="link-black home-track">Kids: 5-6 Years</a>
+        <a href="product/Adorable-Heart-Printed-Short-Sleeve-Mom-Me-Dress-in-Navy-flag=recommended_15&size=Kids-+6-7+Years.html"
+           class="link-black home-track">Kids: 6-7 Years</a>
+        <a href="product/Adorable-Heart-Printed-Short-Sleeve-Mom-Me-Dress-in-Navy-flag=recommended_15&size=Women-+S.html"
+           class="link-black home-track">Women: S</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41413">
+    <article class="box-product alt">
+        <a href="product/Baby-and-Toddler-Girls-Simple-Striped-Sleeveless-Cotton-Dress-in-Yellow-flag=recommended_16.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41413/1688-JP-D06-00004-001.jpg/1493726435.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Baby and Toddler Girl&#039;s Simple Striped Sleeveless Cotton Dress in Yellow"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Baby and Toddler Girl&#039;s Simple Striped Sleeveless Cotton Dress in Yellow">Baby
+                    and Toddler Girl&#039;s Simple Striped Sleeveless Cotton Dress in Yellow</a></h2>
+
+            <p class="price product-list-price">
+                <s>$21.99</s>&nbsp;&nbsp;$11.99
+            </p>
+
+        </div>
+        <div class="collect" data-id="41413" data-event_id="0" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Baby-and-Toddler-Girls-Simple-Striped-Sleeveless-Cotton-Dress-in-Yellow-flag=recommended_16&size=9-12+Months.html"
+           class="link-black home-track">9-12 Months</a>
+        <a href="product/Baby-and-Toddler-Girls-Simple-Striped-Sleeveless-Cotton-Dress-in-Yellow-flag=recommended_16&size=2+Years.html"
+           class="link-black home-track">2 Years</a>
+        <a href="product/Baby-and-Toddler-Girls-Simple-Striped-Sleeveless-Cotton-Dress-in-Yellow-flag=recommended_16&size=3+Years.html"
+           class="link-black home-track">3 Years</a>
+        <a href="product/Baby-and-Toddler-Girls-Simple-Striped-Sleeveless-Cotton-Dress-in-Yellow-flag=recommended_16&size=4+Years.html"
+           class="link-black home-track">4 Years</a>
+        <a href="product/Baby-and-Toddler-Girls-Simple-Striped-Sleeveless-Cotton-Dress-in-Yellow-flag=recommended_16&size=4-5+Years.html"
+           class="link-black home-track">4-5 Years</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41407">
+    <article class="box-product alt">
+        <a href="product/Cute-Cat-Appliqued-and-Striped-Contrast-Long-Sleeve-Dress-for-Girls-flag=recommended_17.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41407/C-MK-002-00664-001.jpg/1493718455.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Cute Cat Appliqued and Striped Contrast Long Sleeve Dress for Girls"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Cute Cat Appliqued and Striped Contrast Long Sleeve Dress for Girls">Cute Cat
+                    Appliqued and Striped Contrast Long Sleeve Dress for Girls</a></h2>
+
+            <p class="price product-list-price">
+                <s>$24.99</s>&nbsp;&nbsp;$14.99
+            </p>
+
+        </div>
+        <div class="collect" data-id="41407" data-event_id="0" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Cute-Cat-Appliqued-and-Striped-Contrast-Long-Sleeve-Dress-for-Girls-flag=recommended_17&size=9-12+Months.html"
+           class="link-black home-track">9-12 Months</a>
+        <a href="product/Cute-Cat-Appliqued-and-Striped-Contrast-Long-Sleeve-Dress-for-Girls-flag=recommended_17&size=18-24+Months.html"
+           class="link-black home-track">18-24 Months</a>
+        <a href="product/Cute-Cat-Appliqued-and-Striped-Contrast-Long-Sleeve-Dress-for-Girls-flag=recommended_17&size=3+Years.html"
+           class="link-black home-track">3 Years</a>
+        <a href="product/Cute-Cat-Appliqued-and-Striped-Contrast-Long-Sleeve-Dress-for-Girls-flag=recommended_17&size=3-4+Years.html"
+           class="link-black home-track">3-4 Years</a>
+        <a href="product/Cute-Cat-Appliqued-and-Striped-Contrast-Long-Sleeve-Dress-for-Girls-flag=recommended_17&size=4-5+Years.html"
+           class="link-black home-track">4-5 Years</a>
+        <a href="product/Cute-Cat-Appliqued-and-Striped-Contrast-Long-Sleeve-Dress-for-Girls-flag=recommended_17&size=6-7+Years.html"
+           class="link-black home-track">6-7 Years</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41395">
+    <article class="box-product alt">
+        <a href="product/Oversize-Bowknot-Lace-Princess-Dress-Party-Dress-for-Baby-and-Toddler-Girls-color=&flag=recommended_18.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41395/C-MK-002-00652-001.jpg/1493718403.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Oversize Bowknot Lace Princess Dress Party Dress for Baby and Toddler Girls"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Oversize Bowknot Lace Princess Dress Party Dress for Baby and Toddler Girls">Oversize
+                    Bowknot Lace Princess Dress Party Dress for Baby and Toddler Girls</a></h2>
+
+            <p class="price product-list-price">
+                <s>$56.99</s>&nbsp;&nbsp;$30.99
+            </p>
+
+            <span class="acting">SALE</span> <span class="acting-color"></span>
+        </div>
+        <div class="collect" data-id="41395" data-event_id="20669" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Oversize-Bowknot-Lace-Princess-Dress-Party-Dress-for-Baby-and-Toddler-Girls-color=&flag=recommended_18&size=9-12+Months.html"
+           class="link-black home-track">9-12 Months</a>
+        <a href="product/Oversize-Bowknot-Lace-Princess-Dress-Party-Dress-for-Baby-and-Toddler-Girls-color=&flag=recommended_18&size=18-24+Months.html"
+           class="link-black home-track">18-24 Months</a>
+        <a href="product/Oversize-Bowknot-Lace-Princess-Dress-Party-Dress-for-Baby-and-Toddler-Girls-color=&flag=recommended_18&size=3+Years.html"
+           class="link-black home-track">3 Years</a>
+        <a href="product/Oversize-Bowknot-Lace-Princess-Dress-Party-Dress-for-Baby-and-Toddler-Girls-color=&flag=recommended_18&size=3-4+Years.html"
+           class="link-black home-track">3-4 Years</a>
+        <a href="product/Oversize-Bowknot-Lace-Princess-Dress-Party-Dress-for-Baby-and-Toddler-Girls-color=&flag=recommended_18&size=4-5+Years.html"
+           class="link-black home-track">4-5 Years</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41367">
+    <article class="box-product alt">
+        <a href="product/Cool-Bear-Printed-Short-Sleeve-Tee-in-White-for-Daddy-Mom-and-Baby-flag=recommended_19.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41367/1688-JP-QZ15-00001-001-1.jpg/1493889269.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Cool Bear Printed Short Sleeve Tee in White for Daddy Mom and Baby"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Cool Bear Printed Short Sleeve Tee in White for Daddy Mom and Baby">Cool Bear
+                    Printed Short Sleeve Tee in White for Daddy Mom and Baby</a></h2>
+
+            <p class="price product-list-price">
+                <s>$19.84</s>&nbsp;&nbsp;$7.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="41367" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Cool-Bear-Printed-Short-Sleeve-Tee-in-White-for-Daddy-Mom-and-Baby-flag=recommended_19&size=Kids-+3+Years.html"
+           class="link-black home-track">Kids: 3 Years</a>
+        <a href="product/Cool-Bear-Printed-Short-Sleeve-Tee-in-White-for-Daddy-Mom-and-Baby-flag=recommended_19&size=Kids-+4+Years.html"
+           class="link-black home-track">Kids: 4 Years</a>
+        <a href="product/Cool-Bear-Printed-Short-Sleeve-Tee-in-White-for-Daddy-Mom-and-Baby-flag=recommended_19&size=Kids-+4-5+Years.html"
+           class="link-black home-track">Kids: 4-5 Years</a>
+        <a href="product/Cool-Bear-Printed-Short-Sleeve-Tee-in-White-for-Daddy-Mom-and-Baby-flag=recommended_19&size=Kids-+5-6+Years.html"
+           class="link-black home-track">Kids: 5-6 Years</a>
+        <a href="product/Cool-Bear-Printed-Short-Sleeve-Tee-in-White-for-Daddy-Mom-and-Baby-flag=recommended_19&size=Women-+S.html"
+           class="link-black home-track">Women: S</a>
+        <a href="product/Cool-Bear-Printed-Short-Sleeve-Tee-in-White-for-Daddy-Mom-and-Baby-flag=recommended_19&size=Women-+M.html"
+           class="link-black home-track">Women: M</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41358">
+    <article class="box-product alt">
+        <a href="product/Funny-Slogans-Mommy-and-Me-Shirts-flag=recommended_20.html" class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41358/1688-JP-QZ08-00001-001-1.jpg/1493377418.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Funny Slogans Mommy and Me Shirts"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black" title="Funny Slogans Mommy and Me Shirts">Funny
+                    Slogans Mommy and Me Shirts</a></h2>
+
+            <p class="price product-list-price">
+                <s>$17.62</s>&nbsp;&nbsp;$8.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="41358" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Funny-Slogans-Mommy-and-Me-Shirts-flag=recommended_20&size=Kids-+3+Years.html"
+           class="link-black home-track">Kids: 3 Years</a>
+        <a href="product/Funny-Slogans-Mommy-and-Me-Shirts-flag=recommended_20&size=Kids-+4+Years.html"
+           class="link-black home-track">Kids: 4 Years</a>
+        <a href="product/Funny-Slogans-Mommy-and-Me-Shirts-flag=recommended_20&size=Kids-+4-5+Years.html"
+           class="link-black home-track">Kids: 4-5 Years</a>
+        <a href="product/Funny-Slogans-Mommy-and-Me-Shirts-flag=recommended_20&size=Women-+S.html"
+           class="link-black home-track">Women: S</a>
+        <a href="product/Funny-Slogans-Mommy-and-Me-Shirts-flag=recommended_20&size=Women-+M.html"
+           class="link-black home-track">Women: M</a>
+        <a href="product/Funny-Slogans-Mommy-and-Me-Shirts-flag=recommended_20&size=Women-+L.html"
+           class="link-black home-track">Women: L</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41263">
+    <article class="box-product alt">
+        <a href="product/Off-Shoulder-Ruffled-and-Striped-Mom-and-Me-Dress-in-Blue-flag=recommended_21.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41263/T-MS-002-00098-001.jpg/1493211033.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Off Shoulder Ruffled and Striped Mom and Me Dress in Blue"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Off Shoulder Ruffled and Striped Mom and Me Dress in Blue">Off Shoulder
+                    Ruffled and Striped Mom and Me Dress in Blue</a></h2>
+
+            <p class="price product-list-price">
+                <s>$29.48</s>&nbsp;&nbsp;$14.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="41263" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Off-Shoulder-Ruffled-and-Striped-Mom-and-Me-Dress-in-Blue-flag=recommended_21&size=Kids-+3+Years.html"
+           class="link-black home-track">Kids: 3 Years</a>
+        <a href="product/Off-Shoulder-Ruffled-and-Striped-Mom-and-Me-Dress-in-Blue-flag=recommended_21&size=Kids-+3-4+Years.html"
+           class="link-black home-track">Kids: 3-4 Years</a>
+        <a href="product/Off-Shoulder-Ruffled-and-Striped-Mom-and-Me-Dress-in-Blue-flag=recommended_21&size=Kids-+4-5+Years.html"
+           class="link-black home-track">Kids: 4-5 Years</a>
+        <a href="product/Off-Shoulder-Ruffled-and-Striped-Mom-and-Me-Dress-in-Blue-flag=recommended_21&size=Kids-+5-6+Years.html"
+           class="link-black home-track">Kids: 5-6 Years</a>
+        <a href="product/Off-Shoulder-Ruffled-and-Striped-Mom-and-Me-Dress-in-Blue-flag=recommended_21&size=Kids-+6-7+Years.html"
+           class="link-black home-track">Kids: 6-7 Years</a>
+        <a href="product/Off-Shoulder-Ruffled-and-Striped-Mom-and-Me-Dress-in-Blue-flag=recommended_21&size=Women-+S.html"
+           class="link-black home-track">Women: S</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41262">
+    <article class="box-product alt">
+        <a href="product/Back-Cutout-Sleeveless-Mom-and-Me-Dress-in-Green-flag=recommended_22.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41262/T-MS-002-00097-001.jpg/1493211032.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Back Cutout Sleeveless Mom and Me Dress in Green"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Back Cutout Sleeveless Mom and Me Dress in Green">Back Cutout Sleeveless Mom
+                    and Me Dress in Green</a></h2>
+
+            <p class="price product-list-price">
+                <s>$29.48</s>&nbsp;&nbsp;$14.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="41262" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Back-Cutout-Sleeveless-Mom-and-Me-Dress-in-Green-flag=recommended_22&size=Kids-+2+Years.html"
+           class="link-black home-track">Kids: 2 Years</a>
+        <a href="product/Back-Cutout-Sleeveless-Mom-and-Me-Dress-in-Green-flag=recommended_22&size=Kids-+3+Years.html"
+           class="link-black home-track">Kids: 3 Years</a>
+        <a href="product/Back-Cutout-Sleeveless-Mom-and-Me-Dress-in-Green-flag=recommended_22&size=Kids-+3-4+Years.html"
+           class="link-black home-track">Kids: 3-4 Years</a>
+        <a href="product/Back-Cutout-Sleeveless-Mom-and-Me-Dress-in-Green-flag=recommended_22&size=Kids-+4-5+Years.html"
+           class="link-black home-track">Kids: 4-5 Years</a>
+        <a href="product/Back-Cutout-Sleeveless-Mom-and-Me-Dress-in-Green-flag=recommended_22&size=Kids-+5-6+Years.html"
+           class="link-black home-track">Kids: 5-6 Years</a>
+        <a href="product/Back-Cutout-Sleeveless-Mom-and-Me-Dress-in-Green-flag=recommended_22&size=Women-+S.html"
+           class="link-black home-track">Women: S</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41261">
+    <article class="box-product alt">
+        <a href="product/Vintage-Floral-Sleeveless-Mom-and-Me-Dress-in-Yellow-flag=recommended_23.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41261/T-MS-002-00096-001.jpg/1493211031.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Vintage Floral Sleeveless Mom and Me Dress in Yellow"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Vintage Floral Sleeveless Mom and Me Dress in Yellow">Vintage Floral
+                    Sleeveless Mom and Me Dress in Yellow</a></h2>
+
+            <p class="price product-list-price">
+                <s>$27.76</s>&nbsp;&nbsp;$13.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="41261" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Vintage-Floral-Sleeveless-Mom-and-Me-Dress-in-Yellow-flag=recommended_23&size=Kids-+3+Years.html"
+           class="link-black home-track">Kids: 3 Years</a>
+        <a href="product/Vintage-Floral-Sleeveless-Mom-and-Me-Dress-in-Yellow-flag=recommended_23&size=Kids-+4+Years.html"
+           class="link-black home-track">Kids: 4 Years</a>
+        <a href="product/Vintage-Floral-Sleeveless-Mom-and-Me-Dress-in-Yellow-flag=recommended_23&size=Kids-+4-5+Years.html"
+           class="link-black home-track">Kids: 4-5 Years</a>
+        <a href="product/Vintage-Floral-Sleeveless-Mom-and-Me-Dress-in-Yellow-flag=recommended_23&size=Kids-+5-6+Years.html"
+           class="link-black home-track">Kids: 5-6 Years</a>
+        <a href="product/Vintage-Floral-Sleeveless-Mom-and-Me-Dress-in-Yellow-flag=recommended_23&size=Kids-+6-7+Years.html"
+           class="link-black home-track">Kids: 6-7 Years</a>
+        <a href="product/Vintage-Floral-Sleeveless-Mom-and-Me-Dress-in-Yellow-flag=recommended_23&size=Women-+S.html"
+           class="link-black home-track">Women: S</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41259">
+    <article class="box-product alt">
+        <a href="product/High-waist-Floral-Mom-and-Me-Bikini-Swimsuit-Set-in-Black-flag=recommended_24.html"
+           class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41259/T-MS-002-00094-001.jpg/1493211028.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="High-waist Floral Mom and Me Bikini Swimsuit Set in Black"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="High-waist Floral Mom and Me Bikini Swimsuit Set in Black">High-waist Floral
+                    Mom and Me Bikini Swimsuit Set in Black</a></h2>
+
+            <p class="price product-list-price">
+                <s>$23.76</s>&nbsp;&nbsp;$11.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="41259" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/High-waist-Floral-Mom-and-Me-Bikini-Swimsuit-Set-in-Black-flag=recommended_24&size=Kids-+2+Years.html"
+           class="link-black home-track">Kids: 2 Years</a>
+        <a href="product/High-waist-Floral-Mom-and-Me-Bikini-Swimsuit-Set-in-Black-flag=recommended_24&size=Kids-+3-4+Years.html"
+           class="link-black home-track">Kids: 3-4 Years</a>
+        <a href="product/High-waist-Floral-Mom-and-Me-Bikini-Swimsuit-Set-in-Black-flag=recommended_24&size=Kids-+5-6+Years.html"
+           class="link-black home-track">Kids: 5-6 Years</a>
+        <a href="product/High-waist-Floral-Mom-and-Me-Bikini-Swimsuit-Set-in-Black-flag=recommended_24&size=Kids-+6-7+Years.html"
+           class="link-black home-track">Kids: 6-7 Years</a>
+        <a href="product/High-waist-Floral-Mom-and-Me-Bikini-Swimsuit-Set-in-Black-flag=recommended_24&size=Kids-+8-9+Years.html"
+           class="link-black home-track">Kids: 8-9 Years</a>
+        <a href="product/High-waist-Floral-Mom-and-Me-Bikini-Swimsuit-Set-in-Black-flag=recommended_24&size=Women-+S.html"
+           class="link-black home-track">Women: S</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41256">
+    <article class="box-product alt">
+        <a href="product/Boho-Style-Sleeveless-Floral-Mom-and-Me-Dress-flag=recommended_25.html" class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41256/T-MS-002-00091-001.jpg/1493211026.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Boho Style Sleeveless Floral Mom and Me Dress"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Boho Style Sleeveless Floral Mom and Me Dress">Boho Style Sleeveless Floral
+                    Mom and Me Dress</a></h2>
+
+            <p class="price product-list-price">
+                <s>$27.98</s>&nbsp;&nbsp;$13.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="41256" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Boho-Style-Sleeveless-Floral-Mom-and-Me-Dress-flag=recommended_25&size=Kids-+2+Years.html"
+           class="link-black home-track">Kids: 2 Years</a>
+        <a href="product/Boho-Style-Sleeveless-Floral-Mom-and-Me-Dress-flag=recommended_25&size=Kids-+3-4+Years.html"
+           class="link-black home-track">Kids: 3-4 Years</a>
+        <a href="product/Boho-Style-Sleeveless-Floral-Mom-and-Me-Dress-flag=recommended_25&size=Kids-+5-6+Years.html"
+           class="link-black home-track">Kids: 5-6 Years</a>
+        <a href="product/Boho-Style-Sleeveless-Floral-Mom-and-Me-Dress-flag=recommended_25&size=Women-+S.html"
+           class="link-black home-track">Women: S</a>
+        <a href="product/Boho-Style-Sleeveless-Floral-Mom-and-Me-Dress-flag=recommended_25&size=Women-+M.html"
+           class="link-black home-track">Women: M</a>
+        <a href="product/Boho-Style-Sleeveless-Floral-Mom-and-Me-Dress-flag=recommended_25&size=Women-+L.html"
+           class="link-black home-track">Women: L</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41254">
+    <article class="box-product alt">
+        <a href="product/Mini-Me-Daddy-and-Me-Short-Sleeve-T-shirt-flag=recommended_26.html" class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41254/T-MS-002-00089-001-1.jpg/1493211025.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Mini Me Daddy and Me Short Sleeve T-shirt "/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Mini Me Daddy and Me Short Sleeve T-shirt ">Mini Me Daddy and Me Short Sleeve
+                    T-shirt </a></h2>
+
+            <p class="price product-list-price">
+                <s>$25.98</s>&nbsp;&nbsp;$13.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="41254" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Mini-Me-Daddy-and-Me-Short-Sleeve-T-shirt-flag=recommended_26&size=Kids-+9-12+Months.html"
+           class="link-black home-track">Kids: 9-12 Months</a>
+        <a href="product/Mini-Me-Daddy-and-Me-Short-Sleeve-T-shirt-flag=recommended_26&size=Kids-+12-18+Months.html"
+           class="link-black home-track">Kids: 12-18 Months</a>
+        <a href="product/Mini-Me-Daddy-and-Me-Short-Sleeve-T-shirt-flag=recommended_26&size=Kids-+18-24+Months.html"
+           class="link-black home-track">Kids: 18-24 Months</a>
+        <a href="product/Mini-Me-Daddy-and-Me-Short-Sleeve-T-shirt-flag=recommended_26&size=Kids-+3+Years.html"
+           class="link-black home-track">Kids: 3 Years</a>
+        <a href="product/Mini-Me-Daddy-and-Me-Short-Sleeve-T-shirt-flag=recommended_26&size=Men-+M.html"
+           class="link-black home-track">Men: M</a>
+        <a href="product/Mini-Me-Daddy-and-Me-Short-Sleeve-T-shirt-flag=recommended_26&size=Men-+L.html"
+           class="link-black home-track">Men: L</a>
+    </p>
+</div>
+<div class="col-xs-6 category-list-item show_item empty_list link-hover" data-id="41253">
+    <article class="box-product alt">
+        <a href="product/Big-Man-and-Little-Man-Daddy-and-Me-T-shirt-flag=recommended_27.html" class="img home-track">
+            <img src="https://img.patpat.com/assets/img/product_placeholder.png"
+                 data-original="https://img.patpat.com/Product/41253/T-MS-002-00088-001.jpg/1493211022.jpg/350x350"
+                 class="img-lazyload img-main img-responsive center-block falsh-img-margin"
+                 alt="Big Man and Little Man Daddy and Me T-shirt"/>
+        </a>
+
+        <div class="caption">
+            <h2 class="heading"><a href="index.html#" class="link-black"
+                                   title="Big Man and Little Man Daddy and Me T-shirt">Big Man and Little Man Daddy and
+                    Me T-shirt</a></h2>
+
+            <p class="price product-list-price">
+                <s>$25.98</s>&nbsp;&nbsp;$13.99
+            </p>
+
+            <span class="acting">SALE</span></div>
+        <div class="collect" data-id="41253" data-event_id="21104" data-get_liked_count="0"></div>
+    </article>
+    <p class="caption-size">Size:
+        <a href="product/Big-Man-and-Little-Man-Daddy-and-Me-T-shirt-flag=recommended_27&size=Kids-+9-12+Months.html"
+           class="link-black home-track">Kids: 9-12 Months</a>
+        <a href="product/Big-Man-and-Little-Man-Daddy-and-Me-T-shirt-flag=recommended_27&size=Kids-+12-18+Months.html"
+           class="link-black home-track">Kids: 12-18 Months</a>
+        <a href="product/Big-Man-and-Little-Man-Daddy-and-Me-T-shirt-flag=recommended_27&size=Kids-+18-24+Months.html"
+           class="link-black home-track">Kids: 18-24 Months</a>
+        <a href="product/Big-Man-and-Little-Man-Daddy-and-Me-T-shirt-flag=recommended_27&size=Kids-+3+Years.html"
+           class="link-black home-track">Kids: 3 Years</a>
+        <a href="product/Big-Man-and-Little-Man-Daddy-and-Me-T-shirt-flag=recommended_27&size=Men-+M.html"
+           class="link-black home-track">Men: M</a>
+        <a href="product/Big-Man-and-Little-Man-Daddy-and-Me-T-shirt-flag=recommended_27&size=Men-+L.html"
+           class="link-black home-track">Men: L</a>
+    </p>
+</div>
+</div>
+<div class="m-load2">
+    <div class="line">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="circlebg"></div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- PAT LIFE -->
+<section class="padded section">
+    <div class="container">
+        <div class="pat-lift">
+            <div class="hd-life font-regular">
+                <img src="https://img.patpat.com/assets/img/pat-life.png"/>
+                Super moms and cute babies at PatPat
+            </div>
+            <div class="life-img clearfix">
+                <img class="img-lazyload img-responsive" src="https://img.patpat.com/assets/img/product_placeholder.png"
+                     data-original="https://img.patpat.com/web_index_diy/58d8c8df485e4/1490602207.jpg">
+                <img class="img-lazyload img-responsive" src="https://img.patpat.com/assets/img/product_placeholder.png"
+                     data-original="https://img.patpat.com/web_index_diy/58d8c8f66c5af/1490602230.jpg">
+                <img class="img-lazyload img-responsive" src="https://img.patpat.com/assets/img/product_placeholder.png"
+                     data-original="https://img.patpat.com/web_index_diy/58d8c8fe55974/1490602238.jpg">
+                <img class="img-lazyload img-responsive" src="https://img.patpat.com/assets/img/product_placeholder.png"
+                     data-original="https://img.patpat.com/web_index_diy/58d8c9000b3bc/1490602240.jpg">
+                <img class="img-lazyload img-responsive" src="https://img.patpat.com/assets/img/product_placeholder.png"
+                     data-original="https://img.patpat.com/web_index_diy/58d8c8ec591ba/1490602220.jpg">
+                <img class="img-lazyload img-responsive" src="https://img.patpat.com/assets/img/product_placeholder.png"
+                     data-original="https://img.patpat.com/web_index_diy/58d8c90ae9c93/1490602250.jpg">
+                <img class="img-lazyload img-responsive" src="https://img.patpat.com/assets/img/product_placeholder.png"
+                     data-original="https://img.patpat.com/web_index_diy/58d8c90d40549/1490602253.jpg">
+                <img class="img-lazyload img-responsive" src="https://img.patpat.com/assets/img/product_placeholder.png"
+                     data-original="https://img.patpat.com/web_index_diy/58d8c91367e17/1490602259.jpg">
+
+                <div class="life-more">
+                    <a href="javascript:;" class="font-regular">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

@@ -4,7 +4,7 @@ return new \Phalcon\Config([
         'adapter' => 'Mysql',
         'host' => 'localhost',
         'username' => 'root',
-        'password' => '',
+        'password' => 'root',
         'dbname' => 'phasty',
         'charset' => 'utf8',
     ],
@@ -54,5 +54,21 @@ return new \Phalcon\Config([
     ]],
 
     'models' => ['metadata' => ['adapter' => 'Redis']],
-    'session' => ['adapter' => 'Redis']
+    'session' => ['adapter' => 'Redis'],
+    'application' => [
+        'appDir'         => BASE_DIR . '/',
+        'controllersDir' => BASE_DIR . '/controllers/',
+        'modelsDir'      => BASE_DIR . '/models/',
+        'migrationsDir'  => BASE_DIR . '/migrations/',
+        'viewsDir'       => BASE_DIR . '/views/',
+        'pluginsDir'     => BASE_DIR . '/plugins/',
+        'libraryDir'     => BASE_DIR . '/library/',
+        'cacheDir'       => BASE_DIR . '/cache/',
+
+        // This allows the baseUri to be understand project paths that are not in the root directory
+        // of the webpspace.  This will break if the public/index.php entry point is moved or
+        // possibly if the web server rewrite rules are changed. This can also be set to a static path.
+        'baseUri'        => preg_replace('/public([\/\\\\])index.php$/', '', $_SERVER["PHP_SELF"]),
+    ],
+    'domain'=>'http://public.dev:88/',
 ]);

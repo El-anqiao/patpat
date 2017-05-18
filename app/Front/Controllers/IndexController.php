@@ -10,7 +10,8 @@ class IndexController extends ControllerBase
     {
         $this->products = new Products();
         parent::initialize();
-        $this->tag->setTitle('Home | Phasty');
+        $this->tag->setTitle('PatPat | Daily Deals For Moms');
+        //var_dump($this->config->domain);die;
     }
 
     /**
