@@ -1,0 +1,724 @@
+
+<div class="sign-points index-sign" style="display:none;">
+    <div class="sign-points-con">
+        <em class="close-points"><img src="https://img.patpat.com/assets/img/btn_close.png"></em>
+
+        <div class="fraction">
+            <span>YOU<br/>WIN</span>
+            <a href="javascript:;"></a>
+            <i>Points</i>
+        </div>
+        <ul>
+            <li class="dateFirst">
+                <a href="javascript:;">+0</a>
+                <em></em>
+            </li>
+            <li class="yesterday">
+                <a href="javascript:;">+0</a>
+                Yesterday
+            </li>
+            <li>
+                <a class="today" href="javascript:;"></a>
+                <em class="today-text">Today</em>
+            </li>
+            <li>
+                <a class="today-last" href="javascript:;"></a>
+                <em class="tomorrow">Tomorrow</em>
+            </li>
+            <li>
+                <a class="today-last" href="javascript:;"></a>
+                <em class="dateLast"></em>
+            </li>
+        </ul>
+        <a href="login.html" class="go-points">See My Pat Points</a>
+    </div>
+</div>
+<script src="https://img.patpat.com/assets/js/test_index.min.js"></script>
+<script id="PatPatTrackScript" type="text/javascript" src="assets/js/track.js" data='{"event_id":"1","type_id":"1"}'
+        async="async"></script>
+
+<script src="/assets/js/touchslider_daily.min.js"></script>
+<script type="text/javascript">
+    $(".swiper-slide:gt(2)").remove();
+
+    var tt=new TouchSlider({
+        id:'slider-daily',
+        auto:-1
+    });
+</script>
+
+<script>
+    $(function () {
+        $(".img-responsive,.img-lazyload").lazyload({
+            threshold: 800,
+            failure_limit: 8,
+            placeholder: '/assets/img/product_placeholder.png',
+            effect: "fadeIn",
+            skip_invisible: false
+        });
+
+        //   banner
+        $("#test-index-banner .slick-con").slick({
+            autoplaySpeed: 4000,
+            speed: 200,
+            dots: true,
+            arrows: false,
+            infinite: true,
+            autoplay: true,
+            draggable: true,
+            pauseOnHover: true,
+            swipe: true
+        });
+
+        $(".life-img").hover(function () {
+            $(this).find(".life-more").stop().fadeIn()
+        }, function () {
+            $(this).find(".life-more").stop().fadeOut()
+        });
+
+        //  顶部大图活动
+        var jsTopBanner = $(".js-top-banner");
+        jsTopBanner.find("i").click(function () {
+            if (!$(this).hasClass("on")) {
+                $(this).next().stop().fadeIn();
+                $(this).addClass("on");
+                jsTopBanner.addClass("js-top-banner-show");
+                jsTopBanner.removeClass("js-top-banner-hide");
+            } else {
+                $(this).next().stop().fadeOut();
+                $(this).removeClass("on");
+                jsTopBanner.removeClass("js-top-banner-show");
+                jsTopBanner.addClass("js-top-banner-hide");
+            }
+        });
+
+        //  banner 边上倒计时上下滑动效果
+        var clickTrack = $(".product-small-img .slick-track");
+        $(".product-small-img .slick-track:gt(2)").hide();
+
+
+        clickTrack.first().addClass("slick-active")
+        clickTrack.click(function () {
+            $(this).addClass("slick-active").siblings().removeClass("slick-active");
+            var _this = $(this).index();
+            var pro_time_box = $(".product-img-slider ul");
+            pro_time_box.animate({
+                top: "-" + pro_time_box.find("li").eq(0).height() * _this
+            }, 300)
+        });
+
+
+        //  you link products
+        $(".you-link .category-list-item:gt(9)").hide();
+        var i = 0;
+        $("#link-pull").on("click", function () {
+            i++
+            $(".you-link .category-list-item").hide();
+            $(".you-link .m-load2").show();
+            $(this).addClass("pull-rotate");
+            setTimeout(function () {
+                $("#link-pull").removeClass('pull-rotate');
+            }, 900)
+
+            if (i == 1) {
+                setTimeout(function () {
+                    $(".you-link .m-load2").hide();
+                    $(".you-link .category-list-item:lt(20)").fadeIn();
+                    $(".you-link .category-list-item:lt(10)").hide();
+                }, 1000)
+            } else if (i == 2) {
+                setTimeout(function () {
+                    $(".you-link .m-load2").hide();
+                    $(".you-link .category-list-item:lt(30)").fadeIn();
+                    $(".you-link .category-list-item:lt(20)").hide();
+                }, 1000)
+
+            }
+            if (i == 3) {
+                setTimeout(function () {
+                    $(".you-link .category-list-item:gt(9)").hide();
+                    $(".you-link .m-load2").hide();
+                    $(".you-link .category-list-item:lt(10)").fadeIn();
+                }, 1000)
+                i = 0
+            }
+
+        })
+
+    });
+
+
+    $(".home-track").click(function () {
+        var thisUrl = $(this).attr("href");
+        patpatTrackAddClick(44, thisUrl)
+    })
+</script>
+
+<!-- Criteo tags Home page tag ---->
+<script type="text/javascript" src="https://static.criteo.net/js/ld/ld.js" async="true"></script>
+<script type="text/javascript">
+    var md5Email = "";
+    var accountId = 38134
+    var platformType = get_device_info();
+
+    window.criteo_q = window.criteo_q || [];
+    window.criteo_q.push(
+        {event: "setAccount", account: accountId},
+        {event: "setHashedEmail", email: md5Email},
+        {event: "setSiteType", type: platformType},
+        {event: "viewHome"}
+    );
+
+    function get_device_info() {
+        var ua = navigator.userAgent;
+        if (ua.match('Android') || ua.match('iPhone') || ua.match('iPod')) {
+            return 'm';
+        } else if (ua.match('iPad')) {
+            return 't';
+        } else {
+            return 'd';
+        }
+    }
+</script>
+<!--/Criteo tags Home page tag ---->
+
+
+<!-- Criteo tags Listing page tag ---->
+<script type="text/javascript">
+    var platformType = get_device_info();
+    var md5Email = "";
+    var accountId = 38134
+    var item_ids = new Array();
+    item_ids[0] = "111298";
+    item_ids[1] = "117232";
+    item_ids[2] = "108565";
+    window.criteo_q = window.criteo_q || [];
+    window.criteo_q.push(
+        {event: "setAccount", account: accountId},
+        {event: "setHashedEmail", email: md5Email},
+        {event: "setSiteType", type: platformType},
+        {event: "viewList", item: item_ids}
+    );
+
+    function get_device_info() {
+        var ua = navigator.userAgent;
+        if (ua.match('Android') || ua.match('iPhone') || ua.match('iPod')) {
+            return 'm';
+        } else if (ua.match('iPad')) {
+            return 't';
+        } else {
+            return 'd';
+        }
+    }
+
+    $(".old-home-track").click(function () {
+        var thisUrl = $(this).attr("href");
+        console.log(thisUrl)
+        patpatTrackAddClick(45, thisUrl);
+    })
+
+</script>
+<!--/Criteo tags Listing page tag ---->
+
+<!-- site main -->
+
+<!-- site footer -->
+
+
+<?php if(is_mobile){ ?>
+    <!-- site footer -->
+    <footer id="site-footer">
+        <div class="container">
+            <div class="services">
+                <a href="/faq#6-32" class="col-xs-6 col-sm-3 footer-nav-icon" target="_blank">
+                    <i></i>
+                    <p>100% Secured<br>Payments</p>
+                </a>
+                <a href="/contact" class="col-xs-6 col-sm-3 footer-nav-icon" target="_blank">
+                    <i></i>
+                    <p>Customer Service<br>Mail &amp; Telephone</p>
+                </a>
+                <a href="/faq#10-56" class="col-xs-6 col-sm-3 footer-nav-icon" target="_blank">
+                    <i></i>
+                    <p>14 Days to Change<br>Your Mind</p>
+                </a>
+                <a href="/faq#5-22" class="col-xs-6 col-sm-3 footer-nav-icon" target="_blank">
+                    <i></i>
+                    <p>Highest Quality<br>Guarantee</p>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- site footer -->
+    <!-- wap footer-nav -->
+    <footer id="wap-footer-nav">
+        <strong>About <i></i></strong>
+        <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/How-PatPat-Works">How PatPat Works.</a></li>
+            <li><a href="/terms">Term of Service</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="http://blog.patpat.com" target="_blank">PatPat Blog</a></li>
+            <li><a href="https://www.facebook.com/groups/PatPatParentingCommunity" target="_blank">PatPat Community</a></li>
+        </ul>
+        <strong>Contact Us <i></i></strong>
+        <ul>
+            <li><a href="/contact">1-844-9-PATPAT,</a> <a href="/cdn-cgi/l/email-protection#75061007031c1610350514010514015b161a18"><span class="__cf_email__" data-cfemail="097a6c7b7f606a6c4979687d79687d276a6664">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>,</a></li>
+            <li><a href="javascript:void(0);">650 Castro Street Ste. 120-458,<br /> Mountain View, CA 94041, USA</a></li>
+            <li><a href="/cdn-cgi/l/email-protection#c6b6a7b2b6a7b2a7aba7bca9a886b6a7b2b6a7b2e8a5a9ab">PatPat on Amazon: <span class="__cf_email__" data-cfemail="b9c9d8cdc9d8cdd8d4d8c3d6d7f9c9d8cdc9d8cd97dad6d4">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></li>
+        </ul>
+        <strong>ADDITIONAL INFORMATION <i></i></strong>
+        <ul>
+            <a href="https://www.facebook.com/groups/PatPatParentingCommunity" target="view_window" class="hidden-xs join-patpat">PatPat Community: Join PatPat private family community to win freebies &amp; credits!</a>
+            <article class="site-footer-bottom-copyright">
+                <span>PatPat is a registered trademark of InterFocus Inc. All Rights Reserved.</span>
+            </article>
+            <!-- footer_nav -->
+            <div class="footer-nav">
+                <a href="https://www.patpat.com/category/Baby-Toddlers.html"
+                   class="nav-tabs-js" id="category27">Baby &amp; Toddlers</a><i></i>
+                <a href="https://www.patpat.com/category/Kids.html"
+                   class="nav-tabs-js" id="category28">Kids</a><i></i>
+                <a href="https://www.patpat.com/category/Women.html"
+                   class="nav-tabs-js" id="category29">Women</a><i></i>
+                <a href="https://www.patpat.com/category/Home-Storage.html"
+                   class="nav-tabs-js" id="category26">Home &amp; Storage</a><i></i>
+            </div>
+        </ul>
+
+    </footer>
+    <!-- wap footer-nav -->
+
+    <!-- site footer services-->
+    <footer id="site-footer-services"  >
+        <div class="container">
+
+            <div class="footer-services">
+                <div class="footer-search">
+                    <div class="font-regular services-about hidden-xs" style="margin-bottom:8px;">Newsletter Subscription</div>
+                    <div class="input-email clearfix">
+                        <input type="email" class="footer-services-search" placeholder="Email">
+                        <button type="submit" class="button-rss">SUBSCRIBE</button>
+                    </div>
+                </div>
+
+                <div class="get-app clearfix">
+                    <a href="https://itunes.apple.com/us/app/patpat-daily-deals-for-moms/id966740633?mt=8" target="_blank">
+                        <img src="https://img.patpat.com/assets/img/footer/iphone@2x.png">
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.interfocusllc.patpat" target="_blank">
+                        <img src="https://img.patpat.com/assets/img/footer/Android@2x.png">
+                    </a>
+                </div>
+                <div class="font-regular services-about hidden-xs" style="margin-bottom:5px;">Follow us</div>
+                <ul class="list-inline-show clearfix">
+                    <li>
+                        <a href="https://www.facebook.com/patpatshopping" class="icon-social" target="_blank"></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/patpatshopping" class="icon-social" target="_blank"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.pinterest.com/patpatshopping" class="icon-social" target="_blank"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/patpatshopping" class="icon-social" target="_blank"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/company/interfocus-inc" class="icon-social" target="_blank"></a>
+                    </li>
+                    <li>
+                        <a href="http://blog.patpat.com" class="icon-social" target="_blank"></a>
+                    </li>
+
+
+
+
+
+
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- site footer services-->
+<?php }else{ ?>
+    <!-- site footer -->
+    <footer id="site-footer">
+        <div class="container">
+            <div class="services">
+                <a href="faq.html#6-32" class="col-xs-6 col-sm-3 footer-nav-icon" target="_blank">
+                    <i></i>
+
+                    <p>100% Secured<br>Payments</p>
+                </a>
+                <a href="contact.html" class="col-xs-6 col-sm-3 footer-nav-icon" target="_blank">
+                    <i></i>
+
+                    <p>Customer Service<br>Mail &amp; Telephone</p>
+                </a>
+                <a href="faq.html#10-56" class="col-xs-6 col-sm-3 footer-nav-icon" target="_blank">
+                    <i></i>
+
+                    <p>14 Days to Change<br>Your Mind</p>
+                </a>
+                <a href="faq.html#5-22" class="col-xs-6 col-sm-3 footer-nav-icon" target="_blank">
+                    <i></i>
+
+                    <p>Highest Quality<br>Guarantee</p>
+                </a>
+            </div>
+            <div class="get-app">
+                <a href="https://itunes.apple.com/us/app/patpat-daily-deals-for-moms/id966740633?mt=8" target="_blank"></a>
+                <a href="https://play.google.com/store/apps/details?id=com.interfocusllc.patpat" target="_blank"></a>
+            </div>
+        </div>
+    </footer>
+    <!-- site footer -->
+    <!-- site footer services-->
+    <footer id="site-footer-services">
+        <div class="container">
+            <div class="footer-services">
+                <div class="font-regular services-about">About</div>
+                <ul class="clearfix">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="How-PatPat-Works.html">How PatPat Works.</a></li>
+                    <li><a href="terms.html">Term of Service</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="http://blog.patpat.com" target="_blank">PatPat Blog</a></li>
+                    <li><a href="https://www.facebook.com/groups/PatPatParentingCommunity" target="_blank">PatPat
+                            Community</a></li>
+                </ul>
+            </div>
+            <div class="footer-services">
+                <div class="font-regular services-about">Contact Us</div>
+                <ul class="clearfix" style="padding-bottom: 3px;">
+
+                    <li><a href="cdn-cgi/l/email-protection.html#56253324203f3533162637222637227835393b"><span
+                                class="__cf_email__" data-cfemail="d2a1b7a0a4bbb1b792a2b3a6a2b3a6fcb1bdbf">[email&#160;protected]</span>
+                            <script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */
+                                !function (t, e, r, n, c, a, p) {
+                                    try {
+                                        t = document.currentScript || function () {
+                                            for (t = document.getElementsByTagName('script'), e = t.length; e--;)if (t[e].getAttribute('data-cfhash'))return t[e]
+                                        }();
+                                        if (t && (c = t.previousSibling)) {
+                                            p = t.parentNode;
+                                            if (a = c.getAttribute('data-cfemail')) {
+                                                for (e = '', r = '0x' + a.substr(0, 2) | 0, n = 2; a.length - n; n += 2)e += '%' + ('0' + ('0x' + a.substr(n, 2) ^ r).toString(16)).slice(-2);
+                                                p.replaceChild(document.createTextNode(decodeURIComponent(e)), c)
+                                            }
+                                            p.removeChild(t)
+                                        }
+                                    } catch (u) {
+                                    }
+                                }()
+                                /* ]]> */</script>
+                            ,</a></li>
+                    <li><a href="javascript:void(0);">650 Castro Street Ste. 120-458,<br/> Mountain View, CA 94041, USA</a>
+                    </li>
+                    <li><a href="cdn-cgi/l/email-protection.html#92e2f3e6e2f3e6f3fff3e8fdfcd2e2f3e6e2f3e6bcf1fdff">PatPat on
+                            Amazon: <span class="__cf_email__" data-cfemail="92e2f3e6e2f3e6f3fff3e8fdfcd2e2f3e6e2f3e6bcf1fdff">[email&#160;protected]</span>
+                            <script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */
+                                !function (t, e, r, n, c, a, p) {
+                                    try {
+                                        t = document.currentScript || function () {
+                                            for (t = document.getElementsByTagName('script'), e = t.length; e--;)if (t[e].getAttribute('data-cfhash'))return t[e]
+                                        }();
+                                        if (t && (c = t.previousSibling)) {
+                                            p = t.parentNode;
+                                            if (a = c.getAttribute('data-cfemail')) {
+                                                for (e = '', r = '0x' + a.substr(0, 2) | 0, n = 2; a.length - n; n += 2)e += '%' + ('0' + ('0x' + a.substr(n, 2) ^ r).toString(16)).slice(-2);
+                                                p.replaceChild(document.createTextNode(decodeURIComponent(e)), c)
+                                            }
+                                            p.removeChild(t)
+                                        }
+                                    } catch (u) {
+                                    }
+                                }()
+                                /* ]]> */</script>
+                        </a></li>
+                    <li><a href="javascript:void(0);">BUMPERR LTD，71-75, Shelton Street, Covent Garden, London, WC2H 9JQ,
+                            UNITED KINGDOM (This address is only for billing)</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-services">
+                <div class="footer-search">
+                    <div class="font-regular services-about hidden-xs" style="margin-bottom:8px;">Newsletter Subscription
+                    </div>
+                    <div class="input-email clearfix">
+                        <input type="email" class="footer-services-search" placeholder="Email">
+                        <button type="submit" class="button-rss">SUBSCRIBE</button>
+                    </div>
+                </div>
+
+                <div class="font-regular services-about hidden-xs" style="margin-bottom:5px;">Follow us</div>
+                <ul class="list-inline-show clearfix">
+                    <li>
+                        <a href="https://www.facebook.com/patpatshopping" class="icon-social" target="_blank"></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/patpatshopping" class="icon-social" target="_blank"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.pinterest.com/patpatshopping" class="icon-social" target="_blank"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/patpatshopping" class="icon-social" target="_blank"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/company/interfocus-inc" class="icon-social" target="_blank"></a>
+                    </li>
+                    <li>
+                        <a href="http://blog.patpat.com" class="icon-social" target="_blank"></a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- site footer services-->
+
+
+<?php } ?>
+
+<!-- site footer bottom -->
+<footer id="site-footer-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="footer-services footer-services-us">
+                <div class="credit-card-full"></div>
+                <div class="credit-card-full"></div>
+                <div class="credit-card-full"></div>
+                <div class="credit-card-full"></div>
+                <div class="credit-card-full"></div>
+                <div class="credit-card-full"></div>
+                <div class="credit-card-full">
+                    <a href="javascript:openNortonAuth();"></a>
+                    <script>
+                        function openNortonAuth() {
+                            window.open("https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf%2Fsplash.fdf&sap=&dn=www.patpat.com&zoneoff=&lang=en", "newwindow", "width=540px,height=480px");
+                        }
+                    </script>
+                </div>
+                <div class="credit-card-full">
+                    <a href="http://www.bbb.org/losangelessiliconvalley/business-reviews/online-retailer/interfocus-in-sunnyvale-ca-413140#bbbseal"
+                       target="_blank"></a>
+                </div>
+            </div>
+
+            <!-- site footer like/follow /-->
+        </div>
+    </div>
+</footer>
+<!-- site footer bottom /-->
+
+<!-- site footer bottom copyright -->
+<footer class="site-footer-copyright hidden-xs">
+    <div class="container">
+        <div class="row site-footer-container">
+            <a href="https://www.facebook.com/groups/PatPatParentingCommunity" target="view_window"
+               class="hidden-xs join-patpat">PatPat Community: Join PatPat private family community to win freebies
+                &amp; credits!</a>
+            <article class="site-footer-bottom-copyright">
+                <span>PatPat is a registered trademark of InterFocus Inc. All Rights Reserved.</span>
+            </article>
+            <p class="patpat-description"></p>
+            <!-- footer_nav -->
+            <div class="footer-nav">
+                <a href="category/Baby-Toddlers.html"
+                   class="nav-tabs-js" id="category27">Baby &amp; Toddlers</a><i></i>
+                <a href="category/Kids.html"
+                   class="nav-tabs-js" id="category28">Kids</a><i></i>
+                <a href="category/Women.html"
+                   class="nav-tabs-js" id="category29">Women</a><i></i>
+                <a href="category/Home-Storage.html"
+                   class="nav-tabs-js" id="category26">Home &amp; Storage</a><i></i>
+            </div>
+        </div>
+
+
+    </div>
+
+</footer>
+<!-- site footer bottom copyright /-->
+
+
+<!-- go top-->
+<span class="gotop-btn"></span>
+<!-- site footer -->
+
+<div class="mask-ind1"></div>
+
+<!--email 弹窗 start-->
+<!--enter your email 弹窗-->
+<div class="popup" id="popup-email-one">
+    <div class="popup-container popup-container-sendemail">
+        <div class="popup-close"></div>
+        <img src="https://img.patpat.com/assets/img/invite_promocode@3x.png" alt="">
+
+        <p class="enter-email font-medium">Enter Your Email &amp; Receive <br>A Coupon Code For 20% OFF</p>
+        <input type="email" name="new_user_email_address" placeholder="Enter Your Email Here" value="">
+        <span class="old_user"></span>
+        <button id="get_discount_code">Get Your 20% OFF</button>
+    </div>
+</div>
+
+<div class="popup" id="popup-email-send">
+    <div class="popup-container popup-container-success">
+        <div class="popup-close"></div>
+        <div class="success-circular">
+            <div class="success-line line-one"></div>
+            <div class="success-line line-two"></div>
+        </div>
+        <p class="font-medium">The coupon code has been sent to your Email.</p>
+        <a href="" class="check_mailbox">Check You Mailbox</a>
+        <button>New to PatPat? <a href="register.html" class="join_us">Join Us</a></button>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $(".popup-close").on("click", function () {
+            $(this).parents(".popup").css({"display": "none"});
+        });
+
+        $("input[name=new_user_email_address]").bind('input propertychange', function () {
+            $(".popup-container-sendemail").removeClass("sendmail-old");
+            $("#get_discount_code").removeAttr("disable");
+        });
+
+        $("#get_discount_code").on("click", function () {
+            var email = $.trim($("input[name=new_user_email_address]").val());
+            var reg = /\w+[@]{1}\w+[.]\w+/;
+            if (email.length > 0) {
+                if (reg.test(email)) {
+                    $.ajax({
+                        url: "<?php echo $this->config->domain ?>/send_code",
+                        type: "POST",
+                        data: {email: email},
+                        dataType: "JSON",
+                        success: function (data) {
+                            if (data.status) {
+                                $("#popup-email-one").css({"display": "none"});
+                                $("#popup-email-send").css({"display": "block"});
+                                $("input[name=new_user_email_address]").val("");
+                            } else {
+                                showErrorAlert(data.message);
+                                return false;
+                            }
+                        }
+                    });
+                } else {
+                    showErrorAlert("Your email address is illegal!");
+                    return false;
+                }
+            } else {
+                showErrorAlert("Please input your email address!");
+                return false
+            }
+        });
+
+        function showErrorAlert(message) {
+            $(".old_user").html(message);
+            $(".popup-container-sendemail").addClass("sendmail-old");
+            $("#get_discount_code").attr("disable", "disable");
+        }
+    });
+</script>
+<!--email 弹窗 end-->
+</div>
+<script src="https://img.patpat.com/build/assets/js/application.min-03e3e4c856.js"></script>
+
+<!-- GTM pinterest -->
+<script>
+    dataLayer = [{
+        'pinterest_page_name': 'home',
+        'pinterest_page_category': 'home'
+    }];
+</script>
+<!-- GTM pinterest -->
+</div>
+
+<!-- Google Tag Manager -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GJGP2"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5GJGP2');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Facebook Pixel Code -->
+<script>
+    !function (f, b, e, v, n, t, s) {
+        if (f.fbq)return;
+        n = f.fbq = function () {
+            n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq)f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window,
+        document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1166203326740725');
+    fbq('track', "PageView");
+
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1166203326740725&ev=PageView&noscript=1"/></noscript>
+<!-- End Facebook Pixel Code -->
+<script>/* <![CDATA[ */
+    (function (d, s, a, i, j, r, l, m, t) {
+        try {
+            l = d.getElementsByTagName('a');
+            t = d.createElement('textarea');
+            for (i = 0; l.length - i; i++) {
+                try {
+                    a = l[i].href;
+                    s = a.indexOf('/cdn-cgi/l/email-protection');
+                    m = a.length;
+                    if (a && s > -1 && m > 28) {
+                        j = 28 + s;
+                        s = '';
+                        if (j < m) {
+                            r = '0x' + a.substr(j, 2) | 0;
+                            for (j += 2; j < m && a.charAt(j) != 'X'; j += 2)s += '%' + ('0' + ('0x' + a.substr(j, 2) ^ r).toString(16)).slice(-2);
+                            j++;
+                            s = decodeURIComponent(s) + a.substr(j, m - j)
+                        }
+                        t.innerHTML = s.replace(/</g, '&lt;').replace(/\>/g, '&gt;');
+                        l[i].href = 'mailto:' + t.value
+                    }
+                } catch (e) {
+                }
+            }
+        } catch (e) {
+        }
+    })(document);
+    /* ]]> */</script>
+

@@ -17,7 +17,6 @@ class ControllerBase extends Controller
     {
 
         $this->tag->setTitle('PatPat | Daily Deals For Moms');
-        define('is_mobile',$this->is_mobile_request());
 
     }
 

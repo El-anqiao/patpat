@@ -4,7 +4,7 @@ return new \Phalcon\Config([
         'adapter' => 'Mysql',
         'host' => 'localhost',
         'username' => 'root',
-        'password' => 'root',
+        'password' => '',
         'dbname' => 'phasty',
         'charset' => 'utf8',
     ],
@@ -70,5 +70,5 @@ return new \Phalcon\Config([
         // possibly if the web server rewrite rules are changed. This can also be set to a static path.
         'baseUri'        => preg_replace('/public([\/\\\\])index.php$/', '', $_SERVER["PHP_SELF"]),
     ],
-    'domain'=>'http://public.dev:88/',
+    'domain'=>'http://patpat.dev/',
 ]);

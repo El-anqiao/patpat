@@ -12,6 +12,7 @@
     <link href="/assets/css/index_test.min-edb4de340d.css" rel="stylesheet"/>
     <link href="favicon.ico" rel="shortcut icon" type="image/ico"/>
     <script src="/assets/js/jquery.min.js"></script>
+
 </head>
 <body ontouchstart="">
 <?php echo $this->getContent() ?>

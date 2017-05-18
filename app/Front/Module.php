@@ -36,10 +36,9 @@ class Module implements ModuleDefinitionInterface {
 		);
         */
         $di->setShared('view', function () {
-
             $view = new View();
             $view->setDI($this);
-            $view->setViewsDir(__DIR__ . '/views/');
+            $view->setViewsDir(__DIR__ . '/views/'.view_type.'/');
 
             $view->registerEngines([
                 '.volt' => function ($view) {
