@@ -4,7 +4,7 @@ return new \Phalcon\Config([
         'adapter' => 'Mysql',
         'host' => 'localhost',
         'username' => 'root',
-        'password' => 'root',
+        'password' => '',
         'dbname' => 'phasty',
         'charset' => 'utf8',
     ],
@@ -26,7 +26,7 @@ return new \Phalcon\Config([
         "host" => "smtp.qq.com",
         "port" => 25,
         "username" => "565720073@qq.com",
-        "password" => "**",
+        "password" => "faraonexx",
         //"sendmail" => "/usr/sbin/sendmail -bs",
         'encryption' => 'tls',
         'from' => [
