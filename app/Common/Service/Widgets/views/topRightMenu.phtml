@@ -1,16 +1,239 @@
-<div class="shop-menu pull-right">
-    <ul class="nav navbar-nav">
-        <li>
-            <?php if($this->session->has('auth')){echo $this->tag->linkTo(["profile/index", '<i class="fa fa-user"></i>Account', 'class' => ($controller == 'profile') ? 'active' : '']);} ?>
+
+<div class="col-xs-3 col-sm-6 col-md-5 col-lg-4 account-and-cart">
+<nav id="site-header-icons" class="dropdown">
+    <nav id="site-header-nav" class="hidden-xs">
+        <ul class="list-inline list-inline-user logined-ul" style="position:relative;">
+            <li class="dropdown" id="username">
+                <?php if($this->session->has('auth')) {?>
+                <a class="dropdown-toggle" id="user_name" href="javascript:;"><?php echo $this->session->get('auth')['name']; ?></a>
+                <ul class="dropdown-menu dropdown-menu-account" id="user_info">
+                    <li class="score-btn clearfix"><strong><i>200</i>Points</strong><a
+                            href="/patpoints" class="sign-no">Check In</a></li>
+                    <li><a href="/notification">Notifications <span class="notiofication-number"
+                                                                    style="display: inline-block;">1</span></a></li>
+                    <li><a href="/orders">Orders</a></li>
+                    <li><a href="/reviews">Reviews</a></li>
+                    <li><a href="/faves">My Favorites</a></li>
+                    <li><a href="/wallet">Wallet</a></li>
+                    <li><a href="/patpoints">My Pat Points</a></li>
+                    <li><a href="/voucher">My Voucher</a></li>
+                    <li><a href="/address">Shipping Address</a></li>
+                    <li><a href="/payment">Payment</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/promo-code">Give 25% Off, Get $5</a></li>
+                    <li><a class="logout" href="/logout">Sign Out</a></li>
+                </ul>
+                <?php  }else{ ?>
+                    <a class="dropdown-toggle" id="user_name" href="/login">Sign In</a>
+                <?php }?>
+            </li>
+        </ul>
+    </nav>
+    <?php if($this->session->has('auth')){?>
+        <a href="/notification" id="site-header-icon-bell" class="hidden-xs"><span class="icon-bell" style="display: inline-block;">1</span></a>
+    <?php } ?>
+    <a class="account-favourites" href="<?php if($this->session->has('auth')){echo '/faves';}else{echo '/login';} ?>">MY FAVORITES</a>
+    <button onclick="window.location='/order/cart'" class="dropdown-toggle dropdown-toggle-cart"
+            id="site-header-icon-cart" style="position:relative;">
+        <span class="icon-cart" id="cart-end"></span>
+        <em class="cart-wz hidden-xs" style="font-style: normal;">CART</em>
+        <span class="invalid_quantity" style="display:none;">0</span>
+        <span class="currency_display_symbol" style="display: none">$</span>
+        <span class="currency_exchange_rate" style="display: none">1.00000</span>
+
+        <p class="hidden-xs" style="position:absolute;left:-13%;top:0;height:10px;width:115%;"></p>
+
+        <p class="hidden-xs" style="height:10px;width:115%;"></p>
+    </button>
+
+    <ul class="dropdown-menu dropdown-menu-cart pull-right" id="cart-dropdown">
+        <li class="loading">
+            <div class="loadingAnimation">
+                <img src="/assets/img/loading.gif" loop=infinite>
+            </div>
         </li>
-        <li><a class="<?php echo ($controller == 'compare') ? 'active' : '' ?>" href="<?php echo $this->url->get('compare/show/compare'); ?>"><i class="fa fa-crosshairs"></i> CompareList</a>
+        <div class="header-cart-list-con" style="max-height: 400px;overflow: auto;">
+        </div>
+        <li id="summary_cart_li">
+            <table class="table full-width table-bordered table-bordered-cart">
+                <tbody>
+                <tr>
+                    <td>
+                        <h5 class="sub-title table-bordered-cart-free" style="display: none">
+                            Add <span class="table-bordered-cart-free">0</span> to enjoy Free Shipping </h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-bordered-subtotal-td"><h4 class="title table-bordered-cart-subtotal">Subtotal:
+                            <span></span></h4></td>
+                </tr>
+                </tbody>
+            </table>
         </li>
-        <li><a class="<?php echo ($controller == 'compare') ? 'active' : '' ?>" href="<?php echo $this->url->get('compare/show/wish'); ?>"><i class="fa fa-star"></i> Wishlist</a>
+        <li class="btn-view-cart">
+            <a href="login.html" class="btn-block" id="direct_checkout">View Cart</a>
         </li>
-        <li><a class="<?php echo ($controller == 'cart') ? 'active' : '' ?>" href="<?php echo $this->url->get('cart'); ?>"><i class="fa fa-shopping-cart"></i> Cart</a>
-        </li>
-        <li>
-            <?php if($this->session->has('auth')) { echo $this->tag->linkTo(["session/logout", '<i class="fa fa-lock"></i>Log out']); }else{ echo $this->tag->linkTo(["session/login", '<i class="fa fa-lock"></i>Login/Sign up', 'class' => ($controller == 'session') ? 'active' : '']); }?>
-        </li>
+
     </ul>
+    <div class="top-cart-empty-down">
+        <div class="empty-cart-tips">
+            <p>There are currently no items in your Shopping Cart</p>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+</nav>
+<!-- site header icons /-->
+<script type="text/javascript">
+    $(function () {
+        //加载页面用户信息
+        var html = '';
+        html += '<ul class="dropdown-menu dropdown-menu-account" id="user_info">';
+        html += '<li class="score-btn clearfix">';
+        html += '<strong><i></i>Points</strong>';
+        html += '<a href="login.html" class="sign-no">Check In</a>';    // 签到成功添加 sign-yes
+        html += '</li>';
+        html += '<li><a href="/notification">Notifications <span class="notiofication-number"></span></a></li>';
+        html += '<li><a href="<?php echo $this->config->domain ?>/orders">Orders</a></li>';
+        html += '<li><a href="<?php echo $this->config->domain ?>/reviews">Reviews</a></li>';
+        html += '<li><a href="<?php echo $this->config->domain ?>/faves">My Favorites</a></li>';
+        html += '<li><a href="<?php echo $this->config->domain ?>/wallet">Wallet</a></li>';
+        html += '<li><a href="login.html" >My Pat Points</a></li>';
+        html += '<li><a href="<?php echo $this->config->domain ?>/voucher">My Voucher</a></li>';
+        html += '<li><a href="<?php echo $this->config->domain ?>/address">Shipping Address</a></li>';
+        html += '<li><a href="<?php echo $this->config->domain ?>/payment">Payment</a></li>';
+        html += '<li><a href="<?php echo $this->config->domain ?>/profile">Profile</a></li>';
+        html += '<li><a href="<?php echo $this->config->domain ?>/promo-code">Give 25% Off, Get $5</a></li>';
+        html += '<li><a class="logout" href="<?php echo $this->config->domain ?>/logout">Sign Out</a></li>';
+        var ordersHtml = '<a href="/notification" id="site-header-icon-bell" class="hidden-xs"><span class="icon-bell"></span></a>';
+        var userInfo = $("#user_name");
+        var name;
+        var url_login = "/login",
+            url_love = "/faves";
+        if (!sessionStorage.getItem('lignName')) {
+            $.ajax({
+                type: "get",
+                url: "/getUserNavigationData",
+                dataType: "json",
+                success: function (data) {
+                    var userKey = data.registered;
+                    if (userKey == 1) {
+                        name = data.content.currentUserInfo.first_name + " " + data.content.currentUserInfo.last_name;
+                        userInfo.attr("href", "javascript:;");
+                        $("#site-header-nav").after(ordersHtml);
+                        userInfo.after(html);
+                        sessionStorage.setItem('lignName', name);
+                        $(".account-favourites").attr("href", url_love);
+                        $(".nav-sign .sign-btn").hide();
+                        $(".nav-sign span").css("display", "block");
+                        $(".nav-sign span i").text(sessionStorage.getItem('lignName'));
+                        $("#user-nav strong").text(sessionStorage.getItem('lignName'));
+                        $(".order-status").attr("href", "/orders");
+                        $(".sign-entrance").show();
+
+                    } else {
+                        name = "Sign In";
+                        userInfo.attr("href", url_login);
+                        if ($(".order_status").length > 0) {
+                            userInfo.attr("href", "/login?refer=/orders")
+                        }
+
+                    }
+                    userInfo.text(name);
+                    var points = data.content.points,
+                        Notification = data.content.unreadNotificationCount,
+                        cartItems = data.content.cartItemsCount;
+                    if (data["content"]["check_in_history"] != "") {
+                        var signData = data["content"]["check_in_history"][0]["checkIn_date"] * 1000;
+                    }
+                    user_sign(signData);
+                    notification(Notification, points, cartItems);
+                }
+            });
+            $(".order-status").attr("href", "/guest/orderquery");
+            userInfo.text("Sign In");
+        } else {
+            userInfo.text(sessionStorage.getItem('lignName'));
+            userInfo.after(html);
+            $("#site-header-nav").after(ordersHtml);
+            $(".account-favourites").attr("href", url_love);
+            $(".order-status").attr("href", "/orders");
+            $(".sign-entrance").show();
+            $(".nav-sign .sign-btn").hide();
+            $(".nav-sign span").css("display", "block");
+            $(".nav-sign span i").text(sessionStorage.getItem('lignName'));
+            $("#user-nav strong").text(sessionStorage.getItem('lignName'));
+            $("#order_action").show();
+            $("#auth_order_action").hide();
+
+            $.ajax({
+                type: "get",
+                url: "/getUserNavigationData",
+                dataType: "json",
+                success: function (data) {
+                    var points = data.content.points,
+                        Notification = data.content.unreadNotificationCount,
+                        cartItems = data.content.cartItemsCount;
+                    if (data["content"]["check_in_history"] != "") {
+                        var signData = data["content"]["check_in_history"][0]["checkIn_date"] * 1000;
+                    }
+                    user_sign(signData);
+                    notification(Notification, points, cartItems);
+                }
+            })
+
+        }
+
+        // Notification 提示
+        function notification(NotificationEnd, pointsEnd, cartItems) {
+            if (NotificationEnd > 0) {
+                var iconBell = $(".icon-bell");
+                var notioficationNumber = $(".notiofication-number");
+                iconBell.css("display", "inline-block");
+                iconBell.text(NotificationEnd);
+                notioficationNumber.css("display", "inline-block");
+                notioficationNumber.text(NotificationEnd);
+            }
+            if (cartItems != 0) {
+                $(".cart-wz").after('<span class="total_quantity">' + cartItems + '</span>');
+            }
+
+            $(".score-btn i").text(pointsEnd);
+        }
+
+        // 判断用户签到未签到
+        function user_sign(signDateEnd) {
+            var scoreBtn = $(".score-btn a"),
+                pointsA = $(".points-section a"),
+                signBtn = $("#wap-sign-btn");
+            var signDate = parseInt(signDateEnd);
+            var signTime = new Date(signDate),   //  时间戳转换签到日期
+                signY = signTime.getFullYear(),
+                signM = signTime.getMonth() + 1 < 10 ? "0" + (signTime.getMonth() + 1) : signTime.getMonth() + 1,
+                signD = signTime.getDate() < 10 ? "0" + signTime.getDate() : signTime.getDate();
+            var newDate = new Date(),      //  获取当前日期
+                newY = newDate.getFullYear(),
+                newM = newDate.getMonth() + 1 < 10 ? "0" + (newDate.getMonth() + 1) : newDate.getMonth() + 1,
+                newD = newDate.getDate() < 10 ? "0" + newDate.getDate() : newDate.getDate();
+            if (newY + "" + newM + "" + newD == signY + "" + signM + "" + signD) {
+                pointsA.addClass("wap-sign-yes already-sign");
+                scoreBtn.addClass("sign-yes").text("Checked");
+                scoreBtn.removeClass("sign-no");
+                signBtn.addClass("wap-sign-yes").text("Checked");
+            } else {
+                pointsA.removeClass("wap-sign-yes").text("Check In");
+            }
+        }
+
+        $("body").on("touchend click", ".sign-no", function () {
+            localStorage.setItem("checked", "CheckedIn");
+        });
+        //  清楚登录痕迹
+        $("body").on("touchend click", ".logout", function () {
+            sessionStorage.clear()
+        });
+
+    })
+</script>
+<!-- site header icons /-->
 </div>

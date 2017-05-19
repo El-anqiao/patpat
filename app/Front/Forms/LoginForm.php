@@ -59,7 +59,7 @@ class LoginForm extends Form
 		$csrf->addValidator(
 			new Identical(array(
 				'value' => $this->security->getSessionToken(),
-				'message' => 'сработала защита от CSRF'
+				'message' => 'Protection against CSRF'
 			))
 		);
 

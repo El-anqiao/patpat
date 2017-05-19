@@ -79,6 +79,28 @@ $router->add('/session/reset-password/{code}/{email}', array(
     'action' => 'resetPassword'
 ));
 
+//login
+$router->add('/login', array(
+    'module' => "front",
+    'namespace' => 'Phasty\Front\Controllers\\',
+    'controller' => 'session',
+    'action' => 'login'
+));
+
+$router->add('/register', array(
+    'module' => "front",
+    'namespace' => 'Phasty\Front\Controllers\\',
+    'controller' => 'session',
+    'action' => 'signUp'
+));
+
+//ajax获取信息
+$router->add('/getUserNavigationData', array(
+    'module' => "front",
+    'namespace' => 'Phasty\Front\Controllers\\',
+    'controller' => 'Service',
+    'action' => 'GetUserNavigationData'
+));
 
 /**
  * Admin routes

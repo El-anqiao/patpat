@@ -22,6 +22,9 @@ class SessionController extends ControllerBase
         $this->signUpForm = new SignUpForm();
         $this->forgotPasswordForm = new ForgotPasswordForm();
         parent::initialize();
+        //$this->assets->collection('headercss')
+        //    ->addCss('\assets\css\auth.min-355872eb0c.css');
+        //var_dump($this->session->get('auth')['name']);die;
     }
 
     public function indexAction()
@@ -64,6 +67,7 @@ class SessionController extends ControllerBase
      */
     public function loginAction()
     {
+        $this->assets->addCss('/assets/css/auth.min-355872eb0c.css');
         if ($this->session->has('auth')) {
             return $this->response->redirect('index');
         }
@@ -83,7 +87,7 @@ class SessionController extends ControllerBase
         }
 
         $this->view->form = $this->loginForm;
-        $this->view->breadcrumbs = ["Вход/Регистрация"];
+        $this->view->breadcrumbs = ["login"];
     }
 
     /**
