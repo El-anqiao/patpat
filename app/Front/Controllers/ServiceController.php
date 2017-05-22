@@ -9,7 +9,9 @@
 namespace Phasty\Front\Controllers;
 
 
-class ServiceController extends ControllerBase {
+use Phalcon\Mvc\Controller;
+
+class ServiceController extends Controller {
 
     /**
      * 获取有关用户的信息，用于头部
@@ -48,42 +50,21 @@ class ServiceController extends ControllerBase {
             }
 
             die(json_encode($ret));
-
-            $id = $this->request->getPost('productId', 'int');
-            $quantity = $this->request->getPost('quantity', 'int', 1);
-            $model = Products::findFirstById($id);
-            $discount = [];
-            foreach ($model->brand->discount as $value) {
-                if (isset($value->name) && isset($value->sum)) {
-                    $discount = $value->toArray();
-                    break;
-                }
-            }
-            //if discount for category has been set, discount for brand will be owerwriten
-            foreach ($model->category->discount as $value) {
-                if (isset($value->name) && isset($value->sum)) {
-                    $discount = $value->toArray();
-                    break;
-                }
-            }
-            if ($model) {
-                $model->saveCounter('cart');
-
-                $this->cart->insert([
-                    'id' => $model->id,
-                    'name' => $model->name,
-                    'price' => $model->price,
-                    'quantity' => $quantity,
-                    'sku' => $model->sku,
-                    'currency' => $this->session->has('currency') ? $this->session->get('currency') : $this->config->app->currency,
-                    'options' => [
-                        'image' => $model->getImages(),
-                        'discount' => $discount,
-                        'slug' => $model->slug
-                    ]
-                ]);
-                echo 'success';
-            }
         }
+    }
+
+    public function TrackAction()
+    {
+        if ($this->request->isAjax()) {
+            $this->view->disable();
+            $ret=[
+                'status'=>'200',
+                'global_setting'=>null,
+                'content'=>'',
+                'msg'=>'track done'
+            ];
+            die(json_encode($ret));
+        }
+
     }
 } 

@@ -101,6 +101,12 @@ $router->add('/getUserNavigationData', array(
     'controller' => 'Service',
     'action' => 'GetUserNavigationData'
 ));
+$router->add('/track', array(
+    'module' => "front",
+    'namespace' => 'Phasty\Front\Controllers\\',
+    'controller' => 'Service',
+    'action' => 'Track'
+));
 
 /**
  * Admin routes
