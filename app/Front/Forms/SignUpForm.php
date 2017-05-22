@@ -15,12 +15,19 @@ class SignUpForm extends Form {
 
 	public function initialize() {
 
-		$name = new Text('name', ['class' => 'form-control', 'placeholder' => 'Name']);
+		$first_name = new Text('first_name', ['class' => 'form-control', 'placeholder' => 'Name']);
 
-		$name->addValidators(array(new PresenceOf(array('message' =>
-			'<div class="alert alert-danger"> Поле Имя обязательно для заполнения</div>'))));
+        $first_name->addValidators(array(new PresenceOf(array('message' =>
+			'<div class="alert alert-danger">First Name is required</div>'))));
 
-		$this->add($name);
+		$this->add($first_name);
+
+        $first_name = new Text('first_name', ['class' => 'form-control', 'placeholder' => 'Name']);
+
+        $first_name->addValidators(array(new PresenceOf(array('message' =>
+            '<div class="alert alert-danger">First Name is required</div>'))));
+
+        $this->add($first_name);
 
 		//Email
 		$email = new Text('email', ['class' => 'form-control', 'placeholder' => 'Email']);

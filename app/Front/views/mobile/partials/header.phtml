@@ -1,352 +1,355 @@
 <div class="global-wrapper">
-    <div class="nav-below-fixed" style="left: -100%; background: rgb(255, 255, 255);"></div>
-    <div class="nav-below-fixed" style=""></div>
-    <div class="navmenu navmenu-default navmenu-fixed-left" id="menu-mobile">
-        <div class="nav-list" style="padding-bottom:250px;">
-            <div class="nav-sign">
-                <a href="/login" class="sign-btn"><i>My Account: Sign In</i></a>
-                <span class="right-arrow"><img src="/assets/img/sign-in@3x.png"><i></i></span>
-            </div>
-            <div class="products-nav"> </div>
-            <div class="nav-menu">
-                <a href="/new-arrivals" class="menu">New Arrivals</a>
-                <a href="/flashsale/event" class="menu">Flash Sale</a>
-                <a href="/clearance" class="menu">Clearance</a>
-            </div>
-            <div class="nav-settings">
-                <a href="javascript:;" class="menu right-arrow">My Settings <i class="show-country-img"><img src="/assets/img/national_flag/1491823597.png"></i> </a>
-            </div>
-            <a href="/guest/orderquery" class="menu order-status">Order Status</a>
+
+
+<div class="nav-below-fixed" style=""></div>
+<div class="navmenu navmenu-default navmenu-fixed-left" id="menu-mobile">
+    <div class="nav-list" style="padding-bottom:250px;">
+        <div class="nav-sign">
+            <a href="/login" class="sign-btn"><i>My Account: Sign In</i></a>
+            <span class="right-arrow"><img src="https://img.patpat.com/assets/img/sign-in@3x.png"><i></i></span>
         </div>
-        <div class="center-nav right-hide" id="user-nav">
-            <strong class="left-arrow"></strong>
-            <ul>
-                <li class="border05"><a href="/notification">Notifications</a></li>
-                <li class="border05"><a href="<?php echo $this->config->domain ?>/orders">Orders</a></li>
-                <li class="border05"><a href="<?php echo $this->config->domain ?>/reviews">Reviews</a></li>
-                <li class="border05"><a href="<?php echo $this->config->domain ?>/faves">My Favorites</a></li>
-                <li class="border05"><a href="<?php echo $this->config->domain ?>/wallet">Wallet</a></li>
-                <li class="border05"><a href="<?php echo $this->config->domain ?>/patpoints">My Pat Points</a></li>
-                <li class="border05"><a href="<?php echo $this->config->domain ?>/voucher">My Voucher</a></li>
-                <li class="border05"><a href="<?php echo $this->config->domain ?>/address">Shipping Address</a></li>
-                <li class="border05"><a href="<?php echo $this->config->domain ?>/payment">Payment</a></li>
-                <li class="border05"><a href="<?php echo $this->config->domain ?>/profile">Profile</a></li>
-                <li class="border05"><a href="<?php echo $this->config->domain ?>/promo-code">Give 25% Off, Get $5</a></li>
-                <li class="logout"><a href="/logout">Sign Out</a></li>
-            </ul>
+        <div class="products-nav"> </div>
+        <div class="nav-menu">
+            <a href="/new-arrivals" class="menu">New Arrivals</a>
+            <a href="/flashsale/event" class="menu">Flash Sale</a>
+            <a href="/clearance" class="menu">Clearance</a>
         </div>
-        <div class="product-nav right-hide"></div>
-        <div class="nav-setup right-hide">
-            <strong class="left-arrow">My Settings</strong>
-            <div class="setup-content">
-                <div class="country setup-choice">
-                    <p>Shipping to</p>
-                    <div class="choice">
-                        <em class="select-btn"><i id="country-img" data-class="United States">United States</i></em>
-                        <ul class="choice-country">
-                        </ul>
-                    </div>
+        <div class="nav-settings">
+            <a href="javascript:;" class="menu right-arrow">My Settings <i class="show-country-img"><img src="https://img.patpat.com/national_flag/58eb6beda1e35/1491823597.png"></i> </a>
+        </div>
+        <a href="/guest/orderquery" class="menu order-status">Order Status</a>
+    </div>
+    <div class="center-nav right-hide" id="user-nav">
+        <strong class="left-arrow"></strong>
+        <ul>
+            <li class="border05"><a href="/notification">Notifications</a></li>
+            <li class="border05"><a href="https://www.patpat.com/orders">Orders</a></li>
+            <li class="border05"><a href="https://www.patpat.com/reviews">Reviews</a></li>
+            <li class="border05"><a href="https://www.patpat.com/faves">My Favorites</a></li>
+            <li class="border05"><a href="https://www.patpat.com/wallet">Wallet</a></li>
+            <li class="border05"><a href="https://www.patpat.com/patpoints">My Pat Points</a></li>
+            <li class="border05"><a href="https://www.patpat.com/voucher">My Voucher</a></li>
+            <li class="border05"><a href="https://www.patpat.com/address">Shipping Address</a></li>
+            <li class="border05"><a href="https://www.patpat.com/payment">Payment</a></li>
+            <li class="border05"><a href="https://www.patpat.com/profile">Profile</a></li>
+            <li class="border05"><a href="https://www.patpat.com/promo-code">Give 25% Off, Get $5</a></li>
+            <li class="logout"><a href="/logout">Sign Out</a></li>
+        </ul>
+    </div>
+    <div class="product-nav right-hide"></div>
+    <div class="nav-setup right-hide">
+        <strong class="left-arrow">My Settings</strong>
+        <div class="setup-content">
+            <div class="country setup-choice">
+                <p>Shipping to</p>
+                <div class="choice">
+                    <em class="select-btn"><i id="country-img" data-class="United States">United States</i></em>
+                    <ul class="choice-country">
+                    </ul>
                 </div>
-                <div class="language setup-choice">
-                    <p>Site / Language</p>
-                    <div class="choice">
-                        <em class="select-btn"><i data-text=" en ">
-                                ENGLISH
-                            </i></em>
-                        <ul>
-                            <li class="wap-select_language wap-select" data-name="en" data-url="http://www.patpat.com/">
-                                <a href="javascript:;">ENGLISH</a>
-                            </li>
-                            <li class="wap-select_language wap-select" data-name="ar" data-url="http://ar.patpat.com/">
-                                <a href="javascript:;"> العربية</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="currency setup-choice">
-                    <p>Currencies</p>
-                    <div class="choice">
-                        <em class="select-btn"><i data-text="USD">USD</i></em>
-                        <ul>
-                            <li class="wap-select_currency wap-select" data-name="USD">
-                                <a>
-                                    USD
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="EUR">
-                                <a>
-                                    EUR
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="GBP">
-                                <a>
-                                    GBP
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="AUD">
-                                <a>
-                                    AUD
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="AED">
-                                <a>
-                                    AED
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="BDT">
-                                <a>
-                                    BDT
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="CAD">
-                                <a>
-                                    CAD
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="IDR">
-                                <a>
-                                    IDR
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="ILS">
-                                <a>
-                                    ILS
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="INR">
-                                <a>
-                                    INR
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="JOD">
-                                <a>
-                                    JOD
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="KWD">
-                                <a>
-                                    KWD
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="LKR">
-                                <a>
-                                    LKR
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="MXN">
-                                <a>
-                                    MXN
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="MYR">
-                                <a>
-                                    MYR
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="NZD">
-                                <a>
-                                    NZD
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="PHP">
-                                <a>
-                                    PHP
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="PLN">
-                                <a>
-                                    PLN
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="RUB">
-                                <a>
-                                    RUB
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="SAR">
-                                <a>
-                                    SAR
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="SEK">
-                                <a>
-                                    SEK
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="SGD">
-                                <a>
-                                    SGD
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="THB">
-                                <a>
-                                    THB
-                                </a>
-                            </li>
-                            <li class="wap-select_currency wap-select" data-name="UAH">
-                                <a>
-                                    UAH
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <a href="javascript:;" class="settings-btn">SAVE</a>
             </div>
+            <div class="language setup-choice">
+                <p>Site / Language</p>
+                <div class="choice">
+                    <em class="select-btn"><i data-text=" en ">
+                            ENGLISH
+                        </i></em>
+                    <ul>
+                        <li class="wap-select_language wap-select" data-name="en" data-url="http://www.patpat.com/">
+                            <a href="javascript:;">ENGLISH</a>
+                        </li>
+                        <li class="wap-select_language wap-select" data-name="ar" data-url="http://ar.patpat.com/">
+                            <a href="javascript:;"> العربية</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="currency setup-choice">
+                <p>Currencies</p>
+                <div class="choice">
+                    <em class="select-btn"><i data-text="USD">USD</i></em>
+                    <ul>
+                        <li class="wap-select_currency wap-select" data-name="USD">
+                            <a>
+                                USD
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="EUR">
+                            <a>
+                                EUR
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="GBP">
+                            <a>
+                                GBP
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="AUD">
+                            <a>
+                                AUD
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="AED">
+                            <a>
+                                AED
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="BDT">
+                            <a>
+                                BDT
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="CAD">
+                            <a>
+                                CAD
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="IDR">
+                            <a>
+                                IDR
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="ILS">
+                            <a>
+                                ILS
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="INR">
+                            <a>
+                                INR
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="JOD">
+                            <a>
+                                JOD
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="KWD">
+                            <a>
+                                KWD
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="LKR">
+                            <a>
+                                LKR
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="MXN">
+                            <a>
+                                MXN
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="MYR">
+                            <a>
+                                MYR
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="NZD">
+                            <a>
+                                NZD
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="PHP">
+                            <a>
+                                PHP
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="PLN">
+                            <a>
+                                PLN
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="RUB">
+                            <a>
+                                RUB
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="SAR">
+                            <a>
+                                SAR
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="SEK">
+                            <a>
+                                SEK
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="SGD">
+                            <a>
+                                SGD
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="THB">
+                            <a>
+                                THB
+                            </a>
+                        </li>
+                        <li class="wap-select_currency wap-select" data-name="UAH">
+                            <a>
+                                UAH
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a href="javascript:;" class="settings-btn">SAVE</a>
         </div>
     </div>
-
-    <script>
-        document.body.addEventListener("touchstart", function(){}, true);
-        $(function(){
-            function trim(str)
-            {
-                return str.replace(/[ ]/g,"");
-            }
-            var wapSelect = function(){
-                $(".wap-select").each(function(){
-                    $(this).click(function(){
-                        var iso_text = $(this).find("a").text();
-                        var data_name = $(this).data("name");
-                        $(this).parent().siblings().find("i").text(iso_text);
-                        $(this).parent().siblings().find("i").data("text",data_name);
-                        $(this).parent().slideUp();
-                        $(".select-btn").removeClass("show");
-                    });
+</div>
+<script>
+    document.body.addEventListener("touchstart", function(){}, true);
+    $(function(){
+        function trim(str)
+        {
+            return str.replace(/[ ]/g,"");
+        }
+        var wapSelect = function(){
+            $(".wap-select").each(function(){
+                $(this).click(function(){
+                    var iso_text = $(this).find("a").text();
+                    var data_name = $(this).data("name");
+                    $(this).parent().siblings().find("i").text(iso_text);
+                    $(this).parent().siblings().find("i").data("text",data_name);
+                    $(this).parent().slideUp();
+                    $(".select-btn").removeClass("show");
                 });
+            });
+        };
+
+        $(".settings-btn").on("click",function(){
+            var dataText = {
+                country_abbreviation:$(".country .select-btn i").data("text"),
+                language: trim($(".language .select-btn i").data("text")),
+                currency_iso_code:$(".currency .select-btn i").data("text")
             };
-
-            $(".settings-btn").on("click",function(){
-                var dataText = {
-                    country_abbreviation:$(".country .select-btn i").data("text"),
-                    language: trim($(".language .select-btn i").data("text")),
-                    currency_iso_code:$(".currency .select-btn i").data("text")
-                };
-                $.ajax({
-                    type:"POST",
-                    url:"<?php echo $this->config->domain ?>/change-global-info",
-                    data:dataText,
-                    dataType:"JSON",
-                    success:function(data){
-                        var status = data.status;
-                        if(status == "y"){
-                            location.reload();
-                        }
+            $.ajax({
+                type:"POST",
+                url:"https://www.patpat.com/change-global-info",
+                data:dataText,
+                dataType:"JSON",
+                success:function(data){
+                    var status = data.status;
+                    if(status == "y"){
+                        location.reload();
                     }
-                })
-            });
-
-
-            //监听语言切换
-            $(".select_language").click(function(){
-                var _this = this;
-                $.get('/set-language', {language:$(this).data('name')}, function(){
-                    window.location.href=$(_this).data('url');
-                });
-            });
-
-            //
-            var liLength = $(".currency-img"),
-                distanceT = -12;
-            for(var i=0; i<liLength.length; i++){
-                liLength.eq(i).css({
-                    backgroundPositionX:"0",
-                    backgroundPositionY:i*distanceT
-                })
-            }
-
-            //  新导航
-            var search_nav_data = [{"id":27,"name":"Baby & Toddlers","sort_order":0,"product_categories":"[845,846,848,849,850,851,853,854,855,856,857,858,860,861,862,863,864,865,866,867,868,869,870,872,873,875,876,877,878,881,882,884,885,886,887,889,890,891,892,893,894,895,896,897,898,900,901,903,904,905,907,908,909,911,912,913,914,915,918,919,920,921,922,923,924,925,926,927,928]","banner":"http:\/\/patpatdev.s3.amazonaws.com\/mall_category\/Baby%2520%2526%2520Toddlers\/1484106517.png","en_name":"Baby & Toddlers","son_categories":[{"category_id":843,"name":"Baby & Toddler Girl","link":"https:\/\/www.patpat.com\/category\/Baby-Toddlers\/Baby-Toddler-Girl.html"},{"category_id":879,"name":"Baby & Toddler Boy","link":"https:\/\/www.patpat.com\/category\/Baby-Toddlers\/Baby-Toddler-Boy.html"},{"category_id":906,"name":"Baby & Toddler Gear","link":"https:\/\/www.patpat.com\/category\/Baby-Toddlers\/Baby-Toddler-Gear.html"},{"category_id":916,"name":"Diapering","link":"https:\/\/www.patpat.com\/category\/Baby-Toddlers\/Diapering.html"}],"hot_categories_id":[],"category_image":"https:\/\/img.patpat.com\/web_index_diy\/582d612371a99\/1479368995.jpg","url":"https:\/\/www.patpat.com\/category\/Baby-Toddlers.html","category_href":"\/category\/Baby-Toddlers.html","category_words":"All Baby Needs","products":[{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/40157\/TAOBAO-YC-002-00001-001.jpg\/1491031936.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/Ruffled-Sleeveless-Romper-for-Baby-and-Toddler-Girls.html?color=Blue","hot_product_title":"Ruffled Romper","hot_product_subtitle":""},{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/40352\/1688-CH-001-00020-001.jpg\/1491817588.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/Angel-Wings-Tutu-One-piece-Swimsuit-in-Pink-for-Toddler-Girls.html?event_id=21001","hot_product_title":"Little Angle Swimsuit","hot_product_subtitle":""},{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/40420\/1688-HZMC-001-00004-001.jpg\/1491985264.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/HOT-Plaid-Sleeveless-Top-in-Green-for-Baby-and-Toddler-Girls.html","hot_product_title":"Adorable in Plaid","hot_product_subtitle":""}]},{"id":28,"name":"Kids","sort_order":1,"product_categories":"[932,933,934,935,936,938,939,940,941,942,943,945,946,947,948,949,950,951,952,953,954,955,956,958,959,961,962,964,965,966,967,970,971,972,973,975,976,977,978,979,980,981,982,983,984,985,987,988,990,991,992]","banner":"http:\/\/patpatdev.s3.amazonaws.com\/mall_category\/Kids\/1484106561.png","en_name":"Kids","son_categories":[{"category_id":930,"name":"Girl","link":"https:\/\/www.patpat.com\/category\/Kids\/Girl.html"},{"category_id":968,"name":"Boy","link":"https:\/\/www.patpat.com\/category\/Kids\/Boy.html"}],"hot_categories_id":[],"category_image":"https:\/\/img.patpat.com\/Test\/web_index_diy\/57a9a1e5bfb9b\/1470734821.png","url":"https:\/\/www.patpat.com\/category\/Kids.html","category_href":"\/category\/Kids.html","category_words":"For Your Kids","products":[{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/38178\/R-1688I-KLM-001-00058-022.jpg\/1489808079.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/Vintage-Sleeveless-Floral-Dress-for-Toddlers-and-Girls.html?color=Dark+Blue","hot_product_title":"Vintage Dress","hot_product_subtitle":""},{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/40346\/1688-CH-001-00014-001.jpg\/1491817567.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/Vintage-Polka-Dotted-Little-Gal-Two-piece-Swimsuit-in-Red-for-Toddler-Girl.html?event_id=21001","hot_product_title":"Polka Dotted Swimsuit","hot_product_subtitle":""},{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/38430\/1688C-HS-001-00142-001.jpg\/1488010555.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/Stylish-Ripped-Denim-Pants-for-Baby-Toddler-Boys.html","hot_product_title":"Pre-washed Jeans","hot_product_subtitle":""}]},{"id":29,"name":"Women","sort_order":2,"product_categories":"[1069,1071,1072,1073,1074,1076,1077,1078,1079,1080,1081,1083,1084,1085,1086,1087,1089,1090,1091,1092,1094,1095,1096,1098,1099,1100,1102,1103,1104,1105,1107,1108,1109,1110,1111,1112,1114,1115,1116,1118,1119,1120,1121,1122,1123,1124,1125,1127,1128,1129,1130,1131,1132,1134,1135]","banner":"http:\/\/patpatdev.s3.amazonaws.com\/mall_category\/Women\/1484106588.png","en_name":"Women","son_categories":[{"category_id":1068,"name":"Clothing","link":"https:\/\/www.patpat.com\/category\/Women\/Clothing.html"},{"category_id":1106,"name":"Accessories","link":"https:\/\/www.patpat.com\/category\/Women\/Accessories.html"},{"category_id":1113,"name":"Jewelry","link":"https:\/\/www.patpat.com\/category\/Women\/Jewelry.html"},{"category_id":1117,"name":"Bags","link":"https:\/\/www.patpat.com\/category\/Women\/Bags.html"},{"category_id":1125,"name":"Watches & Sunglasses","link":"https:\/\/www.patpat.com\/category\/Women\/Watches-Sunglasses.html"},{"category_id":1126,"name":"Beauty","link":"https:\/\/www.patpat.com\/category\/Women\/Beauty.html"},{"category_id":1133,"name":"Health Care","link":"https:\/\/www.patpat.com\/category\/Women\/Health-Care.html"}],"hot_categories_id":[],"category_image":"https:\/\/img.patpat.com\/Test\/web_index_diy\/57a9a2660a81f\/1470734950.png","url":"https:\/\/www.patpat.com\/category\/Women.html","category_href":"\/category\/Women.html","category_words":"Trendy Styles","products":[{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/38026\/T-RX-001-00111.jpg\/1487406589.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/Mom-and-Me-Matching-Striped-Maxi-Dress-in-Crimson-Price-varies-by-size.html","hot_product_title":"Mom and Me","hot_product_subtitle":""},{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/38571\/1688C-SH-003-00065.jpg\/1488191736.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/Boss-Short-Sleeve-Matching-Tee-in-White-Price-Varies-by-Size.html","hot_product_title":"Matching Tee","hot_product_subtitle":""},{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/12394\/I-MY-002-00044-001.jpg\/1461315824.jpg\/350x350","hot_product_href":"http:\/\/www.patpat.com\/product\/Royal-Golden-Synthetic-Hair-Brush-Set-Soft-Foundation-and-Eyeshadow-Brushes-Kit-with-Black-Case-12pc-set.html","hot_product_title":"Soft Makeup Brushes Set","hot_product_subtitle":""}]},{"id":26,"name":"Home & Storage","sort_order":3,"product_categories":"[1054,1055,1056,1057,1058,1060,1061,1062,1063,1064,1065,1066]","banner":"http:\/\/patpatdev.s3.amazonaws.com\/mall_category\/Home%2520%2526%2520Storage\/1484106466.png","en_name":"Home & Storage","son_categories":[{"category_id":1053,"name":"Storage & Organizers","link":"https:\/\/www.patpat.com\/category\/Home-Storage\/Storage-Organizers.html"},{"category_id":1057,"name":"Home D\u00e9cor","link":"https:\/\/www.patpat.com\/category\/Home-Storage\/Home-D%C3%A9cor.html"},{"category_id":1058,"name":"Wall D\u00e9cor","link":"https:\/\/www.patpat.com\/category\/Home-Storage\/Wall-D%C3%A9cor.html"},{"category_id":1059,"name":"Electrical Accessories","link":"https:\/\/www.patpat.com\/category\/Home-Storage\/Electrical-Accessories.html"},{"category_id":1063,"name":"Kitchen & Dinning","link":"https:\/\/www.patpat.com\/category\/Home-Storage\/Kitchen-Dinning.html"},{"category_id":1064,"name":"Bed & Bath","link":"https:\/\/www.patpat.com\/category\/Home-Storage\/Bed-Bath.html"},{"category_id":1065,"name":"Outdoors & Sports","link":"https:\/\/www.patpat.com\/category\/Home-Storage\/Outdoors-Sports.html"},{"category_id":1066,"name":"Stationery","link":"https:\/\/www.patpat.com\/category\/Home-Storage\/Stationery.html"}],"hot_categories_id":[],"category_image":"https:\/\/img.patpat.com\/Test\/web_index_diy\/57a9a39a51098\/1470735258.png","url":"https:\/\/www.patpat.com\/category\/Home-Storage.html","category_href":"\/category\/Home-Storage.html","category_words":"Household Essentials","products":[{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/33677\/1688I-XL-005-00013-001.jpg\/1474529792.jpg\/350x350","hot_product_href":"http:\/\/www.patpat.com\/product\/Blue-Sky-and-White-Clouds-Double-Layer-Hands-Free-Reversible-Umbrella.html","hot_product_title":"Sky C-Handle Umbrella","hot_product_subtitle":""},{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/16853\/1688I-WC-001-00014.jpg\/1451476371.jpg\/350x350","hot_product_href":"http:\/\/www.patpat.com\/product\/Simple-&-Practical-Linen-Laundry-Hamper-Set-3pc-set.html","hot_product_title":"Household Storage","hot_product_subtitle":""},{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/17304\/1688I-LF-002-00016-4.jpg\/1451994378.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/Adorable-Panda-Light-Lamp.html","hot_product_title":"Panda Light Lamp","hot_product_subtitle":""}]}];
-            var proTitHtml = '',proListHtml = '';
-            for( navTit in search_nav_data ){
-                proTitHtml += '<li><a class="content-tit right-arrow menu" data-id="'+ search_nav_data[navTit]["id"] +'" href="javascript:;">'+ search_nav_data[navTit]["name"] +'</a>';
-                proListHtml += '<div class="nav-pro-list" id="proNav'+ search_nav_data[navTit]["id"] +'">';
-                proListHtml += '<strong class="left-arrow">' + search_nav_data[navTit]["name"] + '</strong>';
-                var navList = search_nav_data[navTit]["son_categories"];
-                proListHtml += '<a class="border05" href="'+ search_nav_data[navTit]["category_href"] +'">All</a>';
-                for( navLists in navList ){
-                    proListHtml += '<a class="border05" href="'+ navList[navLists]["link"] +'">'+ navList[navLists]["name"] +'</a>'
                 }
-                proListHtml += '</div>';
-                proTitHtml += '</li>'
+            })
+        });
+
+
+        //监听语言切换
+        $(".select_language").click(function(){
+            var _this = this;
+            $.get('/set-language', {language:$(this).data('name')}, function(){
+                window.location.href=$(_this).data('url');
+            });
+        });
+
+        //
+        var liLength = $(".currency-img"),
+            distanceT = -12;
+        for(var i=0; i<liLength.length; i++){
+            liLength.eq(i).css({
+                backgroundPositionX:"0",
+                backgroundPositionY:i*distanceT
+            })
+        }
+
+        //  新导航
+        var search_nav_data = [{"id":27,"name":"Baby & Toddlers","sort_order":0,"product_categories":"[845,846,848,849,850,851,853,854,855,856,857,858,860,861,862,863,864,865,866,867,868,869,870,872,873,875,876,877,878,881,882,884,885,886,887,889,890,891,892,893,894,895,896,897,898,900,901,903,904,905,907,908,909,911,912,913,914,915,918,919,920,921,922,923,924,925,926,927,928]","banner":"http:\/\/patpatdev.s3.amazonaws.com\/mall_category\/Baby%2520%2526%2520Toddlers\/1484106517.png","en_name":"Baby & Toddlers","son_categories":[{"category_id":843,"name":"Baby & Toddler Girl","link":"https:\/\/www.patpat.com\/category\/Baby-Toddlers\/Baby-Toddler-Girl.html"},{"category_id":879,"name":"Baby & Toddler Boy","link":"https:\/\/www.patpat.com\/category\/Baby-Toddlers\/Baby-Toddler-Boy.html"},{"category_id":906,"name":"Baby & Toddler Gear","link":"https:\/\/www.patpat.com\/category\/Baby-Toddlers\/Baby-Toddler-Gear.html"},{"category_id":916,"name":"Diapering","link":"https:\/\/www.patpat.com\/category\/Baby-Toddlers\/Diapering.html"}],"hot_categories_id":[],"category_image":"https:\/\/img.patpat.com\/web_index_diy\/582d612371a99\/1479368995.jpg","url":"https:\/\/www.patpat.com\/category\/Baby-Toddlers.html","category_href":"\/category\/Baby-Toddlers.html","category_words":"All Baby Needs","products":[{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/40157\/TAOBAO-YC-002-00001-001.jpg\/1491031936.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/Ruffled-Sleeveless-Romper-for-Baby-and-Toddler-Girls.html?color=Blue","hot_product_title":"Ruffled Romper","hot_product_subtitle":""},{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/40352\/1688-CH-001-00020-001.jpg\/1491817588.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/Angel-Wings-Tutu-One-piece-Swimsuit-in-Pink-for-Toddler-Girls.html?event_id=21001","hot_product_title":"Little Angle Swimsuit","hot_product_subtitle":""},{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/40420\/1688-HZMC-001-00004-001.jpg\/1491985264.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/HOT-Plaid-Sleeveless-Top-in-Green-for-Baby-and-Toddler-Girls.html","hot_product_title":"Adorable in Plaid","hot_product_subtitle":""}]},{"id":28,"name":"Kids","sort_order":1,"product_categories":"[932,933,934,935,936,938,939,940,941,942,943,945,946,947,948,949,950,951,952,953,954,955,956,958,959,961,962,964,965,966,967,970,971,972,973,975,976,977,978,979,980,981,982,983,984,985,987,988,990,991,992]","banner":"http:\/\/patpatdev.s3.amazonaws.com\/mall_category\/Kids\/1484106561.png","en_name":"Kids","son_categories":[{"category_id":930,"name":"Girl","link":"https:\/\/www.patpat.com\/category\/Kids\/Girl.html"},{"category_id":968,"name":"Boy","link":"https:\/\/www.patpat.com\/category\/Kids\/Boy.html"}],"hot_categories_id":[],"category_image":"https:\/\/img.patpat.com\/Test\/web_index_diy\/57a9a1e5bfb9b\/1470734821.png","url":"https:\/\/www.patpat.com\/category\/Kids.html","category_href":"\/category\/Kids.html","category_words":"For Your Kids","products":[{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/38178\/R-1688I-KLM-001-00058-022.jpg\/1489808079.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/Vintage-Sleeveless-Floral-Dress-for-Toddlers-and-Girls.html?color=Dark+Blue","hot_product_title":"Vintage Dress","hot_product_subtitle":""},{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/40346\/1688-CH-001-00014-001.jpg\/1491817567.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/Vintage-Polka-Dotted-Little-Gal-Two-piece-Swimsuit-in-Red-for-Toddler-Girl.html?event_id=21001","hot_product_title":"Polka Dotted Swimsuit","hot_product_subtitle":""},{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/38430\/1688C-HS-001-00142-001.jpg\/1488010555.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/Stylish-Ripped-Denim-Pants-for-Baby-Toddler-Boys.html","hot_product_title":"Pre-washed Jeans","hot_product_subtitle":""}]},{"id":29,"name":"Women","sort_order":2,"product_categories":"[1069,1071,1072,1073,1074,1076,1077,1078,1079,1080,1081,1083,1084,1085,1086,1087,1089,1090,1091,1092,1094,1095,1096,1098,1099,1100,1102,1103,1104,1105,1107,1108,1109,1110,1111,1112,1114,1115,1116,1118,1119,1120,1121,1122,1123,1124,1125,1127,1128,1129,1130,1131,1132,1134,1135]","banner":"http:\/\/patpatdev.s3.amazonaws.com\/mall_category\/Women\/1484106588.png","en_name":"Women","son_categories":[{"category_id":1068,"name":"Clothing","link":"https:\/\/www.patpat.com\/category\/Women\/Clothing.html"},{"category_id":1106,"name":"Accessories","link":"https:\/\/www.patpat.com\/category\/Women\/Accessories.html"},{"category_id":1113,"name":"Jewelry","link":"https:\/\/www.patpat.com\/category\/Women\/Jewelry.html"},{"category_id":1117,"name":"Bags","link":"https:\/\/www.patpat.com\/category\/Women\/Bags.html"},{"category_id":1125,"name":"Watches & Sunglasses","link":"https:\/\/www.patpat.com\/category\/Women\/Watches-Sunglasses.html"},{"category_id":1126,"name":"Beauty","link":"https:\/\/www.patpat.com\/category\/Women\/Beauty.html"},{"category_id":1133,"name":"Health Care","link":"https:\/\/www.patpat.com\/category\/Women\/Health-Care.html"}],"hot_categories_id":[],"category_image":"https:\/\/img.patpat.com\/Test\/web_index_diy\/57a9a2660a81f\/1470734950.png","url":"https:\/\/www.patpat.com\/category\/Women.html","category_href":"\/category\/Women.html","category_words":"Trendy Styles","products":[{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/38026\/T-RX-001-00111.jpg\/1487406589.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/Mom-and-Me-Matching-Striped-Maxi-Dress-in-Crimson-Price-varies-by-size.html","hot_product_title":"Mom and Me","hot_product_subtitle":""},{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/38571\/1688C-SH-003-00065.jpg\/1488191736.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/Boss-Short-Sleeve-Matching-Tee-in-White-Price-Varies-by-Size.html","hot_product_title":"Matching Tee","hot_product_subtitle":""},{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/12394\/I-MY-002-00044-001.jpg\/1461315824.jpg\/350x350","hot_product_href":"http:\/\/www.patpat.com\/product\/Royal-Golden-Synthetic-Hair-Brush-Set-Soft-Foundation-and-Eyeshadow-Brushes-Kit-with-Black-Case-12pc-set.html","hot_product_title":"Soft Makeup Brushes Set","hot_product_subtitle":""}]},{"id":26,"name":"Home & Storage","sort_order":3,"product_categories":"[1054,1055,1056,1057,1058,1060,1061,1062,1063,1064,1065,1066]","banner":"http:\/\/patpatdev.s3.amazonaws.com\/mall_category\/Home%2520%2526%2520Storage\/1484106466.png","en_name":"Home & Storage","son_categories":[{"category_id":1053,"name":"Storage & Organizers","link":"https:\/\/www.patpat.com\/category\/Home-Storage\/Storage-Organizers.html"},{"category_id":1057,"name":"Home D\u00e9cor","link":"https:\/\/www.patpat.com\/category\/Home-Storage\/Home-D%C3%A9cor.html"},{"category_id":1058,"name":"Wall D\u00e9cor","link":"https:\/\/www.patpat.com\/category\/Home-Storage\/Wall-D%C3%A9cor.html"},{"category_id":1059,"name":"Electrical Accessories","link":"https:\/\/www.patpat.com\/category\/Home-Storage\/Electrical-Accessories.html"},{"category_id":1063,"name":"Kitchen & Dinning","link":"https:\/\/www.patpat.com\/category\/Home-Storage\/Kitchen-Dinning.html"},{"category_id":1064,"name":"Bed & Bath","link":"https:\/\/www.patpat.com\/category\/Home-Storage\/Bed-Bath.html"},{"category_id":1065,"name":"Outdoors & Sports","link":"https:\/\/www.patpat.com\/category\/Home-Storage\/Outdoors-Sports.html"},{"category_id":1066,"name":"Stationery","link":"https:\/\/www.patpat.com\/category\/Home-Storage\/Stationery.html"}],"hot_categories_id":[],"category_image":"https:\/\/img.patpat.com\/Test\/web_index_diy\/57a9a39a51098\/1470735258.png","url":"https:\/\/www.patpat.com\/category\/Home-Storage.html","category_href":"\/category\/Home-Storage.html","category_words":"Household Essentials","products":[{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/33677\/1688I-XL-005-00013-001.jpg\/1474529792.jpg\/350x350","hot_product_href":"http:\/\/www.patpat.com\/product\/Blue-Sky-and-White-Clouds-Double-Layer-Hands-Free-Reversible-Umbrella.html","hot_product_title":"Sky C-Handle Umbrella","hot_product_subtitle":""},{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/16853\/1688I-WC-001-00014.jpg\/1451476371.jpg\/350x350","hot_product_href":"http:\/\/www.patpat.com\/product\/Simple-&-Practical-Linen-Laundry-Hamper-Set-3pc-set.html","hot_product_title":"Household Storage","hot_product_subtitle":""},{"hot_product_img_url":"https:\/\/cdn.patpat.com\/Product\/17304\/1688I-LF-002-00016-4.jpg\/1451994378.jpg\/350x350","hot_product_href":"https:\/\/www.patpat.com\/product\/Adorable-Panda-Light-Lamp.html","hot_product_title":"Panda Light Lamp","hot_product_subtitle":""}]}];
+        var proTitHtml = '',proListHtml = '';
+        for( navTit in search_nav_data ){
+            proTitHtml += '<li><a class="content-tit right-arrow menu" data-id="'+ search_nav_data[navTit]["id"] +'" href="javascript:;">'+ search_nav_data[navTit]["name"] +'</a>';
+            proListHtml += '<div class="nav-pro-list" id="proNav'+ search_nav_data[navTit]["id"] +'">';
+            proListHtml += '<strong class="left-arrow">' + search_nav_data[navTit]["name"] + '</strong>';
+            var navList = search_nav_data[navTit]["son_categories"];
+            proListHtml += '<a class="border05" href="'+ search_nav_data[navTit]["category_href"] +'">All</a>';
+            for( navLists in navList ){
+                proListHtml += '<a class="border05" href="'+ navList[navLists]["link"] +'">'+ navList[navLists]["name"] +'</a>'
             }
-            $(".products-nav").html("<ul>"+ proTitHtml +"</ul>");
-            $(".product-nav").html(proListHtml);
+            proListHtml += '</div>';
+            proTitHtml += '</li>'
+        }
+        $(".products-nav").html("<ul>"+ proTitHtml +"</ul>");
+        $(".product-nav").html(proListHtml);
 
-            $(".nav-sign span").on("click",function(){
-                rightShow($("#user-nav"));
-                $(".nav-below-fixed").css("background","#f1f3f2");
-                $("body").scrollTop(0);
+        $(".nav-sign span").on("click",function(){
+            rightShow($("#user-nav"));
+            $(".nav-below-fixed").css("background","#f1f3f2");
+            $("body").scrollTop(0);
 
-            });
+        });
 
-            /*异步加载国家*/
-            var choiceCountry = $(".choice-country");
-            var countryHtml = '';
-            var countrys = [{"id":1,"country_name":"United States","country_abbreviation":"US","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6beda1e35\/1491823597.png"},{"id":2,"country_name":"United Kingdom","country_abbreviation":"GB","iso_code":"GBP","symbol_display":"\u00a3","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6c3135922\/1491823665.png"},{"id":16,"country_name":"Italy","country_abbreviation":"IT","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6d759eb56\/1491823989.png"},{"id":4,"country_name":"Australia","country_abbreviation":"AU","iso_code":"AUD","symbol_display":"AUD","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6c7389f2b\/1491823731.png"},{"id":6,"country_name":"Germany","country_abbreviation":"DE","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6cc142a69\/1491823809.png"},{"id":38,"country_name":"Argentina","country_abbreviation":"AR","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb28763c354\/1491806326.png"},{"id":39,"country_name":"Austria","country_abbreviation":"AT","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb2a8f35b62\/1491806863.png"},{"id":40,"country_name":"Belarus","country_abbreviation":"BY","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb2d5d37e6c\/1491807581.png"},{"id":9,"country_name":"Belgium","country_abbreviation":"BE","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6ce75d173\/1491823847.png"},{"id":30,"country_name":"Bengal","country_abbreviation":"BD","iso_code":"BDT","symbol_display":"BDT","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6e8a142e4\/1491824266.png"},{"id":41,"country_name":"Brazil","country_abbreviation":"BR","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb3542030a2\/1491809602.png"},{"id":42,"country_name":"Bulgaria","country_abbreviation":"BG","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb3c235dfc4\/1491811363.png"},{"id":3,"country_name":"Canada","country_abbreviation":"CA","iso_code":"CAD","symbol_display":"CAD","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6c56cee3b\/1491823702.png"},{"id":43,"country_name":"Croatia","country_abbreviation":"HR","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb415f2af3f\/1491812703.png"},{"id":44,"country_name":"Cyprus","country_abbreviation":"CY","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb456aa290f\/1491813738.png"},{"id":45,"country_name":"Czech Republic","country_abbreviation":"CZ","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb45c301c2d\/1491813827.png"},{"id":46,"country_name":"Denmark","country_abbreviation":"DK","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb47b7578e8\/1491814327.png"},{"id":47,"country_name":"Egypt","country_abbreviation":"EG","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb4844b11da\/1491814468.png"},{"id":48,"country_name":"Estonia","country_abbreviation":"EE","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb489507e99\/1491814549.png"},{"id":49,"country_name":"Finland","country_abbreviation":"FI","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb48e2a0afc\/1491814626.png"},{"id":7,"country_name":"France","country_abbreviation":"FR","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6cd626b72\/1491823830.png"},{"id":50,"country_name":"Greece","country_abbreviation":"GR","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb490de44e0\/1491814669.png"},{"id":51,"country_name":"Hong Kong","country_abbreviation":"HK","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb55eeea5a7\/1491817966.png"},{"id":52,"country_name":"Hungary","country_abbreviation":"HU","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb5a1401867\/1491819028.png"},{"id":20,"country_name":"India","country_abbreviation":"IN","iso_code":"INR","symbol_display":"INR","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6dffd4033\/1491824127.png"},{"id":23,"country_name":"Indonesia","country_abbreviation":"ID","iso_code":"IDR","symbol_display":"IDR","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6e0e52761\/1491824142.png"},{"id":17,"country_name":"Ireland","country_abbreviation":"IE","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6dc7bbe6e\/1491824071.png"},{"id":29,"country_name":"Israel","country_abbreviation":"IL","iso_code":"ILS","symbol_display":"ILS","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6e72e6eaa\/1491824242.png"},{"id":53,"country_name":"Japan","country_abbreviation":"JP","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb66d7d2d11\/1491822295.png"},{"id":28,"country_name":"Jordan","country_abbreviation":"JO","iso_code":"JOD","symbol_display":"JOD","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6e6301b11\/1491824227.png"},{"id":27,"country_name":"Kuwait","country_abbreviation":"KW","iso_code":"KWD","symbol_display":"KWD","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6e4ea4058\/1491824206.png"},{"id":54,"country_name":"Latvia","country_abbreviation":"LV","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb67c0be4b7\/1491822528.png"},{"id":55,"country_name":"Lithuania","country_abbreviation":"LT","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb680389e8f\/1491822595.png"},{"id":56,"country_name":"Luxembourg","country_abbreviation":"LU","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb684a19059\/1491822666.png"},{"id":19,"country_name":"Malaysia","country_abbreviation":"MY","iso_code":"MYR","symbol_display":"RM","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6deebd825\/1491824110.png"},{"id":57,"country_name":"Malta","country_abbreviation":"MT","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb68882183f\/1491822728.png"},{"id":37,"country_name":"Mexico","country_abbreviation":"MX","iso_code":"MXN","symbol_display":"MEX","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6f246e6ba\/1491824420.png"},{"id":31,"country_name":"Netherlands","country_abbreviation":"NL","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6eac05949\/1491824300.png"},{"id":5,"country_name":"New Zealand","country_abbreviation":"NZ","iso_code":"NZD","symbol_display":"NZD","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6caacd364\/1491823786.png"},{"id":58,"country_name":"Norway","country_abbreviation":"NO","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb69141e52a\/1491822868.png"},{"id":59,"country_name":"Oman","country_abbreviation":"OM","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb698bd6268\/1491822987.png"},{"id":25,"country_name":"Philippines","country_abbreviation":"PH","iso_code":"PHP","symbol_display":"PHP","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6e32364d5\/1491824178.png"},{"id":15,"country_name":"Poland","country_abbreviation":"PL","iso_code":"PLN","symbol_display":"PLN","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6d656518d\/1491823973.png"},{"id":12,"country_name":"Portugal","country_abbreviation":"PT","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6d2986677\/1491823913.png"},{"id":60,"country_name":"Qatar","country_abbreviation":"QA","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6a0b237c5\/1491823115.png"},{"id":61,"country_name":"Romania","country_abbreviation":"RO","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6a8811e8b\/1491823240.png"},{"id":32,"country_name":"Russian Federation","country_abbreviation":"RU","iso_code":"RUB","symbol_display":"RUB","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6ec010199\/1491824320.png"},{"id":33,"country_name":"Saudi Arabia","country_abbreviation":"SA","iso_code":"SAR","symbol_display":"SAR","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6ed592459\/1491824341.png"},{"id":62,"country_name":"Serbia","country_abbreviation":"RS","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6bc188987\/1491823553.png"},{"id":18,"country_name":"Singapore","country_abbreviation":"SG","iso_code":"SGD","symbol_display":"SGD","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6dd98e265\/1491824089.png"},{"id":63,"country_name":"Slovakia","country_abbreviation":"SK","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58ecb612bf350\/1491908114.png"},{"id":64,"country_name":"Slovenia","country_abbreviation":"SI","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58ecb67e20c8c\/1491908222.png"},{"id":68,"country_name":"South Africa","country_abbreviation":"ZA","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58ecbd4625e3b\/1491909958.png"},{"id":11,"country_name":"Spain","country_abbreviation":"ES","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6d11c44fa\/1491823889.png"},{"id":34,"country_name":"Sri Lanka","country_abbreviation":"LKR","iso_code":"LKR","symbol_display":"LKR","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6eea61078\/1491824362.png"},{"id":14,"country_name":"Sweden","country_abbreviation":"SE","iso_code":"SEK","symbol_display":"SEK","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6d53aeede\/1491823955.png"},{"id":65,"country_name":"Switzerland","country_abbreviation":"CH","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58ecb704cde48\/1491908356.png"},{"id":66,"country_name":"Taiwan","country_abbreviation":"TW","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58ecb733476df\/1491908403.png"},{"id":24,"country_name":"Thailand","country_abbreviation":"TH","iso_code":"THB","symbol_display":"THB","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6e20ca060\/1491824160.png"},{"id":67,"country_name":"Turkey","country_abbreviation":"TR","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58ecb76317c07\/1491908451.png"},{"id":35,"country_name":"Ukraine","country_abbreviation":"UA","iso_code":"UAH","symbol_display":"UAH","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6efd9d7b3\/1491824381.png"},{"id":36,"country_name":"United Arab Emirates","country_abbreviation":"AE","iso_code":"AED","symbol_display":"AED","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6f0eb3e87\/1491824398.png"}];
-            var countrysLen = countrys.length;
-            $(".nav-settings a").on("click",function(){
-                rightShow($(".nav-setup"));
-                console.log(choiceCountry.children().length);
-                if(choiceCountry.children().length == 0){
-                    for(var i=0; i<countrysLen; i++){
-                        countryHtml += '<li  class="wap-select_country wap-select flag" data-name="'+countrys[i].country_abbreviation+'">'
-                        +'<a>'
-                        +'<img src="'+countrys[i].national_flag +'">'+countrys[i].country_name+''
-                        +'</a>'
-                        +'</li>';
-                    }
-                    choiceCountry.append(countryHtml);
+        /*异步加载国家*/
+        var choiceCountry = $(".choice-country");
+        var countryHtml = '';
+        var countrys = [{"id":1,"country_name":"United States","country_abbreviation":"US","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6beda1e35\/1491823597.png"},{"id":2,"country_name":"United Kingdom","country_abbreviation":"GB","iso_code":"GBP","symbol_display":"\u00a3","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6c3135922\/1491823665.png"},{"id":16,"country_name":"Italy","country_abbreviation":"IT","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6d759eb56\/1491823989.png"},{"id":4,"country_name":"Australia","country_abbreviation":"AU","iso_code":"AUD","symbol_display":"AUD","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6c7389f2b\/1491823731.png"},{"id":6,"country_name":"Germany","country_abbreviation":"DE","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6cc142a69\/1491823809.png"},{"id":38,"country_name":"Argentina","country_abbreviation":"AR","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb28763c354\/1491806326.png"},{"id":39,"country_name":"Austria","country_abbreviation":"AT","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb2a8f35b62\/1491806863.png"},{"id":40,"country_name":"Belarus","country_abbreviation":"BY","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb2d5d37e6c\/1491807581.png"},{"id":9,"country_name":"Belgium","country_abbreviation":"BE","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6ce75d173\/1491823847.png"},{"id":30,"country_name":"Bengal","country_abbreviation":"BD","iso_code":"BDT","symbol_display":"BDT","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6e8a142e4\/1491824266.png"},{"id":41,"country_name":"Brazil","country_abbreviation":"BR","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb3542030a2\/1491809602.png"},{"id":42,"country_name":"Bulgaria","country_abbreviation":"BG","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb3c235dfc4\/1491811363.png"},{"id":3,"country_name":"Canada","country_abbreviation":"CA","iso_code":"CAD","symbol_display":"CAD","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6c56cee3b\/1491823702.png"},{"id":43,"country_name":"Croatia","country_abbreviation":"HR","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb415f2af3f\/1491812703.png"},{"id":44,"country_name":"Cyprus","country_abbreviation":"CY","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb456aa290f\/1491813738.png"},{"id":45,"country_name":"Czech Republic","country_abbreviation":"CZ","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb45c301c2d\/1491813827.png"},{"id":46,"country_name":"Denmark","country_abbreviation":"DK","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb47b7578e8\/1491814327.png"},{"id":47,"country_name":"Egypt","country_abbreviation":"EG","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb4844b11da\/1491814468.png"},{"id":48,"country_name":"Estonia","country_abbreviation":"EE","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb489507e99\/1491814549.png"},{"id":49,"country_name":"Finland","country_abbreviation":"FI","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb48e2a0afc\/1491814626.png"},{"id":7,"country_name":"France","country_abbreviation":"FR","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6cd626b72\/1491823830.png"},{"id":50,"country_name":"Greece","country_abbreviation":"GR","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb490de44e0\/1491814669.png"},{"id":51,"country_name":"Hong Kong","country_abbreviation":"HK","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb55eeea5a7\/1491817966.png"},{"id":52,"country_name":"Hungary","country_abbreviation":"HU","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb5a1401867\/1491819028.png"},{"id":20,"country_name":"India","country_abbreviation":"IN","iso_code":"INR","symbol_display":"INR","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6dffd4033\/1491824127.png"},{"id":23,"country_name":"Indonesia","country_abbreviation":"ID","iso_code":"IDR","symbol_display":"IDR","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6e0e52761\/1491824142.png"},{"id":17,"country_name":"Ireland","country_abbreviation":"IE","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6dc7bbe6e\/1491824071.png"},{"id":29,"country_name":"Israel","country_abbreviation":"IL","iso_code":"ILS","symbol_display":"ILS","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6e72e6eaa\/1491824242.png"},{"id":53,"country_name":"Japan","country_abbreviation":"JP","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb66d7d2d11\/1491822295.png"},{"id":28,"country_name":"Jordan","country_abbreviation":"JO","iso_code":"JOD","symbol_display":"JOD","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6e6301b11\/1491824227.png"},{"id":27,"country_name":"Kuwait","country_abbreviation":"KW","iso_code":"KWD","symbol_display":"KWD","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6e4ea4058\/1491824206.png"},{"id":54,"country_name":"Latvia","country_abbreviation":"LV","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb67c0be4b7\/1491822528.png"},{"id":55,"country_name":"Lithuania","country_abbreviation":"LT","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb680389e8f\/1491822595.png"},{"id":56,"country_name":"Luxembourg","country_abbreviation":"LU","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb684a19059\/1491822666.png"},{"id":19,"country_name":"Malaysia","country_abbreviation":"MY","iso_code":"MYR","symbol_display":"RM","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6deebd825\/1491824110.png"},{"id":57,"country_name":"Malta","country_abbreviation":"MT","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb68882183f\/1491822728.png"},{"id":37,"country_name":"Mexico","country_abbreviation":"MX","iso_code":"MXN","symbol_display":"MEX","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6f246e6ba\/1491824420.png"},{"id":31,"country_name":"Netherlands","country_abbreviation":"NL","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6eac05949\/1491824300.png"},{"id":5,"country_name":"New Zealand","country_abbreviation":"NZ","iso_code":"NZD","symbol_display":"NZD","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6caacd364\/1491823786.png"},{"id":58,"country_name":"Norway","country_abbreviation":"NO","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb69141e52a\/1491822868.png"},{"id":59,"country_name":"Oman","country_abbreviation":"OM","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb698bd6268\/1491822987.png"},{"id":25,"country_name":"Philippines","country_abbreviation":"PH","iso_code":"PHP","symbol_display":"PHP","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6e32364d5\/1491824178.png"},{"id":15,"country_name":"Poland","country_abbreviation":"PL","iso_code":"PLN","symbol_display":"PLN","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6d656518d\/1491823973.png"},{"id":12,"country_name":"Portugal","country_abbreviation":"PT","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6d2986677\/1491823913.png"},{"id":60,"country_name":"Qatar","country_abbreviation":"QA","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6a0b237c5\/1491823115.png"},{"id":61,"country_name":"Romania","country_abbreviation":"RO","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6a8811e8b\/1491823240.png"},{"id":32,"country_name":"Russian Federation","country_abbreviation":"RU","iso_code":"RUB","symbol_display":"RUB","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6ec010199\/1491824320.png"},{"id":33,"country_name":"Saudi Arabia","country_abbreviation":"SA","iso_code":"SAR","symbol_display":"SAR","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6ed592459\/1491824341.png"},{"id":62,"country_name":"Serbia","country_abbreviation":"RS","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6bc188987\/1491823553.png"},{"id":18,"country_name":"Singapore","country_abbreviation":"SG","iso_code":"SGD","symbol_display":"SGD","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6dd98e265\/1491824089.png"},{"id":63,"country_name":"Slovakia","country_abbreviation":"SK","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58ecb612bf350\/1491908114.png"},{"id":64,"country_name":"Slovenia","country_abbreviation":"SI","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58ecb67e20c8c\/1491908222.png"},{"id":68,"country_name":"South Africa","country_abbreviation":"ZA","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58ecbd4625e3b\/1491909958.png"},{"id":11,"country_name":"Spain","country_abbreviation":"ES","iso_code":"EUR","symbol_display":"\u20ac","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6d11c44fa\/1491823889.png"},{"id":34,"country_name":"Sri Lanka","country_abbreviation":"LKR","iso_code":"LKR","symbol_display":"LKR","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6eea61078\/1491824362.png"},{"id":14,"country_name":"Sweden","country_abbreviation":"SE","iso_code":"SEK","symbol_display":"SEK","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6d53aeede\/1491823955.png"},{"id":65,"country_name":"Switzerland","country_abbreviation":"CH","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58ecb704cde48\/1491908356.png"},{"id":66,"country_name":"Taiwan","country_abbreviation":"TW","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58ecb733476df\/1491908403.png"},{"id":24,"country_name":"Thailand","country_abbreviation":"TH","iso_code":"THB","symbol_display":"THB","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6e20ca060\/1491824160.png"},{"id":67,"country_name":"Turkey","country_abbreviation":"TR","iso_code":"USD","symbol_display":"$","national_flag":"https:\/\/img.patpat.com\/national_flag\/58ecb76317c07\/1491908451.png"},{"id":35,"country_name":"Ukraine","country_abbreviation":"UA","iso_code":"UAH","symbol_display":"UAH","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6efd9d7b3\/1491824381.png"},{"id":36,"country_name":"United Arab Emirates","country_abbreviation":"AE","iso_code":"AED","symbol_display":"AED","national_flag":"https:\/\/img.patpat.com\/national_flag\/58eb6f0eb3e87\/1491824398.png"}];
+        var countrysLen = countrys.length;
+        $(".nav-settings a").on("click",function(){
+            rightShow($(".nav-setup"));
+            console.log(choiceCountry.children().length);
+            if(choiceCountry.children().length == 0){
+                for(var i=0; i<countrysLen; i++){
+                    countryHtml += '<li  class="wap-select_country wap-select flag" data-name="'+countrys[i].country_abbreviation+'">'
+                    +'<a>'
+                    +'<img src="'+countrys[i].national_flag +'">'+countrys[i].country_name+''
+                    +'</a>'
+                    +'</li>';
                 }
-                wapSelect();
-                $(".nav-below-fixed").css("background","#f1f3f2");
-                $("body").scrollTop(0);
-            });
-
-            $(".products-nav a").on("click",function(){
-                var idText = $(this).data("id");
-                rightShow($(".product-nav"));
-                $("#proNav"+idText).stop().show();
-                $(".nav-below-fixed").css("background","#f1f3f2 ");
-                $("body").scrollTop(0);
-            });
-
-            $(".right-hide strong").on("click",function(){
-                rightHide($(".right-hide"));
-                $(this).parent(".nav-pro-list").stop().hide(500);
-                $(".nav-below-fixed").css("background","#fff ");
-            });
-
-            $(".select-btn").on("click",function(){
-                if( !$(this).hasClass("show") ){
-                    $(this).next().stop().slideDown();
-                    $(this).addClass("show");
-                    $(this).parents(".setup-choice").siblings().find(".select-btn").next().slideUp();
-                    $(this).parents(".setup-choice").siblings().find(".select-btn").removeClass("show");
-                }else{
-                    $(this).next().stop().slideUp();
-                    $(this).removeClass("show");
-                }
-            });
-
-
-            var countryImg =$("#country-img").data("class");
-            $(".nav-settings i").addClass(trim(countryImg));
-
-            function rightShow(show){
-                show.animate({
-                    left:'0'
-                });
+                choiceCountry.append(countryHtml);
             }
-            function rightHide(hide){
-                hide.animate({
-                    left:'100%'
-                });
+            wapSelect();
+            $(".nav-below-fixed").css("background","#f1f3f2");
+            $("body").scrollTop(0);
+        });
+
+        $(".products-nav a").on("click",function(){
+            var idText = $(this).data("id");
+            rightShow($(".product-nav"));
+            $("#proNav"+idText).stop().show();
+            $(".nav-below-fixed").css("background","#f1f3f2 ");
+            $("body").scrollTop(0);
+        });
+
+        $(".right-hide strong").on("click",function(){
+            rightHide($(".right-hide"));
+            $(this).parent(".nav-pro-list").stop().hide(500);
+            $(".nav-below-fixed").css("background","#fff ");
+        });
+
+        $(".select-btn").on("click",function(){
+            if( !$(this).hasClass("show") ){
+                $(this).next().stop().slideDown();
+                $(this).addClass("show");
+                $(this).parents(".setup-choice").siblings().find(".select-btn").next().slideUp();
+                $(this).parents(".setup-choice").siblings().find(".select-btn").removeClass("show");
+            }else{
+                $(this).next().stop().slideUp();
+                $(this).removeClass("show");
             }
         });
 
 
-    </script>
+        var countryImg =$("#country-img").data("class");
+        $(".nav-settings i").addClass(trim(countryImg));
+
+        function rightShow(show){
+            show.animate({
+                left:'0'
+            });
+        }
+        function rightHide(hide){
+            hide.animate({
+                left:'100%'
+            });
+        }
+    });
+
+
+
+
+
+</script>
 
 <div class="canvas" id="canvas">
 

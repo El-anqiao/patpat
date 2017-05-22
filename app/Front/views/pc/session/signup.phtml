@@ -54,3 +54,225 @@
     </form>
 
 </div>
+
+<?php $this->assets->outputCss(); echo $this->getContent() ?>
+<?php echo $this->flashSession->output() ?>
+<!-- site main -->
+
+
+<main id="login-alter" class="padded padded-login small-padded-register site-top-activity">
+    <div class="container-inner clearfix">
+        <section class="box-padded">
+            <form id="gform_2">
+                <?php echo $form->render("csrf", array("value" => $this->security->getToken())) ?>
+                <input type="hidden" name="user_token" value=""/>
+
+                <h2 class="sub-title sub-title-top font-regular">New to PatPat? <a href="login">Sign In</a></h2>
+                <div class="form-group form-group-email">
+                    <label>First Name</label>
+                    <input type="text" name="first_name" class="form-control register" placeholder=""/>
+                    <span style="display: none">First Name is required</span>
+                </div>
+
+                <div class="form-group form-group-email">
+                    <label>Last Name</label>
+                    <input type="text" name="last_name" class="form-control register" placeholder=""/>
+                    <span style="display: none">Last Name is required</span>
+                </div>
+
+                <div class="form-group form-group-email">
+                    <label>Email Address</label>
+                    <input type="text" name="email" class="form-control register" value=""/>
+                    <span style="display: none">Email Address is required</span>
+                </div>
+
+                <div class="form-group form-group-password">
+                    <label>Password</label>
+                    <input type="password" name="password" class="form-control register"
+                           placeholder="min 6 characters"/>
+                    <span style="display: none">Password is required</span>
+                </div>
+                <br />
+                <p class="text-center text-right-bottom">
+                    <input id="register_btn" class="btn btn-primary btn-lg btn-block radius"
+                           type="button" value="Join Now" />
+                </p>
+
+                <p class="text-center text-muted protocol">
+                    By joining, you agree to our <br /><a href="terms">Terms of Service</a> and <a href="privacy">Privacy Policy</a>.
+
+                    <!-- By joining, you agree to our
+                             <a href="/terms" class="text-muted"><u>Terms of Service</u></a> and
+                             <a href="/privacy" class="text-muted"><u>Privacy Policy</u></a>. -->
+                </p>
+            </form>
+
+        </section>
+
+    </div>
+
+</main>
+<!-- site main -->
+
+
+<script>
+    //google track register
+    /* <![CDATA[ /
+     var google_conversion_id = 950786972;
+     var google_conversion_language = "en";
+     var google_conversion_format = "3";
+     var google_conversion_color = "ffffff";
+     var google_conversion_label = "c-M1CNaCv14QnLevxQM";
+     var google_remarketing_only = false;
+     / ]]> */
+    $(document).on("click", "#register_btn", function () {
+        var flag = 0;
+        $("input.register").each(function () {
+            var _this = $(this);
+            if (_this.val() == "") {
+                if (_this.attr("name") == "email"){
+                    _this.next("span").html('Email Address is required');
+                }
+                if (_this.attr("name") == "password"){
+                    _this.next("span").html('Password is required');
+                }
+                _this.next("span").attr("style", "color:red");
+                flag = 1;
+            }else {
+
+                if (_this.attr("name") == "first_name" || _this.attr("name") == "last_name") {
+                    if (form_at_script(_this.val())){
+                        flag = 1;
+                        sweetAlert("Oops", "Input text cannot contain special characters", "error");
+                    }
+                }else if (_this.attr("name") == "email"){
+                    var emailVal = _this.val();
+                    if(!isEmail(emailVal)){
+                        flag = 1;
+                        _this.next("span").attr("style", "color:red");
+                        _this.next("span").html('Email Address should be in format you@yourdomain.com');
+                    }else {
+                        _this.next("span").attr("style", "display:none");
+                    }
+                }else if (_this.attr("name") == "password"){
+                    var passwordVal = _this.val();
+                    if (passwordVal.length<6){
+                        flag = 1;
+                        _this.next("span").attr("style", "color:red");
+                        _this.next("span").html('Password length should be minimum 6 characters');
+                    }else {
+                        _this.next("span").attr("style", "display:none");
+                    }
+                }else {
+                    _this.next("span").attr("style", "display:none");
+                }
+            }
+        });
+        if (flag == 1) {
+            return;
+        } else {
+            var data = $("#gform_2").serialize();
+            var data_mailchimp = $("#gform_2").serialize();
+            var temporary_email = $("input[name='email']").val();
+            $(this).text('Loading').attr('disabled', true);
+            $.ajax({
+                method: "post",
+                url: "https://www.patpat.com/register",
+                data: data,
+                success: function (data, status) {
+                    if (data.status == true) {
+                        patpatMailChimpPostData(data_mailchimp);
+                        swal({
+                            title: "Registration Succeeded!",
+                            type: "success",
+                            confirmButtonText: "Please Sign In"
+                        }, function () {
+                            window.location = "https://www.patpat.com/login?refer=";
+                        });
+                    } else {
+                        sweetAlert("Oops", data.message, "error");
+                    }
+                }, failure: function (data) {
+                    sweetAlert("Oops", "server error 500!", "error");
+                }, complete: function () {
+                    $('#register_btn').text('auth.join_no').attr('disabled', false);
+                }
+            });
+
+        }
+    });
+
+    $(document).on("click", "#sign_in_btn", function () {
+        var flag = 0;
+        $("input.login_input_text").each(function () {
+            var _this = $(this);
+            _this.next('p').remove();
+            if (_this.val() == "") {
+                flag = 1;
+                if (_this.attr("name") == "email"){
+                    _this.next("span").html('Email Address is required');
+                } else {
+                    _this.next("span").html('Password is required');
+                }
+                _this.next("span").attr("style", "color:red");
+            } else {
+                if (_this.attr("name") == "email") {
+                    var emailVal = _this.val();
+                    if (!isEmail(emailVal)) {
+                        flag = 1;
+                        _this.next("span").attr("style", "color:red");
+                        _this.next("span").html('Email Address should be in format you@yourdomain.com');
+                    } else {
+                        _this.next("span").attr("style", "display:none");
+                    }
+                } else if (_this.attr("name") == "password"){
+                    var passwordVal = _this.val();
+                    if (passwordVal.length<6){
+                        flag = 1;
+                        _this.next("span").attr("style", "color:red");
+                        _this.next("span").html('Password length should be minimum 6 characters');
+                    } else {
+                        _this.next("span").attr("style", "display:none");
+                    }
+                }
+            }
+        });
+
+        if (flag != 1) {
+            $("#loginForm").submit();
+        }
+    });
+
+    function form_at_script(str) {
+        var pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？]")
+        var rs = "";
+        for (var i = 0; i < str.length; i++) {
+            rs = rs + str.substr(i, 1).replace(pattern, '');
+        }
+        if(rs.length != str.length){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    $(".form-control").focus(function(){
+        $(this).next().hide();
+    });
+
+    function patpatMailChimpPostData(data) {
+        $.ajax({
+            method: "post",
+            url: '/ecommerceStoresCustomers',
+            data: data,
+            success: function (data) {
+                if (data.status == 200) {
+                    console.log('post mailchimp ok');
+                } else {
+                    console.log('post mailchimp error');
+                }
+            }
+        });
+    }
+
+</script>

@@ -1,44 +1,114 @@
 <?php $this->assets->outputCss(); echo $this->getContent() ?>
 <?php echo $this->flashSession->output() ?>
-<div align="center" class="well">
-    <form class="form-search" method="post">
-        <div class="form-group">
-            <?php echo $form->render("email") ?>
-        </div>
-        <?php foreach ($form->getMessagesFor('email') as $message) { echo $message, '
-        <br>'; } ?>
-        <div class="form-group">
-            <?php echo $form->render("password") ?>
-        </div>
-        <?php foreach ($form->getMessagesFor('password') as $message) { echo $message, '
-        <br>'; } ?>
-        <div align="center" class="remember clearfix">
-            <label>
-                <?php echo $form->render("remember") ?> Remember me</label>
-        </div>
-        <?php echo $form->render("Enter") ?>
-        <?php echo $form->render("csrf", array("value" => $this->security->getToken())) ?>
-        <?php foreach ($form->getMessagesFor('csrf') as $message) { echo $message, '
-        <br>'; } ?>
-        <hr/>
-        <div class="forgot">
-            <?php echo $this->tag->linkTo(array("session/forgotPassword", "I forgot password")); ?>
-        </div>
-        <div class="forgot">
-            <?php echo $this->tag->linkTo(array("session/signUp", "Sign Up")); ?>
-        </div>
-    </form>
-</div>
-<br/>
-<?php /*<div id="EnterSocial">
-<p><a class="zocial google" href="/social/login?provider=Google">Войти через Google</a>
-</p>
-<p><a class="zocial facebook" href="/social/login?provider=Facebook">Войти через Facebook</a>
-</p>
-<p><a class="zocial twitter" href="/social/login?provider=Twitter">Войти через Twitter</a>
-</p>
-<p><a class="zocial vkontakte" href="/social/login?provider=Vkontakte">Войти через Vkontakte</a>
-</p>
-<p><a class="zocial mailru" href="/social/login?provider=Mailru">Войти через Mailru</a>
-</p>
-</div> */ ?>
+<main id="login-alter" class="padded padded-login small-padded-login site-top-activity">
+    <div class="container-inner" >
+        <form id="loginForm" class="clearfix" method="post" enctype="multipart/form-data" name="gform_1" action="">
+            <?php echo $form->render("csrf", array("value" => $this->security->getToken())) ?>
+            <input type="hidden" name="refer" value=""/>
+            <section class="box-padded ">
+                <h2 class="sub-title sub-title-top font-regular">
+                    Welcome Back!
+                </h2>
+
+                <div class="form-group form-group-email  ">
+                    <label>Email Address</label>
+                    <input type="text" name="email" class="form-control login_input_text" placeholder="" value=""/>
+                    <span style="display: none">Email Address is required</span>
+                    <?php foreach ($form->getMessagesFor('email') as $message) { echo $message, '
+                        <br>'; } ?>
+                </div>
+
+                <div class="form-group small-margin forgot-password ">
+                    <label class="password-tit">Password</label>
+                    <p class="text-right text-right-bottom text-right-bottom-password">
+                        <?php echo $this->tag->linkTo([
+                            "session/forgotPassword",
+                            "Forgot your password?",
+                            "class" => "text-muted text-muted-forgot",
+                        ]); ?>
+                    </p>
+                    <input type="password" name="password" class="form-control login_input_text"
+                           placeholder="min 6 characters" value=""/>
+                    <span style="display: none">Email Address is required</span>
+                </div>
+
+                <br />
+                <p class="text-center text-right-bottom text-right-bottom-sign">
+                    <a id="sign_in_btn" class="btn btn-primary btn-lg btn-block radius">Sign In</a>
+                </p>
+                <p class="text-center text-muted text-right-bottom text-muted-or">
+                    <i>or</i>
+                </p>
+
+                <p class="text-center text-right-bottom-sign sign-in-width-facebook">
+                    <a href="/social/login?provider=Facebook" class="btn btn-info btn-lg btn-block radius">Sign In with Facebook</a>
+                </p>
+                <p class="text-center go-register"><a href="register">New to PatPat? <em>Join Us</em></a></p>
+                <p  class="text-center protocol">
+                    By joining, you agree to our <br />
+                    <?php echo $this->tag->linkTo(array("/terms", "Terms of Service")); ?>
+                    and
+                    <?php echo $this->tag->linkTo(array("/privacy", "Privacy Policy")); ?>.
+                </p>
+
+            </section>
+            <div class="clearfix"></div>
+        </form>
+    </div>
+</main>
+
+
+<script>
+    $(function () {
+        //right menu open target self
+        $("[href$='register']").attr('target', '_self');
+
+        $(document).on("click", "#sign_in_btn", function () {
+            var flag = 0;
+            $("input.login_input_text").each(function () {
+                var _this = $(this);
+                _this.next('p').remove();
+                if (_this.val() == "") {
+                    flag = 1;
+                    if (_this.attr("name") == "email"){
+                        _this.next("span").html('Email Address is required');
+                    } else {
+                        _this.next("span").html('Password is required');
+                    }
+                    _this.next("span").attr("style", "color:red");
+                } else {
+                    if (_this.attr("name") == "email") {
+                        var emailVal = _this.val();
+                        if (!isEmail(emailVal)) {
+                            flag = 1;
+                            _this.next("span").attr("style", "color:red");
+                            _this.next("span").html('Email Address should be in format you@yourdomain.com');
+                        } else {
+                            _this.next("span").attr("style", "display:none");
+                        }
+                    } else if (_this.attr("name") == "password"){
+                        var passwordVal = _this.val();
+                        if (passwordVal.length<6){
+                            flag = 1;
+                            _this.next("span").attr("style", "color:red");
+                            _this.next("span").html('Password length should be minimum 6 characters');
+                        } else {
+                            _this.next("span").attr("style", "display:none");
+                        }
+                    }
+                }
+            });
+
+            if (flag != 1) {
+                $("#loginForm").submit();
+            }
+        });
+
+        $(".login_input_text").focus(function(){
+            $(this).next().hide();
+        });
+
+
+
+    });
+</script>

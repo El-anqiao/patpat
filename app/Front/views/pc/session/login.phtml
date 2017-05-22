@@ -43,12 +43,12 @@
                 <p class="text-center text-right-bottom-sign sign-in-width-facebook">
                     <a href="/social/login?provider=Facebook" class="btn btn-info btn-lg btn-block radius">Sign In with Facebook</a>
                 </p>
-                <p class="text-center go-register"><a href="register.html">New to PatPat? <em>Join Us</em></a></p>
+                <p class="text-center go-register"><a href="register">New to PatPat? <em>Join Us</em></a></p>
                 <p  class="text-center protocol">
                     By joining, you agree to our <br />
-                    <?php echo $this->tag->linkTo(array("/terms.html", "Terms of Service")); ?>
+                    <?php echo $this->tag->linkTo(array("/terms", "Terms of Service")); ?>
                     and
-                    <?php echo $this->tag->linkTo(array("/privacy.html", "Privacy Policy")); ?>.
+                    <?php echo $this->tag->linkTo(array("/privacy", "Privacy Policy")); ?>.
                 </p>
 
             </section>

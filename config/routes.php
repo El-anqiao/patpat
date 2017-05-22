@@ -93,6 +93,20 @@ $router->add('/register', array(
     'controller' => 'session',
     'action' => 'signUp'
 ));
+$router->add('/logout', array(
+    'module' => "front",
+    'namespace' => 'Phasty\Front\Controllers\\',
+    'controller' => 'session',
+    'action' => 'logout'
+));
+
+//terms
+$router->add('/privacy', array(
+    'module' => "front",
+    'namespace' => 'Phasty\Front\Controllers\\',
+    'controller' => 'terms',
+    'action' => 'privacy'
+));
 
 //ajax获取信息
 $router->add('/getUserNavigationData', array(

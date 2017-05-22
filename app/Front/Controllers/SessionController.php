@@ -34,6 +34,7 @@ class SessionController extends ControllerBase
 
     public function signUpAction()
     {
+        $this->assets->addCss('/assets/css/auth.min-355872eb0c.css');
         if ($this->session->has('auth')) {
             return $this->response->redirect('index');
         }
@@ -120,7 +121,7 @@ class SessionController extends ControllerBase
     {
         $this->auth->remove();
 
-        return $this->response->redirect('index');
+        return $this->response->redirect('login');
     }
 
 }

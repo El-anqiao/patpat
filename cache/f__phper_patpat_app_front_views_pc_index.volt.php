@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="csrf-token" content="CvbgcAQwvjJAPOS289tLg0AVbsZr64wtY5G7wkOB">
+    <meta name="csrf-token" content="<?php echo $this->security->getToken() ?>">
     <meta name="p:domain_verify" content="21ca919dd56d245ea0eb548244d0fefb"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <?php echo $this->tag->getTitle() ?>
