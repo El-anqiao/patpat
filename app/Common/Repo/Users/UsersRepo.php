@@ -113,7 +113,9 @@ class UsersRepo extends Plugin
             'password' => $this->security->hash($data['password']),
             'mustChangePassword' => $data['mustChangePassword'],
             'confirmed' => $data['confirmed'],
-            'banned' => $data['banned']
+            'banned' => $data['banned'],
+            'first_name'=>$data['first_name'],
+            'last_name'=>$data['last_name']
         ]);
 
         if ($user->create()) {

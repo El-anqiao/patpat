@@ -22,9 +22,6 @@ class SessionController extends ControllerBase
         $this->signUpForm = new SignUpForm();
         $this->forgotPasswordForm = new ForgotPasswordForm();
         parent::initialize();
-        //$this->assets->collection('headercss')
-        //    ->addCss('\assets\css\auth.min-355872eb0c.css');
-        //var_dump($this->session->get('auth')['name']);die;
     }
 
     public function indexAction()
@@ -43,7 +40,7 @@ class SessionController extends ControllerBase
 
         if ($this->request->isPost() && $this->signUpForm->isValid($this->request->getPost())) {
             $this->execute(RegisterUserCommand::class, $this->request->getPost());
-            $this->response->redirect('session/login');
+            $this->response->redirect('/login');
         }
         $this->view->form = $this->signUpForm;
         $this->view->breadcrumbs = array('Signing Up');

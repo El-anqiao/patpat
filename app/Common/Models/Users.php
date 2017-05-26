@@ -51,13 +51,18 @@ class Users extends Model
      */
     public $role;
 
+    public $first_name;
+
+    public $last_name;
+
+
     /**
      * @return array
      */
     public static function getWhiteList()
     {
         return [
-            'id', 'name', 'email', 'password', 'mustChangePassword', 'confirmed', 'banned', 'role'
+            'id', 'name', 'email', 'password', 'mustChangePassword', 'confirmed', 'banned', 'role','first_name','last_name'
         ];
     }
 

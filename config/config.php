@@ -22,7 +22,7 @@ return new \Phalcon\Config([
         'productImagesTypes' => ['image/jpeg', 'image/png', 'image/gif']
     ],
     'mail' => [
-        'viewsDir' => BASE_DIR . '/app/Front/views/email/',
+        'viewsDir' => BASE_DIR . '/app/Front/views/'.view_type.'/email/',
         'driver' => 'smtp',
         "host" => "smtp.qq.com",
         "port" => 25,
@@ -72,5 +72,5 @@ return new \Phalcon\Config([
         'baseUri'        => preg_replace('/public([\/\\\\])index.php$/', '', $_SERVER["PHP_SELF"]),
     ],
     //'domain'=>'http://patpat.dev/',
-    'domain'=>'http://public.dev:88/',
+    'domain'=>'http://public.dev:88',
 ]);

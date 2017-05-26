@@ -36,9 +36,9 @@ class RegisterUserHandler extends Plugin implements CommandHandler {
             $this->flashSession->notice('User with such email already registered');
             return $this->response->redirect('session/login');
         }
-
         $this->repository->create(
-            ['name' => $command->name, 'email' => $command->email, 'password' => $command->password]
+            ['name' => $command->name, 'email' => $command->email, 'password' => $command->password,
+            'first_name'=>$command->first_name,'last_name'=>$command->last_name]
         );
 
         $this->flashSession->notice("Please check your email, and complete registration.");
