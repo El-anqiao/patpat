@@ -4,19 +4,6 @@ ini_set('phalcon.orm.not_null_validations', 'on');
 //ini_set('zlib.output_compression', 'Off');
 (new \Phalcon\Debug)->listen();
 define('BASE_DIR', dirname(__DIR__));
-require_once BASE_DIR . '/vendor/autoload.php';
-$config = include BASE_DIR . "/config/config.php";
-include BASE_DIR . '/config/services.php';
-//include BASE_DIR . '/config/bus_services.php';
-
-/**
- * Handle the request
- */
-$application = new \Phalcon\Mvc\Application();
-$application->setDI($di);
-/**
- * Register application modules
- */
 //识别手机用户
 $_SERVER['ALL_HTTP'] = isset($_SERVER['ALL_HTTP']) ? $_SERVER['ALL_HTTP'] : '';
 $mobile_browser = '0';
@@ -57,6 +44,20 @@ if ($mobile_browser > 0) {
     define('is_mobile', false);
     define('view_type', 'pc');
 }
+require_once BASE_DIR . '/vendor/autoload.php';
+$config = include BASE_DIR . "/config/config.php";
+include BASE_DIR . '/config/services.php';
+//include BASE_DIR . '/config/bus_services.php';
+
+/**
+ * Handle the request
+ */
+$application = new \Phalcon\Mvc\Application();
+$application->setDI($di);
+/**
+ * Register application modules
+ */
+
 $application->registerModules([
     'front' => [
         'className' => 'Phasty\Front\Module',
