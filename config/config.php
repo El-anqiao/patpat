@@ -27,7 +27,7 @@ return new \Phalcon\Config([
         "host" => "smtp.qq.com",
         "port" => 25,
         "username" => "565720073@qq.com",
-        "password" => "faraonexx",
+        "password" => "******",
         //"sendmail" => "/usr/sbin/sendmail -bs",
         'encryption' => 'tls',
         'from' => [
@@ -71,6 +71,6 @@ return new \Phalcon\Config([
         // possibly if the web server rewrite rules are changed. This can also be set to a static path.
         'baseUri'        => preg_replace('/public([\/\\\\])index.php$/', '', $_SERVER["PHP_SELF"]),
     ],
-    //'domain'=>'http://patpat.dev/',
-    'domain'=>'http://public.dev:88/',
+    'domain'=>'http://patpat.dev/',
+    //'domain'=>'http://public.dev:88/',
 ]);
