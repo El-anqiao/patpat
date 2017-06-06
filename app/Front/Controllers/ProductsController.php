@@ -36,4 +36,13 @@ class ProductsController extends ControllerBase
         ]);
     }
 
+    /**
+     * 获取
+     */
+    public function NewArrivalsAction()
+    {
+        $this->assets->addCss('/assets/css/new_arrivals.min-1d6608f62e.css');
+
+    }
+
 }

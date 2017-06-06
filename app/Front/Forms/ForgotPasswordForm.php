@@ -29,7 +29,7 @@ class ForgotPasswordForm extends Form
 		$this->add($email);
 
 		//CSRF
-		$csrf = new Hidden('csrf');
+	/*	$csrf = new Hidden('csrf');
 
 		$csrf->addValidator(
 			new Identical(array(
@@ -39,7 +39,7 @@ class ForgotPasswordForm extends Form
 		);
 
 		$this->add($csrf);
-
+*/
 		$this->add(new Submit('Remind password', array(
 			'class' => 'btn btn-primary'
 		)));

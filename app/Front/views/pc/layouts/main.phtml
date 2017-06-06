@@ -1,4 +1,8 @@
 <?php $this->view->partial('partials/header'); ?>
-        <?php echo $this->flashSession->output() ?>
+<?php if(!empty($this->flashSession->output())){ ?>
+<div class="alert alert-danger">
+    <?php echo $this->flashSession->output() ?>
+</div>
+<?php } ?>
         <?php echo $this->getContent() ?>
 <?php $this->view->partial('partials/footer'); ?>

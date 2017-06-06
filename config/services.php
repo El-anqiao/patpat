@@ -224,3 +224,4 @@ $di->setShared('auth', function () {
 $di->setShared('utils', function () {
     return new \utilphp\util();
 });
+date_default_timezone_set($config->timezones);

@@ -71,8 +71,14 @@ return new \Phalcon\Config([
         // possibly if the web server rewrite rules are changed. This can also be set to a static path.
         'baseUri'        => preg_replace('/public([\/\\\\])index.php$/', '', $_SERVER["PHP_SELF"]),
     ],
+<<<<<<< HEAD
 
     'domain'=>'http://patpat.dev',
     //'domain'=>'http://public.dev:88/',
 
+=======
+    'domain'=>'http://patpat.dev',
+    //'domain'=>'http://public.dev',
+    'timezones'=>'Asia/Hong_Kong',
+>>>>>>> 3fe248ed664586c86adde3cde86187c5719d696e
 ]);

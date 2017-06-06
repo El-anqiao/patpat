@@ -41,7 +41,7 @@ class RegisterUserHandler extends Plugin implements CommandHandler {
             'first_name'=>$command->first_name,'last_name'=>$command->last_name]
         );
 
-        $this->flashSession->notice("Please check your email, and complete registration.");
+        //$this->flashSession->notice("Please check your email, and complete registration.");
     }
 
 }

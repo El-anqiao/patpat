@@ -149,7 +149,7 @@ class Users extends Model
     /**
      * Send a confirmation e-mail to the user if the account is not active
      */
-    public function afterCreate()
+    public function CreateSendEmail()
     {
         if ($this->confirmed == 'N') {
             $this->getDI()->getCommandBus()->execute(new CreateEmailConfirmationCommand($this->id));

@@ -72,7 +72,7 @@ $router->add('/session/confirm-email/{code}/{email}', array(
     'action' => 'confirmEmail'
 ));
 
-$router->add('/session/reset-password/{code}/{email}', array(
+$router->add('/resetPassword', array(
     'module' => "front",
     'namespace' => 'Phasty\Front\Controllers\\',
     'controller' => 'session',
@@ -100,12 +100,26 @@ $router->add('/logout', array(
     'action' => 'logout'
 ));
 
+$router->add('/getVerifyCode', array(
+    'module' => "front",
+    'namespace' => 'Phasty\Front\Controllers\\',
+    'controller' => 'session',
+    'action' => 'forgotPassword'
+));
 //terms
 $router->add('/privacy', array(
     'module' => "front",
     'namespace' => 'Phasty\Front\Controllers\\',
     'controller' => 'terms',
     'action' => 'privacy'
+));
+
+//new arrivals
+$router->add('/new-arrivals', array(
+    'module' => "front",
+    'namespace' => 'Phasty\Front\Controllers\\',
+    'controller' => 'products',
+    'action' => 'NewArrivals'
 ));
 
 //ajax获取信息
@@ -121,6 +135,13 @@ $router->add('/track', array(
     'controller' => 'Service',
     'action' => 'Track'
 ));
+$router->add('/ecommerceStoresCustomers', array(
+    'module' => "front",
+    'namespace' => 'Phasty\Front\Controllers\\',
+    'controller' => 'session',
+    'action' => 'ecommerceStoresCustomers'
+));
+
 
 /**
  * Admin routes

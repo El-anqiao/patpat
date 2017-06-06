@@ -3,6 +3,8 @@
 use Phalcon\Commander\CommandHandler;
 use Phalcon\Mvc\User\Plugin;
 use Phasty\Common\Models\ResetPasswords;
+use Phasty\Common\Models\PasswordChanges;
+use Phasty\Common\Models\Users;
 
 class ResetPasswordHandler extends Plugin implements CommandHandler
 {
@@ -12,6 +14,7 @@ class ResetPasswordHandler extends Plugin implements CommandHandler
      * @param $command
      * @return mixed
      */
+    protected $profile;
     public function handle($command)
     {
         $resetPassword = ResetPasswords::findFirstByCode($command->code);
@@ -39,6 +42,19 @@ class ResetPasswordHandler extends Plugin implements CommandHandler
             }
 
             return $this->response->redirect('index');
+        }else{
+
+            $passwordChange = new PasswordChanges();
+            $passwordChange->usersId = $resetPassword->usersId;
+            $passwordChange->ipAddress = $this->request->getClientAddress();
+            $passwordChange->userAgent = $this->request->getUserAgent();
+            $passwordChange->save();
+
+
+            $user=  Users::findFirstById($resetPassword->usersId);
+            $user->password = $this->security->hash($command->password);
+            $user->mustChangePassword = 'N';
+            $user->update();
         }
 
         /**
@@ -46,7 +62,7 @@ class ResetPasswordHandler extends Plugin implements CommandHandler
          */
         $this->auth->authUserById($resetPassword->usersId);
 
-        $this->flash->success('Please set new password');
+        //$this->flash->success('Please set new password');
     }
 
 }

@@ -5,6 +5,7 @@ use Phalcon\Commander\CommanderTrait;
 use Phasty\Common\Commands\RegisterUserCommand;
 use Phasty\Common\Commands\ConfirmUserEmailCommand;
 use Phasty\Common\Commands\ForgotPasswordCommand;
+use Phasty\Common\Commands\ResetPasswordCommand;
 use Phasty\Front\Forms\LoginForm,
     Phasty\Front\Forms\SignUpForm,
     Phasty\Front\Forms\ForgotPasswordForm;
@@ -40,7 +41,10 @@ class SessionController extends ControllerBase
 
         if ($this->request->isPost() && $this->signUpForm->isValid($this->request->getPost())) {
             $this->execute(RegisterUserCommand::class, $this->request->getPost());
-            $this->response->redirect('/login');
+            header('Content-Type: application/json');
+            $re=array('status'=>true);
+            die(json_encode($re));
+            //$this->response->redirect('/login');
         }
         $this->view->form = $this->signUpForm;
         $this->view->breadcrumbs = array('Signing Up');
@@ -97,18 +101,36 @@ class SessionController extends ControllerBase
 
         if ($this->request->isPost() && $this->forgotPasswordForm->isValid($this->request->getPost())) {
             $this->execute(ForgotPasswordCommand::class, $this->request->getPost());
-            $this->response->redirect('session/login');
+            header('Content-Type: application/json');
+            $re=array('status'=>true);
+            die(json_encode($re));
+            //$this->response->redirect('session/login');
         }
 
         $this->view->form = $this->forgotPasswordForm;
-        $this->view->breadcrumbs = array('Восстановление пароля');
+        //$this->view->breadcrumbs = array('Password recovery');
     }
 
-    public function resetPasswordAction($code, $email)
+    public function resetPasswordAction()
     {
-        $this->execute(ResetPasswordCommand::class, ['code' => $code, 'email' => $email]);
+        if ($this->request->isPost()){
+        $this->execute(ResetPasswordCommand::class, ['code' =>$this->request->getPost('verify_code') , 'email' => $this->request->getPost('email'),
+            'password'=>$this->request->getPost('password')]);
+            // 将流转发到index动作
+           /* $this->profile->user->password = $this->security->hash($this->request->getPost('password'));
+            $this->profile->user->mustChangePassword = 'N';
 
-        return $this->response->redirect("profile/index/changePassword");
+            $passwordChange = new PasswordChanges();
+            $passwordChange->usersId = $this->profile->user_id;
+            $passwordChange->ipAddress = $this->request->getClientAddress();
+            $passwordChange->userAgent = $this->request->getUserAgent();
+*/
+            header('Content-Type: application/json');
+            $re=array('status'=>true);
+            die(json_encode($re));
+            // return $this->response->redirect("profile/index/changePassword");
+
+        }
     }
 
     /**
@@ -119,6 +141,20 @@ class SessionController extends ControllerBase
         $this->auth->remove();
 
         return $this->response->redirect('login');
+    }
+
+    /**
+     * 注册成功给客户发送邮件
+     */
+    public function ecommerceStoresCustomersAction()
+    {
+        if ($this->request->isPost() && $this->signUpForm->isValid($this->request->getPost()) && $this->request->isAjax()) {
+           // $this->execute(RegisterUserCommand::class, $this->request->getPost());
+            //$this->execute(ConfirmUserEmailCommand::class, ['code' => $code, 'email' => $email]);
+            header('Content-Type: application/json');
+            die(json_encode(array('status'=>200)));
+            //$this->response->redirect('/login');
+        }
     }
 
 }

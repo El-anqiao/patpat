@@ -40,8 +40,8 @@ class ServiceController extends Controller {
                 $ret['content']['currentUserInfo']=[
                     'avatar'=>'',
                     'email'=>$user_info['email'],
-                    'first_name'=>$user_info['name'],
-                    'last_name'=>'',
+                    'first_name'=>$user_info['first_name'],
+                    'last_name'=>$user_info['last_name'],
                     'registered'=>1,
                     'user_id'=>$user_info['id'],
                 ];
