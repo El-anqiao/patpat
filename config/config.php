@@ -12,7 +12,7 @@ return new \Phalcon\Config([
     'app' => [
         'cacheDir' => BASE_DIR . '/var/cache/',
         'publicUrl' => 'phasty.tk/',
-        'cryptSalt' => 'your_unique_salt', //generate unique for your site!!!!!!!!
+        'cryptSalt' => '$9dIko$.F#11', //generate unique for your site!!!!!!!!
         'jwtSecret' => 'Your_unique_secret_key', //generate unique for your site!!!!!!!!
         'jwtAlgorithm' => 'HS256',
         'locale' => 'en_US',
@@ -25,13 +25,13 @@ return new \Phalcon\Config([
         'viewsDir' => BASE_DIR . '/app/Front/views/'.view_type.'/email/',
         'driver' => 'smtp',
         "host" => "smtp.qq.com",
-        "port" => 25,
-        "username" => "565720073@qq.com",
-        "password" => "******",
+        "port" => 587,
+        "username" => "565720073",
+        "password" => "faraonexx",
         //"sendmail" => "/usr/sbin/sendmail -bs",
         'encryption' => 'tls',
         'from' => [
-            'email' => 'an_qiao@qq.com',
+            'email' => '565720073@qq.com',
             'name' => 'an_qiao@qq.com'
         ]
     ],
@@ -72,7 +72,7 @@ return new \Phalcon\Config([
         'baseUri'        => preg_replace('/public([\/\\\\])index.php$/', '', $_SERVER["PHP_SELF"]),
     ],
 
-    'domain'=>'http://patpat.dev/',
+    'domain'=>'http://patpat.dev',
     //'domain'=>'http://public.dev:88/',
 
 ]);

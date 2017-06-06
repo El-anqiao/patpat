@@ -207,7 +207,7 @@ $di->set('commandBus', function () {
  */
 
 $di->setShared('mailer', function () use ($config) {
-    return new \Phalcon\Mailer\Manager($config->mail);
+    return new \Phalcon\Mailer\Manager((array)$config->mail);
 });
 
 /**

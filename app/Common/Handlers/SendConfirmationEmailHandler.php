@@ -32,6 +32,7 @@ class SendConfirmationEmailHandler extends Plugin implements CommandHandler
         $message = $this->mailer->createMessageFromView('confirmation', $viewVars, null)
             ->to($user->email, $user->name)
             ->subject('Email confirmation');
+        //var_dump($message);die;
         $message->send();
     }
 
