@@ -111,9 +111,9 @@ class UsersRepo extends Plugin
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => $this->security->hash($data['password']),
-            'mustChangePassword' => $data['mustChangePassword'],
-            'confirmed' => $data['confirmed'],
-            'banned' => $data['banned'],
+            'mustChangePassword' => 'N',
+            'confirmed' => 'Y',
+            'banned' => 'N',
             'first_name'=>$data['first_name'],
             'last_name'=>$data['last_name']
         ]);
@@ -121,8 +121,8 @@ class UsersRepo extends Plugin
         if ($user->create()) {
             $profile = new UserProfile();
             $profile->userId = $user->id;
-            $profile->address = $data['address'];
-            $profile->phone = $data['phone'];
+            $profile->address = '';
+            $profile->phone = '';
             if ($profile->save())
                 return true;
         }

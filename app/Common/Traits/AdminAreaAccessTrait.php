@@ -17,7 +17,7 @@ trait AdminAreaAccessTrait
         //If there is no identity available the user forbidden
         if (!is_array($identity)) {
             $this->flashSession->error('Please login or register first.');
-            $dispatcher->setReturnedValue($this->response->redirect('/session/login'));
+            $dispatcher->setReturnedValue($this->response->redirect('/login'));
             return false;
         }
 

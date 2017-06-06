@@ -27,18 +27,18 @@ class Auth extends Component
         $user = Users::findFirstByEmail($credentials['email']);
         if (!$user) {
             $this->registerUserThrottling(0);
-            return $this->response->redirect('session/login');
+            return $this->response->redirect('/login');
         }
 
         //Check the password
         if (!$this->security->checkHash($credentials['password'], $user->password)) {
             $this->registerUserThrottling($user->id);
-            return $this->response->redirect('session/login');
+            return $this->response->redirect('/login');
         }
 
         //Check if the user was flagged
         if(!$this->checkUserFlags($user)){
-            return $this->response->redirect('session/login');
+            return $this->response->redirect('/login');
         }
 
         //Register the successful login
@@ -53,7 +53,9 @@ class Auth extends Component
             'id' => $user->id,
             'name' => $user->name,
             'email' => $user->email,
-            'role' => $user->role
+            'role' => $user->role,
+            'first_name' => $user->first_name,
+            'last_name' => $user->last_name,
             ]);
         $user->profile->update();
         $this->response->redirect('index');
@@ -172,7 +174,7 @@ class Auth extends Component
 
                         //Check if the user was flagged
                         if(!$this->checkUserFlags($user)){
-                            return $this->response->redirect('session/login');
+                            return $this->response->redirect('/login');
                         }
 
                         //Register identity
@@ -180,7 +182,9 @@ class Auth extends Component
                             'id' => $user->id,
                             'name' => $user->name,
                             'email' => $user->email,
-                            'role' => $user->role
+                            'role' => $user->role,
+                            'first_name' => $user->first_name,
+                            'last_name' => $user->last_name,
                         ]);
 
                         //Register the successful login
@@ -197,7 +201,7 @@ class Auth extends Component
         $this->cookies->get('RMU')->delete();
         $this->cookies->get('RMT')->delete();
 
-        return $this->response->redirect('session/login');
+        return $this->response->redirect('/login');
     }
 
     /**
@@ -306,18 +310,20 @@ class Auth extends Component
         $user = Users::findFirstById($id);
         if (!$user) {
             $this->flashSession->error('There is no such a user');
-            return $this->response->redirect('session/login');
+            return $this->response->redirect('/login');
         }
 
         if(!$this->checkUserFlags($user)){
-            return $this->response->redirect('session/login');
+            return $this->response->redirect('/login');
         }
 
         $this->session->set('auth', [
             'id' => $user->id,
             'name' => $user->name,
             'email' => $user->email,
-            'role' => $user->role
+            'role' => $user->role,
+            'first_name' => $user->first_name,
+            'last_name' => $user->last_name,
         ]);
 
     }

@@ -27,11 +27,11 @@ class ForgotPasswordHandler extends Plugin implements CommandHandler
                     'publicUrl' => $this->config->app->publicUrl,
                     'resetUrl' => 'session/resetPassword/' . $resetPassword->code . '/' . $user->email
                 ];
-                $message = $this->mailer->createMessageFromView('reset', $viewVars, null)
+           /*     $message = $this->mailer->createMessageFromView('reset', $viewVars, null)
                     ->to($user->email, $user->name)
                     ->subject('Reset password');
-                $message->send();
-                $this->flashSession->success('Check pleas your email. Follow link in email and change password');
+                $message->send();*/
+                //$this->flashSession->success('Check pleas your email. Follow link in email and change password');
                 return $this->response->redirect('session/login');
             } else {
                 foreach ($resetPassword->getMessages() as $message) {
