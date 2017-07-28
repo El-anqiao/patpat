@@ -31,4 +31,7 @@
             }
         };
     }
+    angular.module('ng').filter('tel', function (){});
 })();
+
+

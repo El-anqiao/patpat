@@ -74,5 +74,28 @@ return new \Phalcon\Config([
 
     'domain'=>'http://patpat.dev',
     //'domain'=>'http://public.dev',
-    'timezones'=>'Asia/Hong_Kong'
+    'timezones'=>'Asia/Hong_Kong',
+
+   /* 'paypal'=> [
+    // The default gateway to use
+    'default' => 'paypal',
+    // Add in each gateway here
+    'gateways' => [
+        'paypal' => [
+            'driver'  => 'PayPal_Express',
+            'options' => [
+                'solutionType'   => '',
+                'landingPage'    => '',
+                'headerImageUrl' => '',
+                'username'  =>'an199464@163.com',
+                'password'  => 'faraonexx1899',
+                'signature' => env( 'OMNIPAY_PAYPAL_EXPRESS_SIGNATURE', '' ),
+                'brandName' =>  'Your app name',
+                'testMode' => env( 'OMNIPAY_PAYPAL_TEST_MODE', true )
+            ]
+            ]
+        ]
+    ]
+   */
+
 ]);

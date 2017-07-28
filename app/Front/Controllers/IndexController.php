@@ -22,7 +22,10 @@ class IndexController extends ControllerBase
     {
         //$this->modelsCache->flush();
         $products = $this->products->find(["order" => "rating desc", "limit" => 6,
-            "cache" => ["key" => "products-on-index-page"]]);
+            "columns" => "id as cc, name",
+        //    "cache" => ["key" => "products-on-index-page"]
+        ]);
+
         $this->view->setVars(['products' => $products]);
     }
 

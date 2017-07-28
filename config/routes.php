@@ -142,6 +142,20 @@ $router->add('/ecommerceStoresCustomers', array(
     'action' => 'ecommerceStoresCustomers'
 ));
 
+$router->add('/pay', array(
+    'module' => "front",
+    'namespace' => 'Phasty\Front\Controllers\\',
+    'controller' => 'orders',
+    'action' => 'checkout'
+));
+
+$router->add('/do', array(
+    'module' => "front",
+    'namespace' => 'Phasty\Front\Controllers\\',
+    'controller' => 'orders',
+    'action' => 't1'
+));
+
 
 /**
  * Admin routes

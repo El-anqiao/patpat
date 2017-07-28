@@ -25,7 +25,7 @@ class IndexController extends ControllerBase
     {
         $this->view->enable();
         $this->view->setRenderLevel(View::LEVEL_MAIN_LAYOUT);
-        var_dump(LEVEL_MAIN_LAYOUT);die;
+        //var_dump($_SESSION);die;
     }
 
     /**
